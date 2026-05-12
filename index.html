@@ -894,12 +894,10 @@ function exportErrors(){
 
     data.forEach((d,i) => {
 
-        const nav =
-            document.getElementById(`nav-${i}`);
+        const nav = document.getElementById(`nav-${i}`);
+        const btn = document.getElementById(`btn-${i}`);
 
-        const btn =
-            document.getElementById(`btn-${i}`);
-
+        // Zkontrolujeme, zda je úloha odevzdaná a je chybně
         if(
             btn &&
             btn.disabled &&
@@ -911,41 +909,45 @@ function exportErrors(){
             txt += `Úloha ${i + 1}\n`;
             txt += `${d.q}\n\n`;
 
-            let userAns = "";
-
             if(d.type === 'choice'){
 
-                const sel =
-                    document.querySelector(
-                        `input[name="q${i}"]:checked`
-                    );
+                const sel = document.querySelector(`input[name="q${i}"]:checked`);
+                const selIdx = sel ? parseInt(sel.value) : -1;
 
-                userAns = sel
-                    ? d.opts[parseInt(sel.value)]
-                    : "Nezvoleno";
+                txt += `Možnosti:\n`;
 
-            }else{
+                d.opts.forEach((opt, optIdx) => {
+                    const isCorrect = d.ans.includes(optIdx);
+                    const isSelected = (selIdx === optIdx);
+                    const letter = String.fromCharCode(65 + optIdx); // A, B, C...
 
-                const inp =
-                    document.getElementById(`text-${i}`);
+                    let prefix = "[ ]";
+                    let note = "";
 
-                userAns =
-                    inp ? inp.value : "";
-            }
+                    if (isSelected && !isCorrect) {
+                        prefix = "[✗]";
+                        note = " <-- Vaše volba (špatně)";
+                    } else if (!isSelected && isCorrect) {
+                        prefix = "[✓]";
+                        note = " <-- Správná odpověď";
+                    } else if (isSelected && isCorrect) {
+                        // K tomuto u chybného exportu nedojde, ale pro jistotu
+                        prefix = "[✓]";
+                        note = " <-- Vaše volba (správně)";
+                    }
 
-            txt += `Vaše odpověď:\n`;
-            txt += `${userAns}\n\n`;
+                    txt += `${prefix} ${letter}. ${opt}${note}\n`;
+                });
 
-            txt += `Správná odpověď:\n`;
+            } else {
 
-            if(d.type === 'choice'){
+                const inp = document.getElementById(`text-${i}`);
+                const userAns = inp ? inp.value : "";
 
-                txt += d.ans
-                    .map(x => d.opts[x])
-                    .join('\n');
+                txt += `Vaše odpověď:\n`;
+                txt += `${userAns}\n\n`;
 
-            }else{
-
+                txt += `Správná odpověď:\n`;
                 txt += d.ans[0];
             }
 
@@ -958,27 +960,19 @@ function exportErrors(){
     if(errors === 0){
 
         alert("Žádné chyby k exportu.");
-
         return;
     }
 
     const blob = new Blob(
         [txt],
-        {
-            type:'text/plain;charset=utf-8'
-        }
+        { type:'text/plain;charset=utf-8' }
     );
 
-    const url =
-        URL.createObjectURL(blob);
-
-    const a =
-        document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
 
     a.href = url;
-
-    a.download =
-        `chyby_${new Date().toISOString().slice(0,10)}.txt`;
+    a.download = `chyby_${new Date().toISOString().slice(0,10)}.txt`;
 
     a.click();
 
