@@ -29,7 +29,6 @@ body{
 }
 
 /* SIDEBAR */
-
 #sidebar{
     width:280px;
     background:#fff;
@@ -84,7 +83,6 @@ body{
 }
 
 /* MAIN */
-
 #main-content{
     flex:1;
     padding:40px;
@@ -107,7 +105,6 @@ body{
 }
 
 /* CARDS */
-
 .q-card{
     background:#fff;
     border-radius:12px;
@@ -142,7 +139,6 @@ body{
 }
 
 /* OPTIONS */
-
 .opt-label{
     display:flex;
     align-items:flex-start;
@@ -176,7 +172,6 @@ body{
 }
 
 /* TEXT INPUT */
-
 .text-input{
     width:100%;
     padding:14px;
@@ -196,7 +191,6 @@ body{
 }
 
 /* BUTTONS */
-
 .check-btn{
     width:100%;
     padding:14px;
@@ -254,7 +248,6 @@ body{
 }
 
 /* FEEDBACK */
-
 .points-feedback{
     margin-top:15px;
     font-weight:bold;
@@ -282,7 +275,6 @@ body{
 }
 
 /* SETUP */
-
 #setup{
     position:fixed;
     inset:0;
@@ -316,12 +308,15 @@ body{
                 <input type="checkbox" id="shuffleQuestions">
                 Náhodné pořadí úloh
             </label>
-
             <br><br>
-
             <label>
                 <input type="checkbox" id="shuffleAnswers">
                 Náhodné pořadí odpovědí
+            </label>
+            <br><hr style="opacity:0.2;"><br>
+            <label>
+                <strong>Soubor s otázkami (.json):</strong><br>
+                <input type="file" id="fileInput" accept=".json" style="margin-top:10px;">
             </label>
         </div>
 
@@ -332,653 +327,270 @@ body{
 </div>
 
 <div id="sidebar">
-
     <h3>Navigace</h3>
-
     <button class="check-btn export-btn" onclick="exportErrors()">
         EXPORT CHYB
     </button>
-
     <div id="navGrid" class="nav-grid"></div>
-
 </div>
 
 <div id="main-content">
-
     <div class="header-stats">
         <div id="prog">Zodpovězeno: 0 / 0</div>
         <div id="score">Body: 0.00 / 0.00</div>
     </div>
-
     <div id="quiz"></div>
-
     <button
         class="check-btn"
         style="background:var(--primary);margin-bottom:80px;"
         onclick="finishAll()">
-
         ODEVZDAT VŠE
     </button>
-
 </div>
 
 <script>
-
-/* =========================
-   SEM DOSAĎ DATA
-========================= */
-
-const master = [
-    { id: 1, q: "Pomocí metody LZW zkomprimujte posloupnost ABABAC. Ve slovníku je 8-bitová rozšířená ASCII tabulka.", type: "text", ans: ["AB256AC"], pts: 5.0, hint: "První nová sekvence dostane index 256.", proc: "lzw1.jng" },
-    { id: 2, q: "Vyberte typ signálu, který nenese žádnou informaci.", type: "choice", opts: ["Nenáhodný signál", "Náhodný signál", "Stochastický signál"], ans: [0], pts: 2.0, hint: "Determinovaný signál je předvídatelný a tedy nenese informaci." },
-    { id: 3, q: "Jaká musí být minimální Hammingova vzdálenost d_min pro opravu 2 chyb?", type: "text", ans: ["5"], pts: 1.0, hint: "Vzorec: d_min = 2t + 1, kde t je počet opravovaných chyb." },
-    { id: 4, q: "Jaká bude kapacita kanálu, jestliže bude použit binární signál a šířka použitého kmitočtového pásma bude 4 kHz?", type: "text", ans: ["8 kbps", "8"], pts: 2.0, hint: "Nyquistův vzorec: C = 2 * B * log2(L). Pro binární L=2." },
-    { id: 5, q: "Určete vyslané 15-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (68)D kódovanou pomocí Hammingova kódu (15,11).", type: "text", ans: ["000010001001100"], pts: 5.0, hint: "68 binárně je 1000100.", proc: "hamming1.png" },
-    { id: 6, q: "Nevýhody X.25.", type: "choice", opts: ["nízká přenosová rychlost, vysoké zpoždění, možnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, nízké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, nemožnost zahlcení sítě", "vysoká přenosová rychlost, nízké zpoždění, možnost přenášet multimediální data, nemožnost zahlcení sítě"], ans: [2], pts: 1.0, hint: "X.25 je zastaralý paketový protokol s režií pro kontrolu chyb." },
-    { id: 7, q: "Abeceda pro přenos dat je:", type: "choice", opts: ["sestava převodních vztahů mezi abstraktní a fyzikální značkou", "sestava převodních vztahů mezi znaky a odpovídajícími značkami", "sestava převodních vztahů mezi konkrétní a fyzickou značkou", "soubor pravidel, podle kterých se přenáší data", "soubor pravidel, podle kterých se tvoří signál", "sestava převodních vztahů mezi abstraktním a fyzickým znakem"], ans: [1], pts: 1.0, hint: "Definuje přiřazení mezi prvky zprávy a signálovými prvky." },
-    { id: 8, q: "Pomocí adaptivního Huffmanova kódování zkomprimujte posloupnost CAAAA.", type: "text", ans: ["C0A0111"], pts: 6.0, hint: "Algoritmus FGK/Vitter. Sledujte dynamickou aktualizaci stromu.", proc: "adaptive_huff.jpg" },
-    { id: 9, q: "Co znamená zkratka FSK?", type: "choice", opts: ["Frequency Shift Keying", "Frequency Share Keying", "Frequency Software Keying", "Free Shift Keying", "Faze Shift keying"], ans: [0], pts: 2.0, hint: "Modulace, kde se mění kmitočet nosné vlny." },
-    { id: 10, q: "Jaká bude hodnota SNR (v dB), jestliže výkon signálu je 2mW a výkon šumu 2µW?", type: "choice", opts: ["10", "20", "30", "40"], ans: [2], pts: 2.0, hint: "SNR[dB] = 10 * log10(P_signál / P_šum). Pozor na jednotky (m vs µ)." },
-    { id: 11, q: "Určete vyslané 12-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (31)H pomocí CRC kódu (G(x)=x^4+x+1).", type: "text", ans: ["001110010111"], pts: 5.0, hint: "31 hexadecimálně je 0011 0001 binárně.", proc: "crc1.png" },
-    { id: 12, q: "Zkratka SSID znamená:", type: "choice", opts: ["Secure Service Identification", "Service Set Identifier", "Serial System ID", "Signal Set ID"], ans: [1], pts: 1.0, hint: "Unikátní identifikátor bezdrátové sítě Wi-Fi." },
-    { id: 13, q: "S využitím OpenSSL dešifrujte zprávu 'U2FsdGVkX1+qH2J951sMfd7knjjgrX18SVYOXfzjwW4=' (ARIA-192, heslo 'strong').", type: "text", ans: ["radio"], pts: 3.0, hint: "Příkaz: echo \"...\" | openssl aria-192-cbc -d -a -pbkdf2 -pass pass:strong" },
-    { id: 14, q: "Zkratka ADSL znamená:", type: "choice", opts: ["asynchronní digitální účastnická linka a využívá stávající účastnické vedení", "asymetrická diskrétní účastnická linka a využívá stávající účastnické vedení", "asymetrická digitální účastnická linka a využívá stávající tranzitní vedení", "asymetrická digitální účastnická linka a využívá stávající účastnické vedení"], ans: [3], pts: 1.0, hint: "Rychlost stahování (download) je jiná než odesílání (upload)." },
-    { id: 15, q: "Sedmiprvkový kód může mít tyto vlastnosti:", type: "choice", opts: ["kapacita kódu je 64 znaků, je znám jako kód BCD", "kapacita kódu je 128 znaků, je znám jako kód BCD", "kapacita kódu je 256 znaků, je znám jako rozšířená ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako EBCDIC"], ans: [3], pts: 1.0, hint: "Počet kombinací je 2^7 = 128." },
-    { id: 16, q: "Napište příkaz pro vytvoření matice A o velikosti 3x3 v Octave (hodnoty 1 až 9).", type: "text", ans: ["A = [1, 2, 3; 4, 5, 6; 7, 8, 9]"], pts: 2.0, hint: "Oddělujte sloupce čárkou nebo mezerou a řádky středníkem." },
-    { id: 17, q: "Pomocí transpozičního šifrování (tabulka 3x3) zašifrujte zprávu: KDOJEDOMA.", type: "text", ans: ["KJODEMODA"], pts: 2.0, hint: "Zapište 'KDO', 'JED', 'OMA' do řádků a přečtěte po sloupcích." },
-    { id: 18, q: "Slovníkové kompresní metody nepoužívají tuto metodu:", type: "choice", opts: ["LZ78", "LZ77", "LZW", "Adaptivní Huffmanův kód"], ans: [3], pts: 1.0, hint: "Huffman pracuje na základě četnosti znaků (entropie), ne frází." },
-    { id: 19, q: "Iterační kódy:", type: "choice", opts: ["první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – spirálová parita", "první iterace – spirálová parita, druhá iterace – značková parita, třetí iterace – bloková parita", "první iterace – lichá parita, druhá iterace – sudá parita, třetí iterace – lichá parita", "první iterace – sudá parita, druhá iterace – lichá parita, třetí iterace – sudá parita", "první iterace – značková parita, druhá iterace – sloupcová parita, třetí iterace – křížová parita", "první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – křížová parita"], ans: [0], pts: 1.0, hint: "Postupná aplikace parit v různých dimenzích/směrech." },
-    { id: 20, q: "Příkaz touch soubor.txt.", type: "choice", opts: ["vytvoří nový soubor, nebo aktualizuje datum stávajícího souboru", "pouze mění obsah stávajícího souboru", "mění obsah stávajícího souboru a aktualizuje datum"], ans: [0], pts: 2.0, hint: "Často se používá k vytvoření prázdného souboru." },
-    { id: 21, q: "Datové měniče v základním pásmu:", type: "choice", opts: ["mění kódování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kompresi, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kódování, impedanci a stav vysílaného signálu, aby byl přizpůsoben pro krátký přenos", "mění šifrování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro krátký přenos"], ans: [0], pts: 1.0, hint: "Upravují signál bez modulace na nosnou." },
-    { id: 22, q: "Pro kompresi video dat je převážně využívaná:", type: "choice", opts: ["bezeztrátová komprese", "ztrátová komprese", "adaptivní komprese", "statistická komprese"], ans: [1], pts: 1.0, hint: "Kvůli obrovskému objemu dat se vypouštějí méně viditelné detaily." },
-    { id: 23, q: "Zabezpečení bezdrátové sítě pomocí WPA2 využívá:", type: "choice", opts: ["proudovou šifru DES", "proudovou šifru AES", "blokovou šifru AES", "blokovou šifru RC4"], ans: [2], pts: 2.0, hint: "WPA2 používá CCMP protokol založený na AES v blokovém režimu." },
-    { id: 24, q: "Pomocí techniky CDMA demultiplexujte signál (spreadchip 1011 = 1, 1, -1, 1). Přijatý signál na lince: 2, 0, -2, 2.", type: "text", ans: ["1"], pts: 2.0, hint: "Postup výpočtu:\n1. Převeďte chip na bipolární: 1, 1, -1, 1\n2. Vypočítejte skalární součin s přijatým signálem: (1*2) + (1*0) + (-1*-2) + (1*2)\n3. Výsledek: 2 + 0 + 2 + 2 = 6\n4. Vydělte délkou chipu (4): 6/4 = 1.5. Kladné číslo značí bit 1." },
-    { id: 25, q: "Jako zpětnovazební metoda zabezpečení přenosu dat může být použita:", type: "choice", opts: ["informační zpětná vazba", "detekční zpětná vazba", "korekční zpětná vazba", "šifrovaná zpětná vazba"], ans: [0], pts: 1.0, hint: "Zpět se posílají přijatá data k ověření odesílateli." },
-    { id: 26, q: "Modulační signál je signál, který:", type: "choice", opts: ["nenese informaci a je nosný", "nese informaci a bude se modulovat na signál nosný", "slouží pouze k synchronizaci"], ans: [1], pts: 2.0, hint: "Užitečná data (nízkofrekvenční), která ovlivňují parametry nosné." },
-    { id: 27, q: "Symetrické šifrování používá:", type: "choice", opts: ["2 tajné klíče", "jeden tajný klíč", "privátní klíč", "veřejný klíč", "veřejný a privátní klíč"], ans: [1], pts: 1.0, hint: "Tentýž klíč slouží k šifrování i dešifrování." },
-    { id: 28, q: "Zkomprimujte datový řetězec AOB00000C00B0000 pomocí metody RLE Advanced.", type: "text", ans: ["AOB0002C00B0001"], pts: 2.0, hint: "Uvádí se 3x znak a pak počet zbývajících opakování." },
-    { id: 29, q: "Jakým příkazem ukončíme proces, který neodpovídá a jeho PID je 1000?", type: "text", ans: ["kill 1000"], pts: 2.0, hint: "Systémový příkaz pro zasílání signálů procesům." },
-    { id: 30, q: "Topologie typu hvězda je:", type: "choice", opts: ["jednoduchá, lepší správa, odolná na výpadek stanice nebo centrálního uzlu", "jednoduchá, snadno rozšiřitelná, není vhodná pro větší počet KZ, citlivá na výpadek linky", "spolehlivá, lepší správa, odolná na výpadek linky, citlivá na výpadek centrálního uzlu", "spolehlivá, využívá deterministický přístup, citlivá na výpadek linky nebo stanice"], ans: [2], pts: 1.0, hint: "Centrální prvek (switch) je slabým místem, ale výpadek kabelu odpojí jen jedno KZ." },
-    { id: 31, q: "Korekční kódy:", type: "choice", opts: ["potřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb mezi jednotlivými prvky kódové kombinace", "potřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb"], ans: [2], pts: 1.0, hint: "Forward Error Correction (FEC) opravuje chyby přímo v přijímači." }
-];
-
-/* ========================= */
-
+let master = []; 
 let data = [];
 let curScore = 0;
 let maxPosScore = 0;
 let solved = 0;
 
-/* ========================= */
+/* =========================
+   SPOUŠTĚNÍ TESTU
+========================= */
+async function start(){
+    const fileInput = document.getElementById('fileInput');
+    
+    // Načtení externího JSONu
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const text = await file.text();
+        try {
+            master = JSON.parse(text);
+        } catch (e) {
+            alert("Chyba: Vybraný soubor není platný JSON!");
+            return;
+        }
+    }
 
-function start(){
+    if (master.length === 0) {
+        alert("Prosím, vyberte nejdříve soubor s otázkami.");
+        return;
+    }
 
     data = JSON.parse(JSON.stringify(master));
 
-    const shuffleQ =
-        document.getElementById('shuffleQuestions').checked;
-
-    const shuffleA =
-        document.getElementById('shuffleAnswers').checked;
+    const shuffleQ = document.getElementById('shuffleQuestions').checked;
+    const shuffleA = document.getElementById('shuffleAnswers').checked;
 
     if(shuffleQ){
         data.sort(() => Math.random() - 0.5);
     }
 
     if(shuffleA){
-
         data.forEach(d => {
-
             if(d.type !== 'choice') return;
-
             let arr = d.opts.map((o,i) => ({
                 text:o,
                 correct:d.ans.includes(i)
             }));
-
             arr.sort(() => Math.random() - 0.5);
-
             d.opts = arr.map(x => x.text);
-
             d.ans = arr.reduce((a,x,i) => {
-
-                if(x.correct){
-                    a.push(i);
-                }
-
+                if(x.correct) a.push(i);
                 return a;
-
             }, []);
-
         });
-
     }
 
     document.getElementById('setup').style.display = 'none';
-
     renderNav();
     renderQuiz();
     updateStats();
 }
 
-/* ========================= */
-
+/* =========================
+   UI RENDERING
+========================= */
 function renderNav(){
-
     const g = document.getElementById('navGrid');
-
     g.innerHTML = "";
-
     data.forEach((_,i) => {
-
         let d = document.createElement('div');
-
         d.className = 'nav-item';
         d.id = `nav-${i}`;
-
         d.innerText = i + 1;
-
         d.onclick = () => {
-
-            document
-                .getElementById(`qcard-${i}`)
-                .scrollIntoView({
-                    behavior:'smooth'
-                });
-
+            document.getElementById(`qcard-${i}`).scrollIntoView({ behavior:'smooth' });
         };
-
         g.appendChild(d);
-
     });
-
 }
 
-/* ========================= */
-
 function renderQuiz(){
-
     const c = document.getElementById('quiz');
-
     c.innerHTML = "";
-
     data.forEach((d,i) => {
-
         let inputHtml = "";
-
         if(d.type === 'choice'){
-
             inputHtml = d.opts.map((o,oi) => `
-
-                <label
-                    class="opt-label"
-                    id="label-${i}-${oi}">
-
-                    <input
-                        type="radio"
-                        name="q${i}"
-                        value="${oi}">
-
-                    <span>
-                        ${String.fromCharCode(65 + oi)}.
-                        ${o}
-                    </span>
-
+                <label class="opt-label" id="label-${i}-${oi}">
+                    <input type="radio" name="q${i}" value="${oi}">
+                    <span>${String.fromCharCode(65 + oi)}. ${o}</span>
                 </label>
-
             `).join('');
-
         }else{
-
-            inputHtml = `
-
-                <input
-                    type="text"
-                    class="text-input"
-                    id="text-${i}"
-                    placeholder="Odpověď...">
-
-            `;
-
+            inputHtml = `<input type="text" class="text-input" id="text-${i}" placeholder="Odpověď...">`;
         }
 
         let card = document.createElement('div');
-
         card.className = 'q-card';
         card.id = `qcard-${i}`;
-
         card.innerHTML = `
-
             <div class="q-header">
-
                 <div>
-
-                    <span
-                        class="blue-sq-icon"
-                        id="sq-${i}"
-                        onclick="toggleSquare(${i})">
-                    </span>
-
-                    <strong id="display-${i}">
-                        Úloha ${i + 1}
-                    </strong>
-
-                    <span style="margin-left:10px;color:#666;">
-                        ID ${d.id}
-                    </span>
-
+                    <span class="blue-sq-icon" id="sq-${i}" onclick="toggleSquare(${i})"></span>
+                    <strong id="display-${i}">Úloha ${i + 1}</strong>
+                    <span style="margin-left:10px;color:#666;">ID ${d.id}</span>
                 </div>
-
-                <div style="
-                    color:var(--primary);
-                    font-weight:bold;
-                ">
-                    ${d.pts.toFixed(1)} b
-                </div>
-
+                <div style="color:var(--primary);font-weight:bold;">${d.pts.toFixed(1)} b</div>
             </div>
-
-            <div style="margin-bottom:20px;">
-                ${d.q}
-            </div>
-
-            <div id="field-${i}">
-                ${inputHtml}
-            </div>
-
-            <button
-                class="check-btn"
-                id="btn-${i}"
-                onclick="check(${i})">
-
-                ODEVZDAT ÚLOHU
-
-            </button>
-
+            <div style="margin-bottom:20px;">${d.q}</div>
+            <div id="field-${i}">${inputHtml}</div>
+            <button class="check-btn" id="btn-${i}" onclick="check(${i})">ODEVZDAT ÚLOHU</button>
             <div class="action-btns">
-
-                <button
-                    class="hint-btn"
-                    onclick="toggle('hint-${i}')">
-
-                    Nápověda
-
-                </button>
-
-                ${
-                    d.proc
-                    ? `
-                        <button
-                            class="proc-btn"
-                            onclick="toggle('proc-${i}')">
-
-                            Obrázek
-
-                        </button>
-                    `
-                    : ''
-                }
-
+                <button class="hint-btn" onclick="toggle('hint-${i}')">Nápověda</button>
+                ${d.proc ? `<button class="proc-btn" onclick="toggle('proc-${i}')">Obrázek</button>` : ''}
             </div>
-
-            <div
-                id="hint-${i}"
-                class="hint-box">
-
-                ${d.hint || ''}
-
-            </div>
-
-            <div
-                id="proc-${i}"
-                class="proc-box">
-
-                ${d.proc || ''}
-
-            </div>
-
-            <div
-                id="feed-${i}"
-                class="points-feedback">
-            </div>
-
+            <div id="hint-${i}" class="hint-box">${d.hint || ''}</div>
+            <div id="proc-${i}" class="proc-box">${d.proc || ''}</div>
+            <div id="feed-${i}" class="points-feedback"></div>
         `;
-
         c.appendChild(card);
-
     });
-
 }
-
-/* ========================= */
 
 function toggle(id){
-
     let e = document.getElementById(id);
-
-    e.style.display =
-        e.style.display === 'block'
-        ? 'none'
-        : 'block';
+    e.style.display = e.style.display === 'block' ? 'none' : 'block';
 }
-
-/* ========================= */
 
 function toggleSquare(i){
-
-    const sq =
-        document.getElementById(`sq-${i}`);
-
-    const nav =
-        document.getElementById(`nav-${i}`);
-
-    const disp =
-        document.getElementById(`display-${i}`);
-
+    const sq = document.getElementById(`sq-${i}`);
+    const nav = document.getElementById(`nav-${i}`);
+    const disp = document.getElementById(`display-${i}`);
     sq.classList.toggle('active');
     nav.classList.toggle('flagged');
-
-    const active =
-        sq.classList.contains('active');
-
-    nav.innerText =
-        active ? '?' : i + 1;
-
-    disp.innerText =
-        active
-        ? `Úloha ?`
-        : `Úloha ${i + 1}`;
+    const active = sq.classList.contains('active');
+    nav.innerText = active ? '?' : i + 1;
+    disp.innerText = active ? `Úloha ?` : `Úloha ${i + 1}`;
 }
 
-/* ========================= */
-
+/* =========================
+   LOGIKA KONTROLY
+========================= */
 function check(i){
-
     const d = data[i];
-
-    const btn =
-        document.getElementById(`btn-${i}`);
-
-    if(btn.disabled){
-        return;
-    }
+    const btn = document.getElementById(`btn-${i}`);
+    if(btn.disabled) return;
 
     let correct = false;
-    let userAnswer = "";
-
-    /* =====================
-       MULTIPLE CHOICE
-    ===================== */
-
     if(d.type === 'choice'){
-
-        const sel =
-            document.querySelector(
-                `input[name="q${i}"]:checked`
-            );
-
-        if(!sel){
-            alert("Musíte vybrat odpověď.");
-            return;
-        }
-
-        const selIdx =
-            parseInt(sel.value);
-
-        correct =
-            d.ans.includes(selIdx);
-
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if(!sel){ alert("Musíte vybrat odpověď."); return; }
+        const selIdx = parseInt(sel.value);
+        correct = d.ans.includes(selIdx);
         d.opts.forEach((_,oi) => {
-
-            const lbl =
-                document.getElementById(
-                    `label-${i}-${oi}`
-                );
-
-            if(d.ans.includes(oi)){
-
-                lbl.classList.add('correct');
-
-            }else if(selIdx === oi){
-
-                lbl.classList.add('wrong');
-
-            }
-
+            const lbl = document.getElementById(`label-${i}-${oi}`);
+            if(d.ans.includes(oi)) lbl.classList.add('correct');
+            else if(selIdx === oi) lbl.classList.add('wrong');
         });
-
-        document
-            .querySelectorAll(`input[name="q${i}"]`)
-            .forEach(x => x.disabled = true);
-
-    }
-
-    /* =====================
-       TEXT
-    ===================== */
-
-    else{
-
-        const inp =
-            document.getElementById(`text-${i}`);
-
-        userAnswer =
-            inp.value.trim();
-
-        if(!userAnswer){
-            alert("Musíte zadat odpověď.");
-            return;
-        }
-
+        document.querySelectorAll(`input[name="q${i}"]`).forEach(x => x.disabled = true);
+    }else{
+        const inp = document.getElementById(`text-${i}`);
+        const userAns = inp.value.trim();
+        if(!userAns){ alert("Musíte zadat odpověď."); return; }
         inp.disabled = true;
-
-        correct = d.ans.some(a =>
-
-            a.toLowerCase()
-             .replace(/\s/g,'')
-
-            ===
-
-            userAnswer
-                .toLowerCase()
-                .replace(/\s/g,'')
-
-        );
-
+        correct = d.ans.some(a => a.toLowerCase().replace(/\s/g,'') === userAns.toLowerCase().replace(/\s/g,''));
     }
-
-    /* ===================== */
 
     btn.disabled = true;
-
-    let gain =
-        correct ? d.pts : 0;
-
+    let gain = correct ? d.pts : 0;
     curScore += gain;
     maxPosScore += d.pts;
     solved++;
 
-    const feed =
-        document.getElementById(`feed-${i}`);
-
+    const feed = document.getElementById(`feed-${i}`);
     feed.style.display = 'block';
-
     if(correct){
-
-        feed.innerHTML = `
-            ✓ Správně!
-            (+ ${d.pts.toFixed(1)} b)
-        `;
-
+        feed.innerHTML = `✓ Správně! (+ ${d.pts.toFixed(1)} b)`;
         feed.style.background = '#e6f4ea';
         feed.style.color = 'var(--success)';
-
     }else{
-
-        let corrText = "";
-
-        if(d.type === 'choice'){
-
-            corrText =
-                d.ans
-                 .map(x => d.opts[x])
-                 .join('<br>');
-
-        }else{
-
-            corrText = d.ans[0];
-
-        }
-
-        feed.innerHTML = `
-            ✗ Špatně.<br><br>
-            Správná odpověď:<br>
-            <strong>${corrText}</strong>
-        `;
-
+        let corrText = d.type === 'choice' ? d.ans.map(x => d.opts[x]).join('<br>') : d.ans[0];
+        feed.innerHTML = `✗ Špatně.<br><br>Správná odpověď:<br><strong>${corrText}</strong>`;
         feed.style.background = '#fce8e6';
         feed.style.color = 'var(--error)';
     }
-
-    document
-        .getElementById(`nav-${i}`)
-        .classList
-        .add(correct
-            ? 'status-green'
-            : 'status-red');
-
+    document.getElementById(`nav-${i}`).classList.add(correct ? 'status-green' : 'status-red');
     updateStats();
 }
 
-/* ========================= */
-
 function updateStats(){
-
-    document.getElementById('prog').innerText =
-        `Zodpovězeno: ${solved} / ${data.length}`;
-
-    document.getElementById('score').innerText =
-        `Body: ${curScore.toFixed(2)} / ${maxPosScore.toFixed(2)}`;
+    document.getElementById('prog').innerText = `Zodpovězeno: ${solved} / ${data.length}`;
+    document.getElementById('score').innerText = `Body: ${curScore.toFixed(2)} / ${maxPosScore.toFixed(2)}`;
 }
-
-/* ========================= */
 
 function finishAll(){
-
     data.forEach((_,i) => {
-
-        const btn =
-            document.getElementById(`btn-${i}`);
-
-        if(btn && !btn.disabled){
-
-            check(i);
-
-        }
-
+        const btn = document.getElementById(`btn-${i}`);
+        if(btn && !btn.disabled) check(i);
     });
-
 }
 
-/* ========================= */
-
+/* =========================
+   EXPORT CHYB (Vylepšený)
+========================= */
 function exportErrors(){
-
-    let txt =
-`PŘEHLED CHYB
-==============================
-
-`;
-
+    let txt = `PŘEHLED CHYB\n==============================\n\n`;
     let errors = 0;
 
     data.forEach((d,i) => {
-
         const nav = document.getElementById(`nav-${i}`);
         const btn = document.getElementById(`btn-${i}`);
-
-        // Zkontrolujeme, zda je úloha odevzdaná a je chybně
-        if(
-            btn &&
-            btn.disabled &&
-            nav.classList.contains('status-red')
-        ){
-
+        if(btn && btn.disabled && nav.classList.contains('status-red')){
             errors++;
-
-            txt += `Úloha ${i + 1}\n`;
-            txt += `${d.q}\n\n`;
-
+            txt += `Úloha ${i + 1}\n${d.q}\n\n`;
             if(d.type === 'choice'){
-
                 const sel = document.querySelector(`input[name="q${i}"]:checked`);
                 const selIdx = sel ? parseInt(sel.value) : -1;
-
                 txt += `Možnosti:\n`;
-
                 d.opts.forEach((opt, optIdx) => {
                     const isCorrect = d.ans.includes(optIdx);
                     const isSelected = (selIdx === optIdx);
-                    const letter = String.fromCharCode(65 + optIdx); // A, B, C...
-
                     let prefix = "[ ]";
                     let note = "";
-
-                    if (isSelected && !isCorrect) {
-                        prefix = "[✗]";
-                        note = " <-- Vaše volba (špatně)";
-                    } else if (!isSelected && isCorrect) {
-                        prefix = "[✓]";
-                        note = " <-- Správná odpověď";
-                    } else if (isSelected && isCorrect) {
-                        // K tomuto u chybného exportu nedojde, ale pro jistotu
-                        prefix = "[✓]";
-                        note = " <-- Vaše volba (správně)";
-                    }
-
-                    txt += `${prefix} ${letter}. ${opt}${note}\n`;
+                    if (isSelected && !isCorrect) { prefix = "[✗]"; note = " <-- Vaše volba (špatně)"; }
+                    else if (isCorrect) { prefix = "[✓]"; note = isSelected ? " <-- Vaše volba (správně)" : " <-- Správná odpověď"; }
+                    txt += `${prefix} ${String.fromCharCode(65 + optIdx)}. ${opt}${note}\n`;
                 });
-
-            } else {
-
+            }else{
                 const inp = document.getElementById(`text-${i}`);
-                const userAns = inp ? inp.value : "";
-
-                txt += `Vaše odpověď:\n`;
-                txt += `${userAns}\n\n`;
-
-                txt += `Správná odpověď:\n`;
-                txt += d.ans[0];
+                txt += `Vaše odpověď: ${inp ? inp.value : ""}\nSprávná odpověď: ${d.ans[0]}\n`;
             }
-
-            txt += `\n\n==============================\n\n`;
-
+            txt += `\n==============================\n\n`;
         }
-
     });
 
-    if(errors === 0){
-
-        alert("Žádné chyby k exportu.");
-        return;
-    }
-
-    const blob = new Blob(
-        [txt],
-        { type:'text/plain;charset=utf-8' }
-    );
-
+    if(errors === 0){ alert("Žádné chyby k exportu."); return; }
+    const blob = new Blob([txt], {type:'text/plain;charset=utf-8'});
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
-
     a.href = url;
     a.download = `chyby_${new Date().toISOString().slice(0,10)}.txt`;
-
     a.click();
-
     URL.revokeObjectURL(url);
 }
-
 </script>
 </body>
 </html>
