@@ -5,15 +5,34 @@
 <title>Zkouškový simulátor - Full Feedback</title>
 
 <style>
-:root{
-    --primary:#1a73e8;
-    --bg:#f8f9fa;
-    --text:#202124;
-    --blue-square:#007bff;
-    --success:#34a853;
-    --error:#d93025;
-    --warning:#ef6c00;
-    --json-btn:#673ab7;
+/* ZÁKLADNÍ PROMĚNNÉ (Nativně nastaveno na Night Mode) */
+:root {
+    --primary: #1a73e8;
+    --bg: #121212;
+    --card-bg: #1e1e1e;
+    --sidebar-bg: #181818;
+    --text: #e0e0e0;
+    --border: #333;
+    --blue-square: #007bff;
+    --success: #81c995;
+    --error: #f28b82;
+    --warning: #fdd663;
+    --json-btn: #bb86fc;
+    --nav-item-bg: #2d2d2d;
+}
+
+/* ÚPRAVA PRO LIGHT MODE */
+body.light-mode {
+    --bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --sidebar-bg: #ffffff;
+    --text: #202124;
+    --border: #dadce0;
+    --success: #34a853;
+    --error: #d93025;
+    --warning: #ef6c00;
+    --json-btn: #673ab7;
+    --nav-item-bg: #ffffff;
 }
 
 *{ box-sizing:border-box; }
@@ -21,17 +40,35 @@
 body{
     font-family:'Segoe UI',sans-serif;
     background:var(--bg);
+    color: var(--text);
     margin:0;
     display:flex;
     height:100vh;
     overflow:hidden;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* PŘEPÍNAČ REŽIMU */
+.theme-toggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1001;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* SIDEBAR */
 #sidebar{
     width:280px;
-    background:#fff;
-    border-right:1px solid #dadce0;
+    background:var(--sidebar-bg);
+    border-right:1px solid var(--border);
     display:flex;
     flex-direction:column;
     padding:20px;
@@ -51,11 +88,13 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    border:1px solid #dadce0;
+    border:1px solid var(--border);
+    background: var(--nav-item-bg);
     border-radius:6px;
     cursor:pointer;
     font-weight:bold;
     transition:0.15s;
+    color: var(--text);
 }
 
 .nav-item.flagged{
@@ -65,13 +104,13 @@ body{
 }
 
 .status-green{
-    background:#e6f4ea!important;
+    background: rgba(52, 168, 83, 0.2)!important;
     color:var(--success)!important;
     border-color:var(--success)!important;
 }
 
 .status-red{
-    background:#fce8e6!important;
+    background: rgba(217, 48, 37, 0.2)!important;
     color:var(--error)!important;
     border-color:var(--error)!important;
 }
@@ -95,23 +134,23 @@ body{
     display:flex;
     justify-content:space-between;
     z-index:100;
-    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    box-shadow:0 4px 12px rgba(0,0,0,0.3);
 }
 
 /* CARDS */
 .q-card{
-    background:#fff;
+    background:var(--card-bg);
     border-radius:12px;
     padding:30px;
     margin-bottom:40px;
-    border:1px solid #dadce0;
+    border:1px solid var(--border);
 }
 
 .q-header{
     display:flex;
     justify-content:space-between;
     margin-bottom:20px;
-    border-bottom:1px solid #eee;
+    border-bottom:1px solid var(--border);
     padding-bottom:15px;
 }
 
@@ -133,32 +172,34 @@ body{
     display:flex;
     align-items:flex-start;
     padding:15px;
-    border:2px solid #eee;
+    border:2px solid var(--border);
     border-radius:10px;
     margin-bottom:10px;
     cursor:pointer;
 }
 
 .opt-label.correct{
-    background:#e6f4ea!important;
+    background: rgba(52, 168, 83, 0.15)!important;
     border-color:var(--success)!important;
 }
 
 .opt-label.wrong{
-    background:#fce8e6!important;
+    background: rgba(217, 48, 37, 0.15)!important;
     border-color:var(--error)!important;
 }
 
 .text-input{
     width:100%;
     padding:14px;
-    border:2px solid #eee;
+    background: var(--bg);
+    color: var(--text);
+    border:2px solid var(--border);
     border-radius:10px;
     font-size:1em;
 }
 
-.text-input.correct { border-color: var(--success); background: #e6f4ea; }
-.text-input.wrong { border-color: var(--error); background: #fce8e6; }
+.text-input.correct { border-color: var(--success); background: rgba(52, 168, 83, 0.1); }
+.text-input.wrong { border-color: var(--error); background: rgba(217, 48, 37, 0.1); }
 
 /* BUTTONS */
 .check-btn{
@@ -174,11 +215,11 @@ body{
 }
 
 .export-json-btn{ background:var(--json-btn); margin-bottom: 5px; }
-.export-txt-btn{ background:var(--error); margin-top: 5px; }
+.export-txt-btn{ background:var(--error); margin-top: 5px; color: white; }
 
 .action-btns{ display:flex; gap:10px; margin-top:10px; }
 .hint-btn{ background:#607d8b; flex:1; padding:10px; color:white; border:none; border-radius:6px; cursor:pointer;}
-.proc-btn{ background:var(--warning); flex:1; padding:10px; color:white; border:none; border-radius:6px; cursor:pointer;}
+.proc-btn{ background:var(--warning); flex:1; padding:10px; color:#202124; border:none; border-radius:6px; cursor:pointer; font-weight: bold;}
 
 /* FEEDBACK BOX */
 .points-feedback{
@@ -186,18 +227,18 @@ body{
     font-weight:bold;
     padding:15px;
     border-radius:8px;
-    display:none; /* Zobrazí JS */
+    display:none; 
     border: 1px solid transparent;
 }
 
-.hint-box{ display:none; margin-top:10px; padding:12px; background:#fff9c4; border-left:4px solid #fbc02d; white-space:pre-line; }
-.proc-box{ display:none; margin-top:10px; padding:12px; background:#fafafa; border:2px dashed #ccc; text-align:center; }
+.hint-box{ display:none; margin-top:10px; padding:12px; background:#424242; color: #fff9c4; border-left:4px solid #fbc02d; white-space:pre-line; }
+.proc-box{ display:none; margin-top:10px; padding:12px; background:var(--bg); border:2px dashed var(--border); text-align:center; }
 
 /* SETUP */
 #setup{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.85);
+    background:rgba(0,0,0,0.9);
     z-index:1000;
     display:flex;
     align-items:center;
@@ -212,11 +253,14 @@ body{
     max-width:450px;
     width:90%;
     text-align:center;
+    border: 1px solid #444;
 }
 </style>
 </head>
 
 <body>
+
+<button class="theme-toggle" onclick="toggleTheme()" id="themeBtn">☀ Light Mode</button>
 
 <div id="setup">
     <div class="setup-card">
@@ -254,6 +298,19 @@ let data = [];
 let curScore = 0;
 let totalPossible = 0;
 let solved = 0;
+
+// Funkce pro přepínání režimu
+function toggleTheme() {
+    const body = document.body;
+    const btn = document.getElementById('themeBtn');
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        btn.innerText = '☀ Light Mode';
+    } else {
+        body.classList.add('light-mode');
+        btn.innerText = '🌙 Night Mode';
+    }
+}
 
 async function start(){
     const fileInput = document.getElementById('fileInput');
@@ -376,13 +433,13 @@ function check(i, isBulk){
         feed.innerHTML = `✓ SPRÁVNĚ (+${d.pts.toFixed(1)} b)`;
         feed.style.borderColor = 'var(--success)';
         feed.style.color = 'var(--success)';
-        feed.style.background = '#e6f4ea';
+        feed.style.background = 'rgba(52, 168, 83, 0.1)';
     }else{
         let corrText = d.type === 'choice' ? d.ans.map(x => d.opts[x]).join(', ') : d.ans[0];
         feed.innerHTML = `✗ ŠPATNĚ. Správně: ${corrText}`;
         feed.style.borderColor = 'var(--error)';
         feed.style.color = 'var(--error)';
-        feed.style.background = '#fce8e6';
+        feed.style.background = 'rgba(217, 48, 37, 0.1)';
     }
     document.getElementById(`nav-${i}`).classList.add(correct ? 'status-green' : 'status-red');
     updateStats();
