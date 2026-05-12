@@ -75,6 +75,7 @@
 
 <script>
 const master = [
+{ id: 1, q: "Pomocí metody LZW zkomprimujte posloupnost ABABAC. Ve slovníku je 8-bitová rozšířená ASCII tabulka.", type: "text", ans: ["AB256AC"], pts: 5.0, hint: "První nová sekvence dostane index 256.", proc: "lzw1.jng" },
 { id: 2, q: "Vyberte typ signálu, který nenese žádnou informaci.", type: "choice", opts: ["Nenáhodný signál", "Náhodný signál", "Stochastický signál"], ans: [0], pts: 2.0, hint: "Determinovaný signál je předvídatelný a tedy nenese informaci." },
 { id: 3, q: "Jaká musí být minimální Hammingova vzdálenost d_min pro opravu 2 chyb?", type: "text", ans: ["5"], pts: 1.0, hint: "Vzorec: d_min = 2t + 1, kde t je počet opravovaných chyb." },
 { id: 4, q: "Jaká bude kapacita kanálu, jestliže bude použit binární signál a šířka použitého kmitočtového pásma bude 4 kHz?", type: "text", ans: ["8 kbps", "8"], pts: 2.0, hint: "Nyquistův vzorec: C = 2 * B * log2(L). Pro binární L=2." },
