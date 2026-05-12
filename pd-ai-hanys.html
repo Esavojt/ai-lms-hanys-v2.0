@@ -61,13 +61,13 @@
 
 <div id="sidebar">
     <h3>Navigace</h3>
-    <button class="check-btn export-btn" onclick="exportErrors()">EXPORT CHYB (TXT)</button>
+    <button class="check-btn" style="background:#d93025; margin-bottom: 15px;" onclick="exportErrors()">EXPORT CHYB (TXT)</button>
     <div id="navGrid" class="nav-grid"></div>
 </div>
 
 <div id="main-content">
     <div class="header-stats">
-        <div id="prog">Zodpovězeno: 0 / 0</div>
+        <div id="prog">Zodpovězeno: 0 / 25</div>
         <div id="score">Body: 0,00 / 0,00</div>
     </div>
     <div id="quiz"></div>
@@ -119,10 +119,6 @@ function start() {
         d.opts = os.map(o => o.t); d.ans = os.reduce((a,o,i) => {if(o.c) a.push(i); return a;}, []);
     });
     document.getElementById('setup').style.display = 'none';
-    
-    // Inicializace statistik
-    document.getElementById('prog').innerText = `Zodpovězeno: 0 / ${data.length}`;
-    
     renderNav(); renderQuiz();
 }
 
@@ -201,7 +197,7 @@ function check(i) {
     document.getElementById('score').innerText = `Body: ${curScore.toFixed(2)} / ${maxPosScore.toFixed(2)}`;
 }
 
-// ---- NOVÁ FUNKCE PRO EXPORT CHYB ----
+// Přidaná funkce pro export bez dalších zbytečností
 function exportErrors() {
     let report = "PŘEHLED CHYB V TESTU\n";
     report += "==============================\n\n";
@@ -211,21 +207,17 @@ function exportErrors() {
         const btn = document.getElementById(`btn-${i}`);
         const navItem = document.getElementById(`nav-${i}`);
         
-        // Kontrola, zda je otázka zodpovězena a zda je špatně (status-red)
+        // Kontrola, zda je otázka odevzdaná a špatně
         if (btn && btn.disabled && navItem && navItem.classList.contains('status-red')) {
             errorCount++;
             report += `Úloha ${i + 1} (ID ${d.id}): ${d.q}\n`;
             
             const selected = document.querySelector(`input[name="q${i}"]:checked`);
             const userChoice = selected ? d.opts[parseInt(selected.value)] : "Nezvoleno";
-            
-            // Poskládání všech správných odpovědí (pro případ, že jich je více, ačkoli v tomto testu je vždy jedna)
-            const correctAnswers = d.ans.map(ansIdx => d.opts[ansIdx]).join(' NEBO ');
+            const correctAnswer = d.ans.map(idx => d.opts[idx]).join(' NEBO ');
 
             report += `-> Vaše odpověď: ${userChoice}\n`;
-            report += `-> Správná odpověď: ${correctAnswers}\n`;
-            
-            // Přidáme i zdůvodnění pro lepší učení
+            report += `-> Správná odpověď: ${correctAnswer}\n`;
             if (d.rationale) {
                 report += `-> Odůvodnění: ${d.rationale}\n`;
             }
@@ -238,7 +230,6 @@ function exportErrors() {
         return;
     }
 
-    // Vytvoření souboru a stažení s podporou diakritiky
     const blob = new Blob([report], { type: 'text/plain;charset=utf-8' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
