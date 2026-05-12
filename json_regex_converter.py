@@ -24,15 +24,19 @@ def convert_js_to_json():
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
 
-        # 1. Regex: Najde slova následovaná dvojtečkou (klíče) a dá je do uvozovek
-        # \b\w+\b najde celé slovo, (?=\s*:) je lookahead, který kontroluje dvojtečku
-        transformed = re.sub(r'(\b\w+\b)(?=\s*:)', r'"\1"', content)
+        # OPRAVENÝ REGEX:
+        # Hledáme slovo následované dvojtečkou, ALE:
+        # 1. (?<=[\{,])  -> Musí mu předcházet buď složená závorka { nebo čárka , (případně mezery)
+        # 2. \s* -> Mezi tím mohou být mezery
+        # 3. (\w+)       -> Samotný název klíče
+        # 4. (?=\s*:)    -> Za ním musí následovat dvojtečka
+        
+        transformed = re.sub(r'(?<=[\{,])\s*(\w+)(?=\s*:)', r' "\1"', content)
 
         # 2. Regex: Odstraní přebytečné čárky před koncem objektu nebo pole (trailing commas)
         # JSON standard je zakazuje, zatímco v JS jsou běžné
         transformed = re.sub(r',\s*([\]}])', r'\1', transformed)
 
-        # Uložení do výstupní složky se stejným názvem
         output_path = os.path.join(output_dir, filename)
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(transformed)
