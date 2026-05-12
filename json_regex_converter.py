@@ -10,7 +10,7 @@ def convert_js_to_json():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    # Najít všechny .txt soubory ve složce ./in
+    # Najít všechny .txt soubory
     files = glob.glob(os.path.join(input_dir, '*.txt'))
 
     if not files:
@@ -18,8 +18,15 @@ def convert_js_to_json():
         return
 
     for file_path in files:
-        filename = os.path.basename(file_path)
-        print(f"Zpracovávám: {filename}...")
+        # Získání názvu souboru bez cesty
+        base_name = os.path.basename(file_path)
+        # Rozdělení na jméno a (původní) příponu
+        name_without_ext, _ = os.path.splitext(base_name)
+        
+        # Nový název s příponou .json
+        new_filename = f"{name_without_ext}.json"
+        
+        print(f"Zpracovávám: {base_name} -> {new_filename}")
 
         with open(file_path, 'r', encoding='utf-8') as f:
             content = f.read()
@@ -37,7 +44,8 @@ def convert_js_to_json():
         # JSON standard je zakazuje, zatímco v JS jsou běžné
         transformed = re.sub(r',\s*([\]}])', r'\1', transformed)
 
-        output_path = os.path.join(output_dir, filename)
+        # Uložení jako .json
+        output_path = os.path.join(output_dir, new_filename)
         with open(output_path, 'w', encoding='utf-8') as f:
             f.write(transformed)
 
