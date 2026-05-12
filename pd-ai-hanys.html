@@ -1,243 +1,990 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>Zkouškový simulátor - Zkouška 4.6.2025</title>
-    <style>
-        :root { --primary: #1a73e8; --bg: #f8f9fa; --text: #202124; --blue-square: #007bff; }
-        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; display: flex; height: 100vh; overflow: hidden; }
-        
-        #sidebar { width: 280px; background: #fff; border-right: 1px solid #dadce0; display: flex; flex-direction: column; padding: 20px; overflow-y: auto; }
-        .nav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 20px; }
-        .nav-item { width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid #dadce0; border-radius: 6px; cursor: pointer; font-weight: bold; transition: 0.2s; }
-        .nav-item.flagged { background: var(--blue-square) !important; color: white; border-color: var(--blue-square); }
-        .status-green { background: #e6f4ea; color: #1e8e3e; border-color: #ceead6; }
-        .status-orange { background: #fff4e5; color: #d97706; border-color: #ffe0b2; }
-        .status-red { background: #fce8e6; color: #d93025; border-color: #fad2cf; }
+<meta charset="UTF-8">
+<title>Zkouškový simulátor</title>
 
-        #main-content { flex: 1; padding: 40px; overflow-y: auto; scroll-behavior: smooth; }
-        .header-stats { position: sticky; top: -40px; background: var(--primary); color: white; padding: 20px; border-radius: 0 0 15px 15px; margin: -40px -40px 30px -40px; display: flex; justify-content: space-between; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        
-        .q-card { background: #fff; border-radius: 12px; padding: 30px; margin-bottom: 40px; border: 1px solid #dadce0; }
-        .q-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
-        
-        .blue-sq-icon { width: 20px; height: 20px; background: var(--blue-square); display: inline-block; cursor: pointer; border-radius: 3px; opacity: 0.3; }
-        .blue-sq-icon.active { opacity: 1; }
+<style>
+:root{
+    --primary:#1a73e8;
+    --bg:#f8f9fa;
+    --text:#202124;
+    --blue-square:#007bff;
+    --success:#34a853;
+    --error:#d93025;
+    --warning:#ef6c00;
+}
 
-        .opt-label { display: flex; align-items: flex-start; padding: 15px; border: 2px solid #eee; border-radius: 10px; margin-bottom: 10px; cursor: pointer; transition: 0.1s; }
-        .opt-label:hover { border-color: var(--primary); background: #f8fbff; }
-        .opt-label input { margin-right: 15px; margin-top: 5px; transform: scale(1.2); }
-        
-        .correct { background: #e6f4ea !important; border-color: #34a853 !important; }
-        .wrong { background: #fce8e6 !important; border-color: #ea4335 !important; }
-        
-        .check-btn { width: 100%; padding: 15px; background: #2c3e50; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 15px; transition: background 0.2s;}
-        .check-btn:hover { background: #1a252f; }
-        .check-btn:disabled { background: #95a5a6; cursor: not-allowed; }
-        
-        .export-btn { background: #d93025; margin-top: 10px; }
-        .export-btn:hover { background: #b32a20; }
+*{
+    box-sizing:border-box;
+}
 
-        .points-feedback { margin-top: 15px; font-weight: bold; padding: 15px; border-radius: 8px; display: none; line-height: 1.5; }
-        .hint-box { margin-top: 10px; font-weight: normal; color: #555; font-style: italic; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 10px; }
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    margin:0;
+    display:flex;
+    height:100vh;
+    overflow:hidden;
+}
 
-        #setup { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; display: flex; align-items: center; justify-content: center; color: white; }
-        .setup-card { background: #202124; padding: 40px; border-radius: 20px; max-width: 450px; width: 90%; text-align: center; border: 1px solid #3c4043; }
-    </style>
+/* SIDEBAR */
+
+#sidebar{
+    width:280px;
+    background:#fff;
+    border-right:1px solid #dadce0;
+    display:flex;
+    flex-direction:column;
+    padding:20px;
+    overflow-y:auto;
+}
+
+.nav-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+    margin-top:20px;
+}
+
+.nav-item{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #dadce0;
+    border-radius:6px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.15s;
+    user-select:none;
+}
+
+.nav-item:hover{
+    border-color:var(--primary);
+}
+
+.nav-item.flagged{
+    background:var(--blue-square)!important;
+    color:white;
+    border-color:var(--blue-square);
+}
+
+.status-green{
+    background:#e6f4ea!important;
+    color:var(--success)!important;
+    border-color:var(--success)!important;
+}
+
+.status-red{
+    background:#fce8e6!important;
+    color:var(--error)!important;
+    border-color:var(--error)!important;
+}
+
+/* MAIN */
+
+#main-content{
+    flex:1;
+    padding:40px;
+    overflow-y:auto;
+    scroll-behavior:smooth;
+}
+
+.header-stats{
+    position:sticky;
+    top:-40px;
+    background:var(--primary);
+    color:white;
+    padding:20px;
+    border-radius:0 0 15px 15px;
+    margin:-40px -40px 30px -40px;
+    display:flex;
+    justify-content:space-between;
+    z-index:100;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* CARDS */
+
+.q-card{
+    background:#fff;
+    border-radius:12px;
+    padding:30px;
+    margin-bottom:40px;
+    border:1px solid #dadce0;
+}
+
+.q-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:20px;
+    border-bottom:1px solid #eee;
+    padding-bottom:15px;
+}
+
+.blue-sq-icon{
+    width:18px;
+    height:18px;
+    background:var(--blue-square);
+    display:inline-block;
+    cursor:pointer;
+    border-radius:3px;
+    opacity:0.3;
+    vertical-align:middle;
+    margin-right:8px;
+}
+
+.blue-sq-icon.active{
+    opacity:1;
+}
+
+/* OPTIONS */
+
+.opt-label{
+    display:flex;
+    align-items:flex-start;
+    padding:15px;
+    border:2px solid #eee;
+    border-radius:10px;
+    margin-bottom:10px;
+    cursor:pointer;
+    transition:0.1s;
+}
+
+.opt-label:hover{
+    border-color:var(--primary);
+    background:#f8fbff;
+}
+
+.opt-label input{
+    margin-right:15px;
+    margin-top:4px;
+    transform:scale(1.15);
+}
+
+.opt-label.correct{
+    background:#e6f4ea!important;
+    border-color:var(--success)!important;
+}
+
+.opt-label.wrong{
+    background:#fce8e6!important;
+    border-color:var(--error)!important;
+}
+
+/* TEXT INPUT */
+
+.text-input{
+    width:100%;
+    padding:14px;
+    border:2px solid #eee;
+    border-radius:10px;
+    font-size:1em;
+}
+
+.text-input:focus{
+    outline:none;
+    border-color:var(--primary);
+}
+
+.text-input:disabled{
+    background:#f1f3f4;
+    font-weight:bold;
+}
+
+/* BUTTONS */
+
+.check-btn{
+    width:100%;
+    padding:14px;
+    background:#2c3e50;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:15px;
+    transition:0.15s;
+}
+
+.check-btn:hover{
+    background:#1a252f;
+}
+
+.check-btn:disabled{
+    background:#95a5a6;
+    cursor:not-allowed;
+}
+
+.export-btn{
+    background:var(--error);
+}
+
+.export-btn:hover{
+    background:#b3261e;
+}
+
+.action-btns{
+    display:flex;
+    gap:10px;
+    margin-top:10px;
+}
+
+.hint-btn{
+    background:#607d8b;
+    flex:1;
+    padding:10px;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.proc-btn{
+    background:var(--warning);
+    flex:1;
+    padding:10px;
+    color:white;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+/* FEEDBACK */
+
+.points-feedback{
+    margin-top:15px;
+    font-weight:bold;
+    padding:15px;
+    border-radius:8px;
+    display:none;
+}
+
+.hint-box{
+    display:none;
+    margin-top:10px;
+    padding:12px;
+    background:#fff9c4;
+    border-left:4px solid #fbc02d;
+    white-space:pre-line;
+}
+
+.proc-box{
+    display:none;
+    margin-top:10px;
+    padding:12px;
+    background:#fafafa;
+    border:2px dashed #ccc;
+    text-align:center;
+}
+
+/* SETUP */
+
+#setup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.85);
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+}
+
+.setup-card{
+    background:#202124;
+    padding:40px;
+    border-radius:20px;
+    max-width:450px;
+    width:90%;
+    text-align:center;
+}
+</style>
 </head>
+
 <body>
 
 <div id="setup">
     <div class="setup-card">
-        <h2>PŘENOS DAT - ZKOUSKA 4.6.</h2>
-        <p>Tento test je vytvořen podle tvého nahraného souboru se zkouškou ze dne 4. června 2025.</p>
-        <div style="text-align:left; margin: 20px 0;">
-            <label><input type="checkbox" id="shufQ"> Náhodné pořadí úloh</label><br><br>
-            <label><input type="checkbox" id="shufA"> Náhodné pořadí odpovědí</label>
+        <h2>Zkouškový simulátor</h2>
+
+        <div style="text-align:left;margin:20px 0;">
+            <label>
+                <input type="checkbox" id="shuffleQuestions">
+                Náhodné pořadí úloh
+            </label>
+
+            <br><br>
+
+            <label>
+                <input type="checkbox" id="shuffleAnswers">
+                Náhodné pořadí odpovědí
+            </label>
         </div>
-        <button class="check-btn" onclick="start()">SPUSTIT TEST</button>
+
+        <button class="check-btn" onclick="start()">
+            SPUSTIT TEST
+        </button>
     </div>
 </div>
 
 <div id="sidebar">
+
     <h3>Navigace</h3>
-    <button class="check-btn" style="background:#d93025; margin-bottom: 15px;" onclick="exportErrors()">EXPORT CHYB (TXT)</button>
+
+    <button class="check-btn export-btn" onclick="exportErrors()">
+        EXPORT CHYB
+    </button>
+
     <div id="navGrid" class="nav-grid"></div>
+
 </div>
 
 <div id="main-content">
+
     <div class="header-stats">
-        <div id="prog">Zodpovězeno: 0 / 25</div>
-        <div id="score">Body: 0,00 / 0,00</div>
+        <div id="prog">Zodpovězeno: 0 / 0</div>
+        <div id="score">Body: 0.00 / 0.00</div>
     </div>
+
     <div id="quiz"></div>
+
+    <button
+        class="check-btn"
+        style="background:var(--primary);margin-bottom:80px;"
+        onclick="finishAll()">
+
+        ODEVZDAT VŠE
+    </button>
+
 </div>
 
 <script>
+
+/* =========================
+   SEM DOSAĎ DATA
+========================= */
+
 const master = [
-{ id: 2, q: "Vyberte typ signálu, který nenese žádnou informaci.", type: "choice", opts: ["Nenáhodný signál", "Náhodný signál", "Stochastický signál"], ans: [0], pts: 2.0, hint: "Determinovaný signál je předvídatelný a tedy nenese informaci." },
-{ id: 3, q: "Jaká musí být minimální Hammingova vzdálenost d_min pro opravu 2 chyb?", type: "text", ans: ["5"], pts: 1.0, hint: "Vzorec: d_min = 2t + 1, kde t je počet opravovaných chyb." },
-{ id: 4, q: "Jaká bude kapacita kanálu, jestliže bude použit binární signál a šířka použitého kmitočtového pásma bude 4 kHz?", type: "text", ans: ["8 kbps", "8"], pts: 2.0, hint: "Nyquistův vzorec: C = 2 * B * log2(L). Pro binární L=2." },
-{ id: 5, q: "Určete vyslané 15-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (68)D kódovanou pomocí Hammingova kódu (15,11).", type: "text", ans: ["000010001001100"], pts: 5.0, hint: "68 binárně je 1000100.", proc: "hamming1.png" },
-{ id: 6, q: "Nevýhody X.25.", type: "choice", opts: ["nízká přenosová rychlost, vysoké zpoždění, možnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, nízké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, nemožnost zahlcení sítě", "vysoká přenosová rychlost, nízké zpoždění, možnost přenášet multimediální data, nemožnost zahlcení sítě"], ans: [2], pts: 1.0, hint: "X.25 je zastaralý paketový protokol s režií pro kontrolu chyb." },
-{ id: 7, q: "Abeceda pro přenos dat je:", type: "choice", opts: ["sestava převodních vztahů mezi abstraktní a fyzikální značkou", "sestava převodních vztahů mezi znaky a odpovídajícími značkami", "sestava převodních vztahů mezi konkrétní a fyzickou značkou", "soubor pravidel, podle kterých se přenáší data", "soubor pravidel, podle kterých se tvoří signál", "sestava převodních vztahů mezi abstraktním a fyzickým znakem"], ans: [1], pts: 1.0, hint: "Definuje přiřazení mezi prvky zprávy a signálovými prvky." },
-{ id: 8, q: "Pomocí adaptivního Huffmanova kódování zkomprimujte posloupnost CAAAA.", type: "text", ans: ["C0A0111"], pts: 6.0, hint: "Algoritmus FGK/Vitter. Sledujte dynamickou aktualizaci stromu.", proc: "adaptive_huff.jpg" },
-{ id: 9, q: "Co znamená zkratka FSK?", type: "choice", opts: ["Frequency Shift Keying", "Frequency Share Keying", "Frequency Software Keying", "Free Shift Keying", "Faze Shift keying"], ans: [0], pts: 2.0, hint: "Modulace, kde se mění kmitočet nosné vlny." },
-{ id: 10, q: "Jaká bude hodnota SNR (v dB), jestliže výkon signálu je 2mW a výkon šumu 2µW?", type: "choice", opts: ["10", "20", "30", "40"], ans: [2], pts: 2.0, hint: "SNR[dB] = 10 * log10(P_signál / P_šum). Pozor na jednotky (m vs µ)." },
-{ id: 11, q: "Určete vyslané 12-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (31)H pomocí CRC kódu (G(x)=x^4+x+1).", type: "text", ans: ["001110010111"], pts: 5.0, hint: "31 hexadecimálně je 0011 0001 binárně.", proc: "crc1.png" },
-{ id: 12, q: "Zkratka SSID znamená:", type: "choice", opts: ["Secure Service Identification", "Service Set Identifier", "Serial System ID", "Signal Set ID"], ans: [1], pts: 1.0, hint: "Unikátní identifikátor bezdrátové sítě Wi-Fi." },
-{ id: 13, q: "S využitím OpenSSL dešifrujte zprávu 'U2FsdGVkX1+qH2J951sMfd7knjjgrX18SVYOXfzjwW4=' (ARIA-192, heslo 'strong').", type: "text", ans: ["radio"], pts: 3.0, hint: "Příkaz: echo \"...\" | openssl aria-192-cbc -d -a -pbkdf2 -pass pass:strong" },
-{ id: 14, q: "Zkratka ADSL znamená:", type: "choice", opts: ["asynchronní digitální účastnická linka a využívá stávající účastnické vedení", "asymetrická diskrétní účastnická linka a využívá stávající účastnické vedení", "asymetrická digitální účastnická linka a využívá stávající tranzitní vedení", "asymetrická digitální účastnická linka a využívá stávající účastnické vedení"], ans: [3], pts: 1.0, hint: "Rychlost stahování (download) je jiná než odesílání (upload)." },
-{ id: 15, q: "Sedmiprvkový kód může mít tyto vlastnosti:", type: "choice", opts: ["kapacita kódu je 64 znaků, je znám jako kód BCD", "kapacita kódu je 128 znaků, je znám jako kód BCD", "kapacita kódu je 256 znaků, je znám jako rozšířená ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako EBCDIC"], ans: [3], pts: 1.0, hint: "Počet kombinací je 2^7 = 128." },
-{ id: 16, q: "Napište příkaz pro vytvoření matice A o velikosti 3x3 v Octave (hodnoty 1 až 9).", type: "text", ans: ["A = [1, 2, 3; 4, 5, 6; 7, 8, 9]"], pts: 2.0, hint: "Oddělujte sloupce čárkou nebo mezerou a řádky středníkem." },
-{ id: 17, q: "Pomocí transpozičního šifrování (tabulka 3x3) zašifrujte zprávu: KDOJEDOMA.", type: "text", ans: ["KJODEMODA"], pts: 2.0, hint: "Zapište 'KDO', 'JED', 'OMA' do řádků a přečtěte po sloupcích." },
-{ id: 18, q: "Slovníkové kompresní metody nepoužívají tuto metodu:", type: "choice", opts: ["LZ78", "LZ77", "LZW", "Adaptivní Huffmanův kód"], ans: [3], pts: 1.0, hint: "Huffman pracuje na základě četnosti znaků (entropie), ne frází." },
-{ id: 19, q: "Iterační kódy:", type: "choice", opts: ["první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – spirálová parita", "první iterace – spirálová parita, druhá iterace – značková parita, třetí iterace – bloková parita", "první iterace – lichá parita, druhá iterace – sudá parita, třetí iterace – lichá parita", "první iterace – sudá parita, druhá iterace – lichá parita, třetí iterace – sudá parita", "první iterace – značková parita, druhá iterace – sloupcová parita, třetí iterace – křížová parita", "první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – křížová parita"], ans: [0], pts: 1.0, hint: "Postupná aplikace parit v různých dimenzích/směrech." },
-{ id: 20, q: "Příkaz touch soubor.txt.", type: "choice", opts: ["vytvoří nový soubor, nebo aktualizuje datum stávajícího souboru", "pouze mění obsah stávajícího souboru", "mění obsah stávajícího souboru a aktualizuje datum"], ans: [0], pts: 2.0, hint: "Často se používá k vytvoření prázdného souboru." },
-{ id: 21, q: "Datové měniče v základním pásmu:", type: "choice", opts: ["mění kódování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kompresi, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kódování, impedanci a stav vysílaného signálu, aby byl přizpůsoben pro krátký přenos", "mění šifrování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro krátký přenos"], ans: [0], pts: 1.0, hint: "Upravují signál bez modulace na nosnou." },
-{ id: 22, q: "Pro kompresi video dat je převážně využívaná:", type: "choice", opts: ["bezeztrátová komprese", "ztrátová komprese", "adaptivní komprese", "statistická komprese"], ans: [1], pts: 1.0, hint: "Kvůli obrovskému objemu dat se vypouštějí méně viditelné detaily." },
-{ id: 23, q: "Zabezpečení bezdrátové sítě pomocí WPA2 využívá:", type: "choice", opts: ["proudovou šifru DES", "proudovou šifru AES", "blokovou šifru AES", "blokovou šifru RC4"], ans: [2], pts: 2.0, hint: "WPA2 používá CCMP protokol založený na AES v blokovém režimu." },
-{ id: 24, q: "Pomocí techniky CDMA demultiplexujte signál (spreadchip 1011 = 1, 1, -1, 1). Přijatý signál na lince: 2, 0, -2, 2.", type: "text", ans: ["1"], pts: 2.0, hint: "Postup výpočtu:\n1. Převeďte chip na bipolární: 1, 1, -1, 1\n2. Vypočítejte skalární součin s přijatým signálem: (1*2) + (1*0) + (-1*-2) + (1*2)\n3. Výsledek: 2 + 0 + 2 + 2 = 6\n4. Vydělte délkou chipu (4): 6/4 = 1.5. Kladné číslo značí bit 1." },
-{ id: 25, q: "Jako zpětnovazební metoda zabezpečení přenosu dat může být použita:", type: "choice", opts: ["informační zpětná vazba", "detekční zpětná vazba", "korekční zpětná vazba", "šifrovaná zpětná vazba"], ans: [0], pts: 1.0, hint: "Zpět se posílají přijatá data k ověření odesílateli." },
-{ id: 26, q: "Modulační signál je signál, který:", type: "choice", opts: ["nenese informaci a je nosný", "nese informaci a bude se modulovat na signál nosný", "slouží pouze k synchronizaci"], ans: [1], pts: 2.0, hint: "Užitečná data (nízkofrekvenční), která ovlivňují parametry nosné." },
-{ id: 27, q: "Symetrické šifrování používá:", type: "choice", opts: ["2 tajné klíče", "jeden tajný klíč", "privátní klíč", "veřejný klíč", "veřejný a privátní klíč"], ans: [1], pts: 1.0, hint: "Tentýž klíč slouží k šifrování i dešifrování." },
-{ id: 28, q: "Zkomprimujte datový řetězec AOB00000C00B0000 pomocí metody RLE Advanced.", type: "text", ans: ["AOB0002C00B0001"], pts: 2.0, hint: "Uvádí se 3x znak a pak počet zbývajících opakování." },
-{ id: 29, q: "Jakým příkazem ukončíme proces, který neodpovídá a jeho PID je 1000?", type: "text", ans: ["kill 1000"], pts: 2.0, hint: "Systémový příkaz pro zasílání signálů procesům." },
-{ id: 30, q: "Topologie typu hvězda je:", type: "choice", opts: ["jednoduchá, lepší správa, odolná na výpadek stanice nebo centrálního uzlu", "jednoduchá, snadno rozšiřitelná, není vhodná pro větší počet KZ, citlivá na výpadek linky", "spolehlivá, lepší správa, odolná na výpadek linky, citlivá na výpadek centrálního uzlu", "spolehlivá, využívá deterministický přístup, citlivá na výpadek linky nebo stanice"], ans: [2], pts: 1.0, hint: "Centrální prvek (switch) je slabým místem, ale výpadek kabelu odpojí jen jedno KZ." },
-{ id: 31, q: "Korekční kódy:", type: "choice", opts: ["potřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb mezi jednotlivými prvky kódové kombinace", "potřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb"], ans: [2], pts: 1.0, hint: "Forward Error Correction (FEC) opravuje chyby přímo v přijímači." }
+    { id: 1, q: "Pomocí metody LZW zkomprimujte posloupnost ABABAC. Ve slovníku je 8-bitová rozšířená ASCII tabulka.", type: "text", ans: ["AB256AC"], pts: 5.0, hint: "První nová sekvence dostane index 256.", proc: "lzw1.jng" },
+    { id: 2, q: "Vyberte typ signálu, který nenese žádnou informaci.", type: "choice", opts: ["Nenáhodný signál", "Náhodný signál", "Stochastický signál"], ans: [0], pts: 2.0, hint: "Determinovaný signál je předvídatelný a tedy nenese informaci." },
+    { id: 3, q: "Jaká musí být minimální Hammingova vzdálenost d_min pro opravu 2 chyb?", type: "text", ans: ["5"], pts: 1.0, hint: "Vzorec: d_min = 2t + 1, kde t je počet opravovaných chyb." },
+    { id: 4, q: "Jaká bude kapacita kanálu, jestliže bude použit binární signál a šířka použitého kmitočtového pásma bude 4 kHz?", type: "text", ans: ["8 kbps", "8"], pts: 2.0, hint: "Nyquistův vzorec: C = 2 * B * log2(L). Pro binární L=2." },
+    { id: 5, q: "Určete vyslané 15-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (68)D kódovanou pomocí Hammingova kódu (15,11).", type: "text", ans: ["000010001001100"], pts: 5.0, hint: "68 binárně je 1000100.", proc: "hamming1.png" },
+    { id: 6, q: "Nevýhody X.25.", type: "choice", opts: ["nízká přenosová rychlost, vysoké zpoždění, možnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, nízké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, možnost zahlcení sítě", "nízká přenosová rychlost, vysoké zpoždění, nemožnost přenášet multimediální data, nemožnost zahlcení sítě", "vysoká přenosová rychlost, nízké zpoždění, možnost přenášet multimediální data, nemožnost zahlcení sítě"], ans: [2], pts: 1.0, hint: "X.25 je zastaralý paketový protokol s režií pro kontrolu chyb." },
+    { id: 7, q: "Abeceda pro přenos dat je:", type: "choice", opts: ["sestava převodních vztahů mezi abstraktní a fyzikální značkou", "sestava převodních vztahů mezi znaky a odpovídajícími značkami", "sestava převodních vztahů mezi konkrétní a fyzickou značkou", "soubor pravidel, podle kterých se přenáší data", "soubor pravidel, podle kterých se tvoří signál", "sestava převodních vztahů mezi abstraktním a fyzickým znakem"], ans: [1], pts: 1.0, hint: "Definuje přiřazení mezi prvky zprávy a signálovými prvky." },
+    { id: 8, q: "Pomocí adaptivního Huffmanova kódování zkomprimujte posloupnost CAAAA.", type: "text", ans: ["C0A0111"], pts: 6.0, hint: "Algoritmus FGK/Vitter. Sledujte dynamickou aktualizaci stromu.", proc: "adaptive_huff.jpg" },
+    { id: 9, q: "Co znamená zkratka FSK?", type: "choice", opts: ["Frequency Shift Keying", "Frequency Share Keying", "Frequency Software Keying", "Free Shift Keying", "Faze Shift keying"], ans: [0], pts: 2.0, hint: "Modulace, kde se mění kmitočet nosné vlny." },
+    { id: 10, q: "Jaká bude hodnota SNR (v dB), jestliže výkon signálu je 2mW a výkon šumu 2µW?", type: "choice", opts: ["10", "20", "30", "40"], ans: [2], pts: 2.0, hint: "SNR[dB] = 10 * log10(P_signál / P_šum). Pozor na jednotky (m vs µ)." },
+    { id: 11, q: "Určete vyslané 12-ti bitové kódové slovo B(x), chceme-li přenést bitovou posloupnost (31)H pomocí CRC kódu (G(x)=x^4+x+1).", type: "text", ans: ["001110010111"], pts: 5.0, hint: "31 hexadecimálně je 0011 0001 binárně.", proc: "crc1.png" },
+    { id: 12, q: "Zkratka SSID znamená:", type: "choice", opts: ["Secure Service Identification", "Service Set Identifier", "Serial System ID", "Signal Set ID"], ans: [1], pts: 1.0, hint: "Unikátní identifikátor bezdrátové sítě Wi-Fi." },
+    { id: 13, q: "S využitím OpenSSL dešifrujte zprávu 'U2FsdGVkX1+qH2J951sMfd7knjjgrX18SVYOXfzjwW4=' (ARIA-192, heslo 'strong').", type: "text", ans: ["radio"], pts: 3.0, hint: "Příkaz: echo \"...\" | openssl aria-192-cbc -d -a -pbkdf2 -pass pass:strong" },
+    { id: 14, q: "Zkratka ADSL znamená:", type: "choice", opts: ["asynchronní digitální účastnická linka a využívá stávající účastnické vedení", "asymetrická diskrétní účastnická linka a využívá stávající účastnické vedení", "asymetrická digitální účastnická linka a využívá stávající tranzitní vedení", "asymetrická digitální účastnická linka a využívá stávající účastnické vedení"], ans: [3], pts: 1.0, hint: "Rychlost stahování (download) je jiná než odesílání (upload)." },
+    { id: 15, q: "Sedmiprvkový kód může mít tyto vlastnosti:", type: "choice", opts: ["kapacita kódu je 64 znaků, je znám jako kód BCD", "kapacita kódu je 128 znaků, je znám jako kód BCD", "kapacita kódu je 256 znaků, je znám jako rozšířená ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako ASCII tabulka", "kapacita kódu je 128 znaků, je znám jako EBCDIC"], ans: [3], pts: 1.0, hint: "Počet kombinací je 2^7 = 128." },
+    { id: 16, q: "Napište příkaz pro vytvoření matice A o velikosti 3x3 v Octave (hodnoty 1 až 9).", type: "text", ans: ["A = [1, 2, 3; 4, 5, 6; 7, 8, 9]"], pts: 2.0, hint: "Oddělujte sloupce čárkou nebo mezerou a řádky středníkem." },
+    { id: 17, q: "Pomocí transpozičního šifrování (tabulka 3x3) zašifrujte zprávu: KDOJEDOMA.", type: "text", ans: ["KJODEMODA"], pts: 2.0, hint: "Zapište 'KDO', 'JED', 'OMA' do řádků a přečtěte po sloupcích." },
+    { id: 18, q: "Slovníkové kompresní metody nepoužívají tuto metodu:", type: "choice", opts: ["LZ78", "LZ77", "LZW", "Adaptivní Huffmanův kód"], ans: [3], pts: 1.0, hint: "Huffman pracuje na základě četnosti znaků (entropie), ne frází." },
+    { id: 19, q: "Iterační kódy:", type: "choice", opts: ["první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – spirálová parita", "první iterace – spirálová parita, druhá iterace – značková parita, třetí iterace – bloková parita", "první iterace – lichá parita, druhá iterace – sudá parita, třetí iterace – lichá parita", "první iterace – sudá parita, druhá iterace – lichá parita, třetí iterace – sudá parita", "první iterace – značková parita, druhá iterace – sloupcová parita, třetí iterace – křížová parita", "první iterace – značková parita, druhá iterace – bloková parita, třetí iterace – křížová parita"], ans: [0], pts: 1.0, hint: "Postupná aplikace parit v různých dimenzích/směrech." },
+    { id: 20, q: "Příkaz touch soubor.txt.", type: "choice", opts: ["vytvoří nový soubor, nebo aktualizuje datum stávajícího souboru", "pouze mění obsah stávajícího souboru", "mění obsah stávajícího souboru a aktualizuje datum"], ans: [0], pts: 2.0, hint: "Často se používá k vytvoření prázdného souboru." },
+    { id: 21, q: "Datové měniče v základním pásmu:", type: "choice", opts: ["mění kódování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kompresi, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro dálkový přenos", "mění kódování, impedanci a stav vysílaného signálu, aby byl přizpůsoben pro krátký přenos", "mění šifrování, impedanci a úroveň vysílaného signálu, aby byl přizpůsoben pro krátký přenos"], ans: [0], pts: 1.0, hint: "Upravují signál bez modulace na nosnou." },
+    { id: 22, q: "Pro kompresi video dat je převážně využívaná:", type: "choice", opts: ["bezeztrátová komprese", "ztrátová komprese", "adaptivní komprese", "statistická komprese"], ans: [1], pts: 1.0, hint: "Kvůli obrovskému objemu dat se vypouštějí méně viditelné detaily." },
+    { id: 23, q: "Zabezpečení bezdrátové sítě pomocí WPA2 využívá:", type: "choice", opts: ["proudovou šifru DES", "proudovou šifru AES", "blokovou šifru AES", "blokovou šifru RC4"], ans: [2], pts: 2.0, hint: "WPA2 používá CCMP protokol založený na AES v blokovém režimu." },
+    { id: 24, q: "Pomocí techniky CDMA demultiplexujte signál (spreadchip 1011 = 1, 1, -1, 1). Přijatý signál na lince: 2, 0, -2, 2.", type: "text", ans: ["1"], pts: 2.0, hint: "Postup výpočtu:\n1. Převeďte chip na bipolární: 1, 1, -1, 1\n2. Vypočítejte skalární součin s přijatým signálem: (1*2) + (1*0) + (-1*-2) + (1*2)\n3. Výsledek: 2 + 0 + 2 + 2 = 6\n4. Vydělte délkou chipu (4): 6/4 = 1.5. Kladné číslo značí bit 1." },
+    { id: 25, q: "Jako zpětnovazební metoda zabezpečení přenosu dat může být použita:", type: "choice", opts: ["informační zpětná vazba", "detekční zpětná vazba", "korekční zpětná vazba", "šifrovaná zpětná vazba"], ans: [0], pts: 1.0, hint: "Zpět se posílají přijatá data k ověření odesílateli." },
+    { id: 26, q: "Modulační signál je signál, který:", type: "choice", opts: ["nenese informaci a je nosný", "nese informaci a bude se modulovat na signál nosný", "slouží pouze k synchronizaci"], ans: [1], pts: 2.0, hint: "Užitečná data (nízkofrekvenční), která ovlivňují parametry nosné." },
+    { id: 27, q: "Symetrické šifrování používá:", type: "choice", opts: ["2 tajné klíče", "jeden tajný klíč", "privátní klíč", "veřejný klíč", "veřejný a privátní klíč"], ans: [1], pts: 1.0, hint: "Tentýž klíč slouží k šifrování i dešifrování." },
+    { id: 28, q: "Zkomprimujte datový řetězec AOB00000C00B0000 pomocí metody RLE Advanced.", type: "text", ans: ["AOB0002C00B0001"], pts: 2.0, hint: "Uvádí se 3x znak a pak počet zbývajících opakování." },
+    { id: 29, q: "Jakým příkazem ukončíme proces, který neodpovídá a jeho PID je 1000?", type: "text", ans: ["kill 1000"], pts: 2.0, hint: "Systémový příkaz pro zasílání signálů procesům." },
+    { id: 30, q: "Topologie typu hvězda je:", type: "choice", opts: ["jednoduchá, lepší správa, odolná na výpadek stanice nebo centrálního uzlu", "jednoduchá, snadno rozšiřitelná, není vhodná pro větší počet KZ, citlivá na výpadek linky", "spolehlivá, lepší správa, odolná na výpadek linky, citlivá na výpadek centrálního uzlu", "spolehlivá, využívá deterministický přístup, citlivá na výpadek linky nebo stanice"], ans: [2], pts: 1.0, hint: "Centrální prvek (switch) je slabým místem, ale výpadek kabelu odpojí jen jedno KZ." },
+    { id: 31, q: "Korekční kódy:", type: "choice", opts: ["potřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb mezi jednotlivými prvky kódové kombinace", "potřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je opravena na základě vazeb mezi jednotlivými prvky kódové kombinace", "nepotřebují zpětný kanál, chyba nebo skupina chyb je detekována na základě vazeb"], ans: [2], pts: 1.0, hint: "Forward Error Correction (FEC) opravuje chyby přímo v přijímači." }
 ];
 
-let data = [], curScore = 0, maxPosScore = 0, solved = 0;
+/* ========================= */
 
-function start() {
-    const qS = document.getElementById('shufQ').checked, aS = document.getElementById('shufA').checked;
+let data = [];
+let curScore = 0;
+let maxPosScore = 0;
+let solved = 0;
+
+/* ========================= */
+
+function start(){
+
     data = JSON.parse(JSON.stringify(master));
-    if(qS) data.sort(() => Math.random() - 0.5);
-    if(aS) data.forEach(d => {
-        let os = d.opts.map((o,i) => ({t:o, c:d.ans.includes(i)}));
-        os.sort(() => Math.random() - 0.5);
-        d.opts = os.map(o => o.t); d.ans = os.reduce((a,o,i) => {if(o.c) a.push(i); return a;}, []);
-    });
+
+    const shuffleQ =
+        document.getElementById('shuffleQuestions').checked;
+
+    const shuffleA =
+        document.getElementById('shuffleAnswers').checked;
+
+    if(shuffleQ){
+        data.sort(() => Math.random() - 0.5);
+    }
+
+    if(shuffleA){
+
+        data.forEach(d => {
+
+            if(d.type !== 'choice') return;
+
+            let arr = d.opts.map((o,i) => ({
+                text:o,
+                correct:d.ans.includes(i)
+            }));
+
+            arr.sort(() => Math.random() - 0.5);
+
+            d.opts = arr.map(x => x.text);
+
+            d.ans = arr.reduce((a,x,i) => {
+
+                if(x.correct){
+                    a.push(i);
+                }
+
+                return a;
+
+            }, []);
+
+        });
+
+    }
+
     document.getElementById('setup').style.display = 'none';
-    renderNav(); renderQuiz();
+
+    renderNav();
+    renderQuiz();
+    updateStats();
 }
 
-function renderNav() {
+/* ========================= */
+
+function renderNav(){
+
     const g = document.getElementById('navGrid');
-    data.forEach((_, i) => {
+
+    g.innerHTML = "";
+
+    data.forEach((_,i) => {
+
         let d = document.createElement('div');
-        d.className = 'nav-item'; d.id = `nav-${i}`;
+
+        d.className = 'nav-item';
+        d.id = `nav-${i}`;
+
         d.innerText = i + 1;
-        d.onclick = () => document.getElementById(`qcard-${i}`).scrollIntoView({behavior:'smooth'});
+
+        d.onclick = () => {
+
+            document
+                .getElementById(`qcard-${i}`)
+                .scrollIntoView({
+                    behavior:'smooth'
+                });
+
+        };
+
         g.appendChild(d);
+
     });
+
 }
 
-function renderQuiz() {
+/* ========================= */
+
+function renderQuiz(){
+
     const c = document.getElementById('quiz');
-    data.forEach((d, i) => {
-        let card = document.createElement('div');
-        card.className = 'q-card'; card.id = `qcard-${i}`;
-        card.innerHTML = `
-            <div class="q-header">
-                <div class="q-id-box">
-                    <span class="blue-sq-icon" id="sq-${i}" onclick="toggleSquare(${i})"></span>
-                    <span id="num-display-${i}" style="font-weight:bold">${i+1}</span>
-                    <span style="color:#666; margin-left:10px">ID ${d.id}</span>
-                </div>
-                <div style="color:var(--primary); font-weight:bold">${d.pts} b</div>
-            </div>
-            <div style="margin-bottom:25px; line-height:1.4">${d.q}</div>
-            <div id="opts-${i}">
-                ${d.opts.map((o,oi) => `<label class="opt-label"><input type="radio" name="q${i}" value="${oi}"><span>${o}</span></label>`).join('')}
-            </div>
-            <button class="check-btn" id="btn-${i}" onclick="check(${i})">ODEVZDAT ÚLOHU</button>
-            <div id="feedback-${i}" class="points-feedback"></div>
-        `;
-        c.appendChild(card);
-    });
-}
 
-function toggleSquare(i) {
-    const icon = document.getElementById(`sq-${i}`);
-    const navItem = document.getElementById(`nav-${i}`);
-    const numDisplay = document.getElementById(`num-display-${i}`);
-    icon.classList.toggle('active');
-    navItem.classList.toggle('flagged');
-    const isAct = icon.classList.contains('active');
-    navItem.innerText = isAct ? '?' : i + 1;
-    numDisplay.innerText = isAct ? '?' : i + 1;
-}
+    c.innerHTML = "";
 
-function check(i) {
-    const d = data[i], block = document.getElementById(`opts-${i}`);
-    const sel = Array.from(block.querySelectorAll('input:checked')).map(n => parseInt(n.value));
-    if(!sel.length) return alert("Musíte vybrat odpověď!");
+    data.forEach((d,i) => {
 
-    document.getElementById(`btn-${i}`).disabled = true;
-    block.querySelectorAll('input').forEach(inp => inp.disabled = true);
+        let inputHtml = "";
 
-    let gain = d.ans.includes(sel[0]) ? d.pts : 0;
-    curScore += gain; maxPosScore += d.pts; solved++;
+        if(d.type === 'choice'){
 
-    const feed = document.getElementById(`feedback-${i}`);
-    feed.style.display = 'block';
-    feed.innerHTML = `Získáno ${gain.toFixed(2)} z ${d.pts} b. <div class="hint-box"><strong>Odůvodnění:</strong> ${d.rationale}</div>`;
-    feed.style.background = (gain >= d.pts) ? '#e6f4ea' : '#fce8e6';
+            inputHtml = d.opts.map((o,oi) => `
 
-    let nav = document.getElementById(`nav-${i}`);
-    nav.classList.add(gain >= d.pts ? 'status-green' : 'status-red');
+                <label
+                    class="opt-label"
+                    id="label-${i}-${oi}">
 
-    block.querySelectorAll('.opt-label').forEach((l, oi) => {
-        if(d.ans.includes(oi)) l.classList.add('correct');
-        else if(sel.includes(oi)) l.classList.add('wrong');
-    });
+                    <input
+                        type="radio"
+                        name="q${i}"
+                        value="${oi}">
 
-    document.getElementById('prog').innerText = `Zodpovězeno: ${solved} / ${data.length}`;
-    document.getElementById('score').innerText = `Body: ${curScore.toFixed(2)} / ${maxPosScore.toFixed(2)}`;
-}
+                    <span>
+                        ${String.fromCharCode(65 + oi)}.
+                        ${o}
+                    </span>
 
-// Přidaná funkce pro export bez dalších zbytečností
-function exportErrors() {
-    let report = "PŘEHLED CHYB V TESTU\n";
-    report += "==============================\n\n";
-    let errorCount = 0;
+                </label>
 
-    data.forEach((d, i) => {
-        const btn = document.getElementById(`btn-${i}`);
-        const navItem = document.getElementById(`nav-${i}`);
-        
-        // Kontrola, zda je otázka odevzdaná a špatně
-        if (btn && btn.disabled && navItem && navItem.classList.contains('status-red')) {
-            errorCount++;
-            report += `Úloha ${i + 1} (ID ${d.id}): ${d.q}\n`;
-            
-            const selected = document.querySelector(`input[name="q${i}"]:checked`);
-            const userChoice = selected ? d.opts[parseInt(selected.value)] : "Nezvoleno";
-            const correctAnswer = d.ans.map(idx => d.opts[idx]).join(' NEBO ');
+            `).join('');
 
-            report += `-> Vaše odpověď: ${userChoice}\n`;
-            report += `-> Správná odpověď: ${correctAnswer}\n`;
-            if (d.rationale) {
-                report += `-> Odůvodnění: ${d.rationale}\n`;
-            }
-            report += "------------------------------\n";
+        }else{
+
+            inputHtml = `
+
+                <input
+                    type="text"
+                    class="text-input"
+                    id="text-${i}"
+                    placeholder="Odpověď...">
+
+            `;
+
         }
+
+        let card = document.createElement('div');
+
+        card.className = 'q-card';
+        card.id = `qcard-${i}`;
+
+        card.innerHTML = `
+
+            <div class="q-header">
+
+                <div>
+
+                    <span
+                        class="blue-sq-icon"
+                        id="sq-${i}"
+                        onclick="toggleSquare(${i})">
+                    </span>
+
+                    <strong id="display-${i}">
+                        Úloha ${i + 1}
+                    </strong>
+
+                    <span style="margin-left:10px;color:#666;">
+                        ID ${d.id}
+                    </span>
+
+                </div>
+
+                <div style="
+                    color:var(--primary);
+                    font-weight:bold;
+                ">
+                    ${d.pts.toFixed(1)} b
+                </div>
+
+            </div>
+
+            <div style="margin-bottom:20px;">
+                ${d.q}
+            </div>
+
+            <div id="field-${i}">
+                ${inputHtml}
+            </div>
+
+            <button
+                class="check-btn"
+                id="btn-${i}"
+                onclick="check(${i})">
+
+                ODEVZDAT ÚLOHU
+
+            </button>
+
+            <div class="action-btns">
+
+                <button
+                    class="hint-btn"
+                    onclick="toggle('hint-${i}')">
+
+                    Nápověda
+
+                </button>
+
+                ${
+                    d.proc
+                    ? `
+                        <button
+                            class="proc-btn"
+                            onclick="toggle('proc-${i}')">
+
+                            Obrázek
+
+                        </button>
+                    `
+                    : ''
+                }
+
+            </div>
+
+            <div
+                id="hint-${i}"
+                class="hint-box">
+
+                ${d.hint || ''}
+
+            </div>
+
+            <div
+                id="proc-${i}"
+                class="proc-box">
+
+                ${d.proc || ''}
+
+            </div>
+
+            <div
+                id="feed-${i}"
+                class="points-feedback">
+            </div>
+
+        `;
+
+        c.appendChild(card);
+
     });
 
-    if (errorCount === 0) {
-        alert("Žádné chyby k exportu! Buď jste ještě nic nevyplnili, nebo máte vše správně.");
+}
+
+/* ========================= */
+
+function toggle(id){
+
+    let e = document.getElementById(id);
+
+    e.style.display =
+        e.style.display === 'block'
+        ? 'none'
+        : 'block';
+}
+
+/* ========================= */
+
+function toggleSquare(i){
+
+    const sq =
+        document.getElementById(`sq-${i}`);
+
+    const nav =
+        document.getElementById(`nav-${i}`);
+
+    const disp =
+        document.getElementById(`display-${i}`);
+
+    sq.classList.toggle('active');
+    nav.classList.toggle('flagged');
+
+    const active =
+        sq.classList.contains('active');
+
+    nav.innerText =
+        active ? '?' : i + 1;
+
+    disp.innerText =
+        active
+        ? `Úloha ?`
+        : `Úloha ${i + 1}`;
+}
+
+/* ========================= */
+
+function check(i){
+
+    const d = data[i];
+
+    const btn =
+        document.getElementById(`btn-${i}`);
+
+    if(btn.disabled){
         return;
     }
 
-    const blob = new Blob([report], { type: 'text/plain;charset=utf-8' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `chyby_test_${new Date().toLocaleDateString('cs-CZ')}.txt`;
-    a.click();
-    window.URL.revokeObjectURL(url);
+    let correct = false;
+    let userAnswer = "";
+
+    /* =====================
+       MULTIPLE CHOICE
+    ===================== */
+
+    if(d.type === 'choice'){
+
+        const sel =
+            document.querySelector(
+                `input[name="q${i}"]:checked`
+            );
+
+        if(!sel){
+            alert("Musíte vybrat odpověď.");
+            return;
+        }
+
+        const selIdx =
+            parseInt(sel.value);
+
+        correct =
+            d.ans.includes(selIdx);
+
+        d.opts.forEach((_,oi) => {
+
+            const lbl =
+                document.getElementById(
+                    `label-${i}-${oi}`
+                );
+
+            if(d.ans.includes(oi)){
+
+                lbl.classList.add('correct');
+
+            }else if(selIdx === oi){
+
+                lbl.classList.add('wrong');
+
+            }
+
+        });
+
+        document
+            .querySelectorAll(`input[name="q${i}"]`)
+            .forEach(x => x.disabled = true);
+
+    }
+
+    /* =====================
+       TEXT
+    ===================== */
+
+    else{
+
+        const inp =
+            document.getElementById(`text-${i}`);
+
+        userAnswer =
+            inp.value.trim();
+
+        if(!userAnswer){
+            alert("Musíte zadat odpověď.");
+            return;
+        }
+
+        inp.disabled = true;
+
+        correct = d.ans.some(a =>
+
+            a.toLowerCase()
+             .replace(/\s/g,'')
+
+            ===
+
+            userAnswer
+                .toLowerCase()
+                .replace(/\s/g,'')
+
+        );
+
+    }
+
+    /* ===================== */
+
+    btn.disabled = true;
+
+    let gain =
+        correct ? d.pts : 0;
+
+    curScore += gain;
+    maxPosScore += d.pts;
+    solved++;
+
+    const feed =
+        document.getElementById(`feed-${i}`);
+
+    feed.style.display = 'block';
+
+    if(correct){
+
+        feed.innerHTML = `
+            ✓ Správně!
+            (+ ${d.pts.toFixed(1)} b)
+        `;
+
+        feed.style.background = '#e6f4ea';
+        feed.style.color = 'var(--success)';
+
+    }else{
+
+        let corrText = "";
+
+        if(d.type === 'choice'){
+
+            corrText =
+                d.ans
+                 .map(x => d.opts[x])
+                 .join('<br>');
+
+        }else{
+
+            corrText = d.ans[0];
+
+        }
+
+        feed.innerHTML = `
+            ✗ Špatně.<br><br>
+            Správná odpověď:<br>
+            <strong>${corrText}</strong>
+        `;
+
+        feed.style.background = '#fce8e6';
+        feed.style.color = 'var(--error)';
+    }
+
+    document
+        .getElementById(`nav-${i}`)
+        .classList
+        .add(correct
+            ? 'status-green'
+            : 'status-red');
+
+    updateStats();
 }
+
+/* ========================= */
+
+function updateStats(){
+
+    document.getElementById('prog').innerText =
+        `Zodpovězeno: ${solved} / ${data.length}`;
+
+    document.getElementById('score').innerText =
+        `Body: ${curScore.toFixed(2)} / ${maxPosScore.toFixed(2)}`;
+}
+
+/* ========================= */
+
+function finishAll(){
+
+    data.forEach((_,i) => {
+
+        const btn =
+            document.getElementById(`btn-${i}`);
+
+        if(btn && !btn.disabled){
+
+            check(i);
+
+        }
+
+    });
+
+}
+
+/* ========================= */
+
+function exportErrors(){
+
+    let txt =
+`PŘEHLED CHYB
+==============================
+
+`;
+
+    let errors = 0;
+
+    data.forEach((d,i) => {
+
+        const nav =
+            document.getElementById(`nav-${i}`);
+
+        const btn =
+            document.getElementById(`btn-${i}`);
+
+        if(
+            btn &&
+            btn.disabled &&
+            nav.classList.contains('status-red')
+        ){
+
+            errors++;
+
+            txt += `Úloha ${i + 1}\n`;
+            txt += `${d.q}\n\n`;
+
+            let userAns = "";
+
+            if(d.type === 'choice'){
+
+                const sel =
+                    document.querySelector(
+                        `input[name="q${i}"]:checked`
+                    );
+
+                userAns = sel
+                    ? d.opts[parseInt(sel.value)]
+                    : "Nezvoleno";
+
+            }else{
+
+                const inp =
+                    document.getElementById(`text-${i}`);
+
+                userAns =
+                    inp ? inp.value : "";
+            }
+
+            txt += `Vaše odpověď:\n`;
+            txt += `${userAns}\n\n`;
+
+            txt += `Správná odpověď:\n`;
+
+            if(d.type === 'choice'){
+
+                txt += d.ans
+                    .map(x => d.opts[x])
+                    .join('\n');
+
+            }else{
+
+                txt += d.ans[0];
+            }
+
+            txt += `\n\n==============================\n\n`;
+
+        }
+
+    });
+
+    if(errors === 0){
+
+        alert("Žádné chyby k exportu.");
+
+        return;
+    }
+
+    const blob = new Blob(
+        [txt],
+        {
+            type:'text/plain;charset=utf-8'
+        }
+    );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const a =
+        document.createElement('a');
+
+    a.href = url;
+
+    a.download =
+        `chyby_${new Date().toISOString().slice(0,10)}.txt`;
+
+    a.click();
+
+    URL.revokeObjectURL(url);
+}
+
 </script>
 </body>
 </html>
