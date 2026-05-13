@@ -376,7 +376,10 @@ function renderQuiz(){
             </div>
             <div style="margin-bottom:20px;">${d.q}</div>
             <div id="field-${i}">${inputHtml}</div>
-            <button class="check-btn" id="btn-${i}" onclick="check(${i}, false)">ODEVZDAT ÚLOHU</button>
+            <div style="display:flex; gap:10px;">
+                <button class="check-btn" style="flex:1;" id="btn-${i}" onclick="check(${i}, false)">ODEVZDAT ÚLOHU</button>
+                <button class="check-btn" style="width:auto; background:#555; padding:14px 20px;" id="exp-btn-${i}" onclick="toggleExport(${i})">📌 EXPORT</button>
+            </div>
             <div class="action-btns">
                 <button class="hint-btn" onclick="toggle('hint-${i}')">Nápověda</button>
                 ${d.proc ? `<button class="proc-btn" onclick="toggle('proc-${i}')">Obrázek</button>` : ''}
@@ -453,10 +456,23 @@ function updateStats(){
 
 function finishAll(){ data.forEach((_,i) => check(i, true)); }
 
+function toggleExport(i) {
+    // Přepne stav vynuceného exportu pro danou otázku
+    data[i].forceExport = !data[i].forceExport;
+    const btn = document.getElementById(`exp-btn-${i}`);
+    
+    // Změna barvy pro vizuální zpětnou vazbu
+    if (data[i].forceExport) {
+        btn.style.background = 'var(--json-btn)';
+    } else {
+        btn.style.background = '#555';
+    }
+}
+
 function exportJSON() {
     let errs = [];
     data.forEach((d, i) => {
-        if (document.getElementById(`nav-${i}`).classList.contains('status-red')) {
+        if (document.getElementById(`nav-${i}`).classList.contains('status-red') || d.forceExport) {
             errs.push({id:d.id, type:d.type, q:d.q, opts:d.opts, ans:d.ans, pts:d.pts, hint:d.hint, proc:d.proc});
         }
     });
@@ -465,9 +481,9 @@ function exportJSON() {
 }
 
 function exportErrors(){
-    let txt = "PŘEHLED CHYB\n\n";
+    let txt = "PŘEHLED CHYB (včetně manuálně označených)\n\n";
     data.forEach((d,i) => {
-        if(document.getElementById(`nav-${i}`).classList.contains('status-red')){
+        if(document.getElementById(`nav-${i}`).classList.contains('status-red') || d.forceExport){
             txt += `Úloha: ${d.q}\nSprávně: ${d.type==='choice' ? d.ans.map(x=>d.opts[x]).join(', ') : d.ans[0]}\n\n---\n`;
         }
     });
