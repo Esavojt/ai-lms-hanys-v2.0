@@ -1,42 +1,801 @@
 [
-{ "id": 1, "q": "Odstup rádiových kanálů u systému EGSM je:", "opts": ["250 kHz", "50 kHz", "25 kHz", "100 kHz", "200 kHz", "45 kHz", "20 kHz"], "ans": [4], "pts": 1.0, "rationale": "Standardní odstup kanálů v systémech GSM (včetně EGSM) je 200 kHz." },
-{ "id": 2, "q": "Který z uvedených prvků sítě GSM nepatří do subsystému NSS?", "opts": ["MSC", "GMSC", "HLR", "BSC", "EIR", "AuC", "jiná odpověď"], "ans": [3], "pts": 1.0, "rationale": "BSC (Base Station Controller) patří do subsystému základnových stanic (BSS), nikoliv do síťového subsystému (NSS)." },
-{ "id": 3, "q": "Kmitočtový rozsah pro komunikaci z MS k BTS u systému GSM 1800 činí:", "opts": ["60 MHz", "50 MHz", "70 MHz", "75 MHz", "90 MHz", "35 MHz", "80 MHz", "25 MHz"], "ans": [3], "pts": 1.0, "rationale": "V pásmu GSM 1800 je pro uplink (MS k BTS) vyhrazeno 75 MHz (1710–1785 MHz)." },
-{ "id": 4, "q": "Průměr buněk systému DECT se pohybuje v rozmezí:", "opts": ["10-400 m", "300-4000 m", "30-150 m", "300-1500 m", "30-400 m"], "ans": [2], "pts": 1.0, "rationale": "DECT je systém pro krátký dosah, typický průměr buňky je 30 až 150 metrů." },
-{ "id": 5, "q": "Kmitočtový rozsah u systému GSM činí:", "opts": ["170 MHz", "174 MHz", "160 MHz", "124 MHz", "75 MHz", "90 MHz", "374 MHz", "125 MHz"], "ans": [0], "pts": 1.0, "rationale": "Podle zdrojového souboru je správná odpověď 170 MHz (pravděpodobně myšleno celkové pásmo včetně DCS 1800)." },
-{ "id": 6, "q": "Mobilní sítě 3. generace UMTS mohou využívat:", "opts": ["pouze TDD.", "pouze FDD.", "FDD i TDD."], "ans": [2], "pts": 1.0, "rationale": "Standard UMTS definuje oba režimy: FDD (kmitočtový duplex) i TDD (časový duplex)." },
-{ "id": 7, "q": "Počet rádiových kanálů u systému NMT 450 je:", "opts": ["45", "200", "125", "124", "180", "450", "160", "75"], "ans": [4], "pts": 1.0, "rationale": "Systém NMT 450 využívá v základní konfiguraci 180 kanálů." },
-{ "id": 8, "q": "Rozhraní v síti GSM označované jako A se nachází mezi:", "opts": ["MS a BTS", "BSC a MSC", "MS a BSS", "BTS a MSC", "MS a BSC", "BTS a BSC", "BTS a BSS"], "ans": [1], "pts": 1.0, "rationale": "Rozhraní 'A' spojuje subsystém BSS (přes BSC) se síťovým subsystémem NSS (přes MSC)." },
-{ "id": 9, "q": "Synchronizační burst je vždy vysílán za:", "opts": ["jiná možnost (je vysílán vždy jako první v pořadí)", "normálním burstem", "přístupovým burstem", "prázdným burstem", "burstem pro kmitočtovou korekci"], "ans": [4], "pts": 1.0, "rationale": "V rámci logického kanálu SCH následuje synchronizační burst po burstu pro kmitočtovou korekci (FCB)." },
-{ "id": 10, "q": "Evropský standard digitálního pagingového systému nese označení:", "opts": ["RDS", "DECT", "CT", "ERMES"], "ans": [3], "pts": 1.0, "rationale": "ERMES (European Radio Message System) byl evropský standard pro paging." },
-{ "id": 11, "q": "Který burst nese informaci o identifikačním kódu základnové stanice BTS, tzv. kódu BSIC?", "opts": ["pro kmitočtovou korekci", "přístupový", "synchronizační", "prázdný", "normální"], "ans": [2], "pts": 1.0, "rationale": "Synchronizační burst (SB) obsahuje kód BSIC a aktuální číslo TDMA rámce." },
-{ "id": 12, "q": "Přizpůsobení bitových rychlostí, převod formátů signálů PCM apod. provádí:", "opts": ["transportní jednotka", "transmodulační jednotka", "transkódovací jednotka", "žádná z uvedených", "translační jednotka"], "ans": [2], "pts": 1.0, "rationale": "Tyto funkce vykonává jednotka TRAU (Transcoder Rate Adapter Unit), tedy transkódovací jednotka." },
-{ "id": 13, "q": "GPRS zařízení třídy A:", "opts": ["jsou terminály umožňující v jeden okamžik ovládat jen jednu službu (hovor nebo data) s možností přecházet mezi těmito dvěma režimy.", "jsou terminály umožňující ovládat pouze služby na základě přepojování okruhů.", "jsou terminály umožňující současně ovládat služby na základě přepojování okruhů a přepojování paketů.", "jsou terminály umožňující v jeden okamžik ovládat jen jednu službu (hovor nebo data) bez možnosti přecházet mezi těmito dvěma režimy.", "jsou terminály umožňující ovládat pouze služby na základě přepojování paketů."], "ans": [2], "pts": 1.0, "rationale": "Zařízení třídy A umožňuje simultánní provoz hlasových (okruhy) i datových (pakety) služeb." },
-{ "id": 14, "q": "Odstup rádiových kanálů u systému NMT 450 je:", "opts": ["25 kHz", "50 kHz", "45 kHz", "250 kHz", "200 kHz", "20 kHz"], "ans": [0], "pts": 1.0, "rationale": "Analogový systém NMT 450 používal šířku kanálu a odstup 25 kHz." },
-{ "id": 15, "q": "Tzv. číslo IMEI je uloženo:", "opts": ["v databázi prodaných mobilních stanic", "v mobilní stanici", "v řídicí jednotce základnových stanic", "jiná odpověď", "na kartě SIM", "v radiotelefonní ústředně"], "ans": [1], "pts": 1.0, "rationale": "IMEI je unikátní identifikátor hardwaru a je napevno uložen v mobilním přístroji." },
-{ "id": 16, "q": "Kmitočtový odstup FDD u systému NMT 450 je:", "opts": ["20 MHz", "15 MHz", "10 MHz", "45 MHz", "75 MHz", "25 MHz"], "ans": [2], "pts": 1.0, "rationale": "Duplexní odstup (rozdíl mezi uplinkem a downlinkem) u NMT 450 je 10 MHz." },
-{ "id": 17, "q": "Který burst nese informaci o pořadí TDMA rámce systému GSM?", "opts": ["normální", "přístupový", "prázdný", "synchronizační", "pro kmitočtovou korekci"], "ans": [3], "pts": 1.0, "rationale": "Synchronizační burst slouží k časové synchronizaci a nese informaci o čísle rámce." },
-{ "id": 18, "q": "Která z uvedených kombinací principů používaných v sítích UMTS platí?", "opts": ["CDMA, TDD, FDD, DCA, bezešvý handover", "FDMA/TDMA/CDMA, TDD, FDD, FCA", "CDMA, TDD, FDD, FCA, bezešvý handover", "FDMA/TDMA, TDD, FDD, FCA, měkký handover", "CDMA, TDD, FDD, DCA, měkký handover"], "ans": [4], "pts": 1.0, "rationale": "UMTS využívá technologii CDMA, oba duplexní režimy, dynamické přidělování (DCA) a měkký handover." },
-{ "id": 19, "q": "IMSI znamená:", "opts": ["číslo účastníka", "kód mobilní stanice", "jednoznačná identifikace uživatele"], "ans": [2], "pts": 1.0, "rationale": "IMSI (International Mobile Subscriber Identity) je unikátní ID přidělené uživateli (uložené na SIM)." },
-{ "id": 20, "q": "V systému DECT se využívá:", "opts": ["DCA, NCHO, měkký handover", "FCA, MCHO, měkký handover", "FCA, MCHO, bezešvý handover", "DCA, NCHO, bezešvý handover", "FCA, NCHO, bezešvý handover", "DCA, MCHO, bezešvý handover", "DCA, MCHO, měkký handover"], "ans": [5], "pts": 1.0, "rationale": "DECT využívá dynamický výběr kanálu (DCA), řízení mobilní stanicí (MCHO) a bezešvý handover." },
-{ "id": 21, "q": "Který burst je vysílán jako první při náhodném přístupu do systému (např. po zapnutí MS)?", "opts": ["pro kmitočtovou korekci", "synchronizační", "přístupový", "normální", "prázdný"], "ans": [2], "pts": 1.0, "rationale": "Pro žádost o přidělení kanálu (Random Access) používá MS přístupový burst (AB)." },
-{ "id": 22, "q": "Které z následujících tvrzení pro kódovací systémy GPRS je správné?", "opts": ["Kódovací systém CS1 v porovnání se systémem CS4 představuje méně bezpečný způsob kódování, výsledná přenosová rychlost je nižší.", "Kódovací systém CS1 v porovnání se systémem CS4 představuje bezpečnější způsob kódování, výsledná přenosová rychlost je vyšší.", "Kódovací systém CS1 v porovnání se systémem CS4 představuje bezpečnější způsob kódování, výsledná přenosová rychlost je nižší.", "Kódovací systém CS1 v porovnání se systémem CS4 představuje méně bezpečný způsob kódování, výsledná přenosová rychlost je vyšší."], "ans": [2], "pts": 1.0, "rationale": "CS1 má nejsilnější zabezpečení (více redundantních dat), ale díky tomu nejnižší užitečnou rychlost." },
-{ "id": 23, "q": "Ve kterém z uvedených prvků sítě GSM je zaznamenáno číslo IMSI?", "opts": ["NSS", "ADC", "BTS", "BSC", "HLR", "MSC", "OMC", "AuC"], "ans": [4], "pts": 1.0, "rationale": "Hlavní databáze HLR (Home Location Register) obsahuje veškerá data o účastníkovi včetně IMSI." },
-{ "id": 24, "q": "Maximální dosah pagingových systému RDS je:", "opts": ["jednotky metrů", "jednotky kilometrů", "desítky kilometrů", "stovky metrů", "desítky metrů"], "ans": [2], "pts": 1.0, "rationale": "RDS se šíří pomocí FM vysílačů, které mají dosah v řádu desítek kilometrů." },
-{ "id": 25, "q": "Kmitočtový rozsah pro komunikaci z BTS k MS u systému PGSM činí:", "opts": ["90 MHz", "75 MHz", "25 MHz", "80 MHz", "35 MHz", "60 MHz", "70 MHz", "50 MHz"], "ans": [2], "pts": 1.0, "rationale": "Standardní (Primary) GSM pásmo využívá 25 MHz pro každý směr." },
-{ "id": 26, "q": "Kmitočtový rozsah pro komunikaci z BTS k MS u systému GSM 1800 činí:", "opts": ["75 MHz", "80 MHz", "25 MHz", "50 MHz", "90 MHz", "35 MHz", "70 MHz", "60 MHz"], "ans": [0], "pts": 1.0, "rationale": "V pásmu 1800 MHz je pro oba směry vyhrazeno po 75 MHz." },
-{ "id": 27, "q": "Který burst souvisí s nastavením tzv. časového posuvu?", "opts": ["normální", "přístupový", "synchronizační", "prázdný", "pro kmitočtovou korekci"], "ans": [1], "pts": 1.0, "rationale": "Dle přístupového burstu BTS měří zpoždění a nastavuje parametr Timing Advance." },
-{ "id": 28, "q": "Kmitočtový rozsah u systému EGSM činí:", "opts": ["25 MHz", "35 MHz", "80 MHz", "70 MHz", "75 MHz", "90 MHz", "60 MHz", "50 MHz"], "ans": [3], "pts": 1.0, "rationale": "Podle zdrojového souboru je správná odpověď 70 MHz." },
-{ "id": 29, "q": "Který z uvedených prvků sítě GSM provádí přizpůsobení bitových rychlostí, převod formátů signálů PCM apod.:", "opts": ["ADC", "BSC", "AuC", "MSC", "jiná odpověď", "TRAU", "BTS"], "ans": [5], "pts": 1.0, "rationale": "TRAU (Transcoder Rate Adapter Unit) zajišťuje převod mezi komprimovaným hlasem v rádiové síti a standardem PCM." },
-{ "id": 30, "q": "Vysokorychlostní přenos dat HSCSD umožňuje", "opts": ["poloduplexní asymetrický i symetrický provoz...", "asymetrický i symetrický provoz... 171,2 kbit/s (8 timeslotů).", "pouze symetrický provoz... 57,6 kbit/s (4 timesloty).", "asymetrický i symetrický provoz... 57,6 kbit/s (8 timeslotů).", "asymetrický i symetrický provoz s možností slučování timeslotů s max. přenosovou rychlostí 57,6 kbit/s (4 timesloty).", "pouze asymetrický provoz..."], "ans": [4], "pts": 1.0, "rationale": "HSCSD slučuje až 4 timesloty s kapacitou 14,4 kbit/s na jeden, což dává 57,6 kbit/s." },
-{ "id": 31, "q": "Odstup rádiových kanálů u systému PGSM je:", "opts": ["20 kHz", "25 kHz", "250 kHz", "45 kHz", "50 kHz", "100 kHz", "200 kHz"], "ans": [6], "pts": 1.0, "rationale": "U všech variant GSM je odstup sousedních nosných 200 kHz." },
-{ "id": 32, "q": "Systém DECT využívá následující metody a principy:", "opts": ["FDMA/TDMA, FDD", "FDMA, FDD", "TDMA, FDD", "FDMA, TDD", "FDMA/TDMA, TDD", "TDMA, TDD"], "ans": [4], "pts": 1.0, "rationale": "DECT kombinuje kmitočtové a časové dělení (FDMA/TDMA) s časovým duplexem (TDD)." },
-{ "id": 33, "q": "Počet rádiových kanálů u systému GSM 1800 je:", "opts": ["75", "125", "224", "1800", "174", "45", "374", "74"], "ans": [6], "pts": 1.0, "rationale": "Pásmo 1800 MHz (DCS) obsahuje 374 rádiových kanálů." },
-{ "id": 34, "q": "V pagingových systémech se nejčastěji využívá modulace:", "opts": ["ADM", "ADPCM", "PSK", "PCM", "FSK", "ASK"], "ans": [4], "pts": 1.0, "rationale": "Frekvenční klíčování (FSK) je standardem pro systémy jako POCSAG či ERMES." },
-{ "id": 35, "q": "Navýšení přenosové rychlosti EDGE bylo dosaženo:", "opts": ["použitím nového typu zdrojového kódování", "použitím nového typu modulace.", "použitím nového typu kanálového kódování.", "začleněním účinnějších síťových prvků...", "použitím účinnějšího komprimačního algoritmu..."], "ans": [1], "pts": 1.0, "rationale": "EDGE zavedlo modulaci 8-PSK namísto původní GMSK." },
-{ "id": 36, "q": "Který z uvedených prvků sítě GSM nepatří mezi registry subsystému NSS?", "opts": ["AuR", "HLR", "EIR", "VLR.", "jiná odpověď."], "ans": [0], "pts": 1.0, "rationale": "AuR neexistuje, autentizační centrum je AuC." },
-{ "id": 37, "q": "Kmitočtový odstup FDD u systému GSM 1800 je:", "opts": ["75 MHz", "175 MHz", "55 MHz", "125 MHz", "50 MHz", "90 MHz"], "ans": [0], "pts": 1.0, "rationale": "U GSM 1800 je duplexní odstup shodný s šířkou pásma, tedy 75 MHz." },
-{ "id": 38, "q": "Evropský standard digitálního systému bezšňůrových telefonů nese označení:", "opts": ["ERMES", "RDS", "DECT", "CT"], "ans": [2], "pts": 1.0, "rationale": "DECT (Digital Enhanced Cordless Telecommunications) je evropský standard pro bezšňůrové telefony." },
-{ "id": 39, "q": "Maximální výkon MS u systému GSM je:", "opts": ["10 W", "200 mW", "2 W", "1 W", "2 mW", "1 mW", "20 W"], "ans": [6], "pts": 1.0, "rationale": "Podle zdrojového souboru je správná odpověď 20 W (třída 1 v původním standardu)." },
-{ "id": 40, "q": "Kmitočtový odstup FDD u systému PGSM je:", "opts": ["25 MHz", "15 MHz", "35 MHz", "55 MHz", "45 MHz", "75 MHz"], "ans": [4], "pts": 1.0, "rationale": "V pásmu GSM 900 je duplexní odstup 45 MHz." }
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Odstup rádiových kanálů u systému EGSM je:",
+    "opts": [
+      "250 kHz",
+      "50 kHz",
+      "25 kHz",
+      "100 kHz",
+      "200 kHz",
+      "45 kHz",
+      "20 kHz"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Standardní odstup kanálů v systémech GSM (včetně EGSM) je 200 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Který z uvedených prvků sítě GSM nepatří do subsystému NSS?",
+    "opts": [
+      "MSC",
+      "GMSC",
+      "HLR",
+      "BSC",
+      "EIR",
+      "AuC",
+      "jiná odpověď"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "BSC (Base Station Controller) patří do subsystému základnových stanic (BSS), nikoliv do síťového subsystému (NSS).",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Kmitočtový rozsah pro komunikaci z MS k BTS u systému GSM 1800 činí:",
+    "opts": [
+      "60 MHz",
+      "50 MHz",
+      "70 MHz",
+      "75 MHz",
+      "90 MHz",
+      "35 MHz",
+      "80 MHz",
+      "25 MHz"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "V pásmu GSM 1800 je pro uplink (MS k BTS) vyhrazeno 75 MHz (1710–1785 MHz).",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Průměr buněk systému DECT se pohybuje v rozmezí:",
+    "opts": [
+      "10-400 m",
+      "300-4000 m",
+      "30-150 m",
+      "300-1500 m",
+      "30-400 m"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "DECT je systém pro krátký dosah, typický průměr buňky je 30 až 150 metrů.",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Kmitočtový rozsah u systému GSM činí:",
+    "opts": [
+      "170 MHz",
+      "174 MHz",
+      "160 MHz",
+      "124 MHz",
+      "75 MHz",
+      "90 MHz",
+      "374 MHz",
+      "125 MHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Podle zdrojového souboru je správná odpověď 170 MHz (pravděpodobně myšleno celkové pásmo včetně DCS 1800).",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Mobilní sítě 3. generace UMTS mohou využívat:",
+    "opts": [
+      "pouze TDD.",
+      "pouze FDD.",
+      "FDD i TDD."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Standard UMTS definuje oba režimy: FDD (kmitočtový duplex) i TDD (časový duplex).",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Počet rádiových kanálů u systému NMT 450 je:",
+    "opts": [
+      "45",
+      "200",
+      "125",
+      "124",
+      "180",
+      "450",
+      "160",
+      "75"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Systém NMT 450 využívá v základní konfiguraci 180 kanálů.",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Rozhraní v síti GSM označované jako A se nachází mezi:",
+    "opts": [
+      "MS a BTS",
+      "BSC a MSC",
+      "MS a BSS",
+      "BTS a MSC",
+      "MS a BSC",
+      "BTS a BSC",
+      "BTS a BSS"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Rozhraní 'A' spojuje subsystém BSS (přes BSC) se síťovým subsystémem NSS (přes MSC).",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Synchronizační burst je vždy vysílán za:",
+    "opts": [
+      "jiná možnost (je vysílán vždy jako první v pořadí)",
+      "normálním burstem",
+      "přístupovým burstem",
+      "prázdným burstem",
+      "burstem pro kmitočtovou korekci"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "V rámci logického kanálu SCH následuje synchronizační burst po burstu pro kmitočtovou korekci (FCB).",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Evropský standard digitálního pagingového systému nese označení:",
+    "opts": [
+      "RDS",
+      "DECT",
+      "CT",
+      "ERMES"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "ERMES (European Radio Message System) byl evropský standard pro paging.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Který burst nese informaci o identifikačním kódu základnové stanice BTS, tzv. kódu BSIC?",
+    "opts": [
+      "pro kmitočtovou korekci",
+      "přístupový",
+      "synchronizační",
+      "prázdný",
+      "normální"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Synchronizační burst (SB) obsahuje kód BSIC a aktuální číslo TDMA rámce.",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Přizpůsobení bitových rychlostí, převod formátů signálů PCM apod. provádí:",
+    "opts": [
+      "transportní jednotka",
+      "transmodulační jednotka",
+      "transkódovací jednotka",
+      "žádná z uvedených",
+      "translační jednotka"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Tyto funkce vykonává jednotka TRAU (Transcoder Rate Adapter Unit), tedy transkódovací jednotka.",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "GPRS zařízení třídy A:",
+    "opts": [
+      "jsou terminály umožňující v jeden okamžik ovládat jen jednu službu (hovor nebo data) s možností přecházet mezi těmito dvěma režimy.",
+      "jsou terminály umožňující ovládat pouze služby na základě přepojování okruhů.",
+      "jsou terminály umožňující současně ovládat služby na základě přepojování okruhů a přepojování paketů.",
+      "jsou terminály umožňující v jeden okamžik ovládat jen jednu službu (hovor nebo data) bez možnosti přecházet mezi těmito dvěma režimy.",
+      "jsou terminály umožňující ovládat pouze služby na základě přepojování paketů."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Zařízení třídy A umožňuje simultánní provoz hlasových (okruhy) i datových (pakety) služeb.",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Odstup rádiových kanálů u systému NMT 450 je:",
+    "opts": [
+      "25 kHz",
+      "50 kHz",
+      "45 kHz",
+      "250 kHz",
+      "200 kHz",
+      "20 kHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Analogový systém NMT 450 používal šířku kanálu a odstup 25 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Tzv. číslo IMEI je uloženo:",
+    "opts": [
+      "v databázi prodaných mobilních stanic",
+      "v mobilní stanici",
+      "v řídicí jednotce základnových stanic",
+      "jiná odpověď",
+      "na kartě SIM",
+      "v radiotelefonní ústředně"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "IMEI je unikátní identifikátor hardwaru a je napevno uložen v mobilním přístroji.",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Kmitočtový odstup FDD u systému NMT 450 je:",
+    "opts": [
+      "20 MHz",
+      "15 MHz",
+      "10 MHz",
+      "45 MHz",
+      "75 MHz",
+      "25 MHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Duplexní odstup (rozdíl mezi uplinkem a downlinkem) u NMT 450 je 10 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Který burst nese informaci o pořadí TDMA rámce systému GSM?",
+    "opts": [
+      "normální",
+      "přístupový",
+      "prázdný",
+      "synchronizační",
+      "pro kmitočtovou korekci"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Synchronizační burst slouží k časové synchronizaci a nese informaci o čísle rámce.",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Která z uvedených kombinací principů používaných v sítích UMTS platí?",
+    "opts": [
+      "CDMA, TDD, FDD, DCA, bezešvý handover",
+      "FDMA/TDMA/CDMA, TDD, FDD, FCA",
+      "CDMA, TDD, FDD, FCA, bezešvý handover",
+      "FDMA/TDMA, TDD, FDD, FCA, měkký handover",
+      "CDMA, TDD, FDD, DCA, měkký handover"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "UMTS využívá technologii CDMA, oba duplexní režimy, dynamické přidělování (DCA) a měkký handover.",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "IMSI znamená:",
+    "opts": [
+      "číslo účastníka",
+      "kód mobilní stanice",
+      "jednoznačná identifikace uživatele"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "IMSI (International Mobile Subscriber Identity) je unikátní ID přidělené uživateli (uložené na SIM).",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "V systému DECT se využívá:",
+    "opts": [
+      "DCA, NCHO, měkký handover",
+      "FCA, MCHO, měkký handover",
+      "FCA, MCHO, bezešvý handover",
+      "DCA, NCHO, bezešvý handover",
+      "FCA, NCHO, bezešvý handover",
+      "DCA, MCHO, bezešvý handover",
+      "DCA, MCHO, měkký handover"
+    ],
+    "ans": [
+      5
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "DECT využívá dynamický výběr kanálu (DCA), řízení mobilní stanicí (MCHO) a bezešvý handover.",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Který burst je vysílán jako první při náhodném přístupu do systému (např. po zapnutí MS)?",
+    "opts": [
+      "pro kmitočtovou korekci",
+      "synchronizační",
+      "přístupový",
+      "normální",
+      "prázdný"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Pro žádost o přidělení kanálu (Random Access) používá MS přístupový burst (AB).",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Které z následujících tvrzení pro kódovací systémy GPRS je správné?",
+    "opts": [
+      "Kódovací systém CS1 v porovnání se systémem CS4 představuje méně bezpečný způsob kódování, výsledná přenosová rychlost je nižší.",
+      "Kódovací systém CS1 v porovnání se systémem CS4 představuje bezpečnější způsob kódování, výsledná přenosová rychlost je vyšší.",
+      "Kódovací systém CS1 v porovnání se systémem CS4 představuje bezpečnější způsob kódování, výsledná přenosová rychlost je nižší.",
+      "Kódovací systém CS1 v porovnání se systémem CS4 představuje méně bezpečný způsob kódování, výsledná přenosová rychlost je vyšší."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "CS1 má nejsilnější zabezpečení (více redundantních dat), ale díky tomu nejnižší užitečnou rychlost.",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Ve kterém z uvedených prvků sítě GSM je zaznamenáno číslo IMSI?",
+    "opts": [
+      "NSS",
+      "ADC",
+      "BTS",
+      "BSC",
+      "HLR",
+      "MSC",
+      "OMC",
+      "AuC"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Hlavní databáze HLR (Home Location Register) obsahuje veškerá data o účastníkovi včetně IMSI.",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Maximální dosah pagingových systému RDS je:",
+    "opts": [
+      "jednotky metrů",
+      "jednotky kilometrů",
+      "desítky kilometrů",
+      "stovky metrů",
+      "desítky metrů"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "RDS se šíří pomocí FM vysílačů, které mají dosah v řádu desítek kilometrů.",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Kmitočtový rozsah pro komunikaci z BTS k MS u systému PGSM činí:",
+    "opts": [
+      "90 MHz",
+      "75 MHz",
+      "25 MHz",
+      "80 MHz",
+      "35 MHz",
+      "60 MHz",
+      "70 MHz",
+      "50 MHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Standardní (Primary) GSM pásmo využívá 25 MHz pro každý směr.",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Kmitočtový rozsah pro komunikaci z BTS k MS u systému GSM 1800 činí:",
+    "opts": [
+      "75 MHz",
+      "80 MHz",
+      "25 MHz",
+      "50 MHz",
+      "90 MHz",
+      "35 MHz",
+      "70 MHz",
+      "60 MHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "V pásmu 1800 MHz je pro oba směry vyhrazeno po 75 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "Který burst souvisí s nastavením tzv. časového posuvu?",
+    "opts": [
+      "normální",
+      "přístupový",
+      "synchronizační",
+      "prázdný",
+      "pro kmitočtovou korekci"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Dle přístupového burstu BTS měří zpoždění a nastavuje parametr Timing Advance.",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Kmitočtový rozsah u systému EGSM činí:",
+    "opts": [
+      "25 MHz",
+      "35 MHz",
+      "80 MHz",
+      "70 MHz",
+      "75 MHz",
+      "90 MHz",
+      "60 MHz",
+      "50 MHz"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Podle zdrojového souboru je správná odpověď 70 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Který z uvedených prvků sítě GSM provádí přizpůsobení bitových rychlostí, převod formátů signálů PCM apod.:",
+    "opts": [
+      "ADC",
+      "BSC",
+      "AuC",
+      "MSC",
+      "jiná odpověď",
+      "TRAU",
+      "BTS"
+    ],
+    "ans": [
+      5
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "TRAU (Transcoder Rate Adapter Unit) zajišťuje převod mezi komprimovaným hlasem v rádiové síti a standardem PCM.",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Vysokorychlostní přenos dat HSCSD umožňuje",
+    "opts": [
+      "poloduplexní asymetrický i symetrický provoz...",
+      "asymetrický i symetrický provoz... 171,2 kbit/s (8 timeslotů).",
+      "pouze symetrický provoz... 57,6 kbit/s (4 timesloty).",
+      "asymetrický i symetrický provoz... 57,6 kbit/s (8 timeslotů).",
+      "asymetrický i symetrický provoz s možností slučování timeslotů s max. přenosovou rychlostí 57,6 kbit/s (4 timesloty).",
+      "pouze asymetrický provoz..."
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "HSCSD slučuje až 4 timesloty s kapacitou 14,4 kbit/s na jeden, což dává 57,6 kbit/s.",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Odstup rádiových kanálů u systému PGSM je:",
+    "opts": [
+      "20 kHz",
+      "25 kHz",
+      "250 kHz",
+      "45 kHz",
+      "50 kHz",
+      "100 kHz",
+      "200 kHz"
+    ],
+    "ans": [
+      6
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "U všech variant GSM je odstup sousedních nosných 200 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Systém DECT využívá následující metody a principy:",
+    "opts": [
+      "FDMA/TDMA, FDD",
+      "FDMA, FDD",
+      "TDMA, FDD",
+      "FDMA, TDD",
+      "FDMA/TDMA, TDD",
+      "TDMA, TDD"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "DECT kombinuje kmitočtové a časové dělení (FDMA/TDMA) s časovým duplexem (TDD).",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Počet rádiových kanálů u systému GSM 1800 je:",
+    "opts": [
+      "75",
+      "125",
+      "224",
+      "1800",
+      "174",
+      "45",
+      "374",
+      "74"
+    ],
+    "ans": [
+      6
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Pásmo 1800 MHz (DCS) obsahuje 374 rádiových kanálů.",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "V pagingových systémech se nejčastěji využívá modulace:",
+    "opts": [
+      "ADM",
+      "ADPCM",
+      "PSK",
+      "PCM",
+      "FSK",
+      "ASK"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Frekvenční klíčování (FSK) je standardem pro systémy jako POCSAG či ERMES.",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Navýšení přenosové rychlosti EDGE bylo dosaženo:",
+    "opts": [
+      "použitím nového typu zdrojového kódování",
+      "použitím nového typu modulace.",
+      "použitím nového typu kanálového kódování.",
+      "začleněním účinnějších síťových prvků...",
+      "použitím účinnějšího komprimačního algoritmu..."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "EDGE zavedlo modulaci 8-PSK namísto původní GMSK.",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Který z uvedených prvků sítě GSM nepatří mezi registry subsystému NSS?",
+    "opts": [
+      "AuR",
+      "HLR",
+      "EIR",
+      "VLR.",
+      "jiná odpověď."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "AuR neexistuje, autentizační centrum je AuC.",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Kmitočtový odstup FDD u systému GSM 1800 je:",
+    "opts": [
+      "75 MHz",
+      "175 MHz",
+      "55 MHz",
+      "125 MHz",
+      "50 MHz",
+      "90 MHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "U GSM 1800 je duplexní odstup shodný s šířkou pásma, tedy 75 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Evropský standard digitálního systému bezšňůrových telefonů nese označení:",
+    "opts": [
+      "ERMES",
+      "RDS",
+      "DECT",
+      "CT"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "DECT (Digital Enhanced Cordless Telecommunications) je evropský standard pro bezšňůrové telefony.",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Maximální výkon MS u systému GSM je:",
+    "opts": [
+      "10 W",
+      "200 mW",
+      "2 W",
+      "1 W",
+      "2 mW",
+      "1 mW",
+      "20 W"
+    ],
+    "ans": [
+      6
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Podle zdrojového souboru je správná odpověď 20 W (třída 1 v původním standardu).",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Kmitočtový odstup FDD u systému PGSM je:",
+    "opts": [
+      "25 MHz",
+      "15 MHz",
+      "35 MHz",
+      "55 MHz",
+      "45 MHz",
+      "75 MHz"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "V pásmu GSM 900 je duplexní odstup 45 MHz.",
+    "proc": ""
+  }
 ]

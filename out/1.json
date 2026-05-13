@@ -1,42 +1,695 @@
 [
-{ "id": 1, "q": "Rámec vnějšího kódu vyjadřuje:", "opts": ["počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby", "velikost paměťové matice", "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé"], "ans": [0], "pts": 1.0, "hint": "Vnější kód u zřetězených kódů.", "rationale": "Rámec vnějšího kódu v kontextu prokládání a zřetězených kódů definuje periodu opakování chyb." },
-{ "id": 2, "q": "Velmi krátké vlny VHF jsou definovány v rozmezí:", "opts": ["300-3000 MHz", "30-300 MHz", "3-30 GHz"], "ans": [1], "pts": 1.0, "hint": "Very High Frequency.", "rationale": "Pásmo VHF (Very High Frequency) náleží frekvencím 30 až 300 MHz." },
-{ "id": 3, "q": "Při handoveru dochází:", "opts": ["k přepnutí spojení mezi MS a BTS během komunikace zachováním rádiového kanálu", "k přepnutí spojení mezi MS a BTS během komunikace z jednoho rádiového kanálu na jiný", "k přepnutí spojení mezi MS a BTS během komunikace na jiného účastníka", "se používá pouze v XHTML"], "ans": [1], "pts": 1.0, "hint": "Předání hovoru mezi buňkami.", "rationale": "Handover je proces předání mobilní stanice od jedné základnové stanice ke druhé (nebo změna kanálu)." },
-{ "id": 4, "q": "Duplex označovaný jako TDD je využíván v systému:", "opts": ["DECT", "Paging", "GSM", "WiFi"], "ans": [0], "pts": 1.0, "hint": "Time Division Duplex.", "rationale": "Systém DECT využívá časový duplex (TDD), kde vysílání i příjem probíhá na stejné frekvenci v různých časech." },
-{ "id": 5, "q": "Pro úzkopásmové radiokomunikační systémy platí:", "opts": ["S/N < 1", "S/N > 1", "S/N = B"], "ans": [1], "pts": 1.0, "hint": "Odstup signálu od šumu.", "rationale": "U úzkopásmových systémů musí být výkon signálu vyšší než výkon šumu pro úspěšnou detekci." },
-{ "id": 6, "q": "Blokové prokládání dosahuje vůči konvolučnímu prokládání:", "opts": ["vyšší účinnosti", "nižší účinnosti", "srovnatelné účinnosti"], "ans": [1], "pts": 1.0, "hint": "Srovnání typů interleavingu.", "rationale": "Konvoluční prokládání je obecně efektivnější z hlediska paměťové náročnosti a zpoždění." },
-{ "id": 7, "q": "Zmenšení přenosové rychlosti:", "opts": ["znamená zvětšení odolnosti zdrojového kódování vůči chybám při přenosu", "nemá na odolnost zdrojového kódování vůči chybám při přenosu vliv", "znamená zmenšení odolnosti zdrojového kódování vůči chybám při přenosu"], "ans": [0], "pts": 1.0, "hint": "Vztah rychlosti a robustnosti.", "rationale": "Nižší přenosová rychlost (při stejném výkonu) zvyšuje energii na bit a tím i odolnost." },
-{ "id": 8, "q": "V případě, že se pozorovatel pohybuje vzhledem ke klidnému zdroji v klidném prostředí platí:", "opts": ["Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.", "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.", "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.", "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění."], "ans": [3], "pts": 1.0, "hint": "Dopplerův jev - pozorovatel v pohybu.", "rationale": "Při pohybu pozorovatele zůstává vlnová délka v prostředí stejná, ale mění se rychlost nárazu vln na pozorovatele (fázová rychlost) a frekvence." },
-{ "id": 9, "q": "Při překrývání buněk (umístění menší buňky do oblasti větší buňky) dochází:", "opts": ["ke zvýšení počtu účastníků v dané oblasti", "ke zvýšení rušení signálů v dané oblasti", "ke zmenšení přenosové kapacity v dané oblasti", "ke zvýšení přenosové kapacity v dané oblasti"], "ans": [3], "pts": 1.0, "hint": "Hierarchické struktury buněk.", "rationale": "Přidáním mikrobuněk do makrobuněk se zvyšuje celková kapacita sítě v dané lokalitě." },
-{ "id": 10, "q": "V případě, že se zdroj vlnění pohybuje vzhledem ke klidnému pozorovateli v klidném prostředí platí:", "opts": ["Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.", "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.", "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.", "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost."], "ans": [1], "pts": 1.0, "hint": "Dopplerův jev - zdroj v pohybu.", "rationale": "Pohybující se zdroj 'stlačuje' nebo 'natahuje' vlnovou délku v prostředí, fázová rychlost v prostředí je konstantní." },
-{ "id": 11, "q": "Tzv. měkký handover je použit u systému:", "opts": ["DECT", "UMTS", "WiFi", "GSM"], "ans": [1], "pts": 1.0, "hint": "Soft Handover (Make-before-break).", "rationale": "Systém UMTS (3G) využívá soft handover, kdy je stanice spojena s více základnami najednou." },
-{ "id": 12, "q": "Všechny rušivé vlivy, jenž ovlivňují parametry daného rádiového kanálu je možno kompenzovat:", "opts": ["diverzitou", "ekvalizací", "Dopplerovým principem"], "ans": [1], "pts": 1.0, "hint": "Úprava signálu v přijímači.", "rationale": "Ekvalizér v přijímači se snaží eliminovat zkreslení a interference způsobené kanálem." },
-{ "id": 13, "q": "Redundanci v hovorovém signálu představují:", "opts": ["všechny hodnoty signálu mimo vzorky signálu vzniklých v důsledku vzorkování signálu", "signály mimo pásmo 300 – 3400 Hz", "časové prodlevy bez hovoru"], "ans": [0], "pts": 1.0, "hint": "Vzorkovací teorém.", "rationale": "Spojitý signál obsahuje nekonečně mnoho hodnot; po navzorkování jsou ostatní hodnoty z hlediska digitálního přenosu redundantní." },
-{ "id": 14, "q": "Veřejné analogové celulární radiotelefonní systémy I. Generace využívaly:", "opts": ["kombinace AM/FM", "amplitudové modulace AM", "kmitočtové modulace FM"], "ans": [2], "pts": 1.0, "hint": "NMT, AMPS apod.", "rationale": "První generace mobilních sítí (např. NMT) využívala pro přenos hlasu analogovou FM modulaci." },
-{ "id": 15, "q": "Korekční kódy označujeme jako:", "opts": ["systémy bez zpětného kanálu", "komunikační systémy hybridní", "systémy se zpětným kanálem"], "ans": [0], "pts": 1.0, "hint": "FEC (Forward Error Correction).", "rationale": "Korekční kódy (FEC) umožňují opravu chyb přímo v přijímači bez nutnosti žádat o opakování přes zpětný kanál." },
-{ "id": 16, "q": "Pro vyjádření velikosti energie přenášené elektromagnetickou vlnou se používá:", "opts": ["hustota zářivého toku S", "magnetická indukce B", "intenzita elektromagnetického pole E"], "ans": [0], "pts": 1.0, "hint": "Poyntingův vektor.", "rationale": "Plošná hustota výkonu (zářivého toku) S udává energii protékající jednotkovou plochou." },
-{ "id": 17, "q": "Vokodéry dosahují vůči kodérům tvarového průběhu:", "opts": ["srovnatelné redukce bitové rychlosti", "poměrně vysoké redukce bitové rychlosti", "poměrně malé redukce bitové rychlosti"], "ans": [1], "pts": 1.0, "hint": "Voice Coder.", "rationale": "Vokodéry nepřenášejí tvar vlny, ale parametry hlasového modelu, čímž výrazně šetří datový tok." },
-{ "id": 18, "q": "Modulace PAM patří mezi:", "opts": ["analogové modulace", "diskrétní modulace s nosnými vlnami", "diskrétní modulace v základním pásmu"], "ans": [2], "pts": 1.0, "hint": "Pulse Amplitude Modulation.", "rationale": "PAM je pulsní modulace, kde se mění amplituda pulsů v základním pásmu." },
-{ "id": 19, "q": "Hloubka prokládání vyjadřuje:", "opts": ["velikost paměťové matice", "počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby", "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé"], "ans": [2], "pts": 1.0, "hint": "Interleaving depth.", "rationale": "Definuje schopnost systému rozptýlit shlukovou chybu na samostatné chyby, které kód umí opravit." },
-{ "id": 20, "q": "Střední vlny MF jsou definovány v rozmezí:", "opts": ["300-3000 kHz", "30-300 MHz", "3-30 kHz", "3-30 MHz"], "ans": [0], "pts": 1.0, "hint": "Medium Frequency.", "rationale": "Pásmo MF (Medium Frequency) pokrývá frekvence 300 až 3000 kHz." },
-{ "id": 21, "q": "Změnu kmitočtu vyvolanou vzájemným přibližováním nebo oddalováním zdroje vlnění a pozorovatele popisuje:", "opts": ["diverzita", "ekvalizace", "Dopplerův jev"], "ans": [2], "pts": 1.0, "hint": "Efekt relativního pohybu.", "rationale": "Dopplerův jev je fyzikální princip změny frekvence při relativním pohybu zdroje a pozorovatele." },
-{ "id": 22, "q": "V systému GSM se používá:", "opts": ["handover řízený mobilní stanicí", "sítí řízený handover s asistencí mobilní stanice", "sítí řízený handover"], "ans": [1], "pts": 1.0, "hint": "MAHO (Mobile Assisted Handover).", "rationale": "V GSM mobilní stanice měří okolní buňky a posílá výsledky síti, která rozhodne o handoveru." },
-{ "id": 23, "q": "Detekční kódy patří mezi:", "opts": ["obyčejné kódy", "zabezpečovací kódy", "blokové konvoluční kódy"], "ans": [1], "pts": 1.0, "hint": "Účel kódování.", "rationale": "Detekční kódy slouží k zabezpečení přenosu odhalením chyb." },
-{ "id": 24, "q": "Tzv. Bezešvý handover je použit u systému:", "opts": ["UMTS", "WiFi", "DECT", "GSM"], "ans": [2], "pts": 1.0, "hint": "Seamless handover.", "rationale": "DECT je navržen tak, aby přepnutí kanálu bylo pro uživatele zcela nepostřehnutelné." },
-{ "id": 25, "q": "Modulace PCM patří mezi:", "opts": ["diskrétní kódové modulace s nosnými vlnami", "diskrétní modulace s nosnými vlnami", "diskrétní modulace v základním pásmu"], "ans": [2], "pts": 1.0, "hint": "Pulse Code Modulation.", "rationale": "PCM je základní způsob digitalizace signálu v základním pásmu." },
-{ "id": 26, "q": "Pro systémy s rozprostřeným spektrem platí:", "opts": ["S/N < 1", "S/M > 1", "S/N = B"], "ans": [0], "pts": 1.0, "hint": "Spread Spectrum (CDMA).", "rationale": "Systémy s rozprostřeným spektrem mohou pracovat i 'pod úrovní šumu' díky zisku rozprostřením." },
-{ "id": 27, "q": "V systému DECT se používá:", "opts": ["sítí řízený handover", "handover řízený mobilní stanicí", "sítí řízený handover s asistencí mobilní stanice"], "ans": [1], "pts": 1.0, "hint": "MCHO (Mobile Controlled Handover).", "rationale": "V DECTu o handoveru rozhoduje přímo mobilní stanice." },
-{ "id": 28, "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velké buňky je nutno použít:", "opts": ["jednoduché kodéry s vysokými přenosovými rychlostmi", "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi", "kodéry s minimálními přenosovými rychlostmi"], "ans": [1], "pts": 1.0, "hint": "Vliv dosahu na kódování.", "rationale": "Ve velkých buňkách je vyšší chybovost, proto se volí robustnější kanálové kódování na úkor rychlosti zdroje." },
-{ "id": 29, "q": "Účinnost zdrojového kódování:", "opts": ["roste s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru", "klesá s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru", "roste s poklesem přen. rychlost dig. signálu na vstupu kodéru vůči přen. rychlost dig. signálu na výstupu kodéru"], "ans": [0], "pts": 1.0, "hint": "Kompresní poměr.", "rationale": "Čím méně bitů je potřeba na výstupu k popisu stejné informace na vstupu, tím je kódování účinnější." },
-{ "id": 30, "q": "Při sektorizaci buněk dochází:", "opts": ["k rozdělení dané oblasti mezi jednotlivé mobilní operátory.", "ke zmenšení přenosové kapacity v dané oblasti.", "ke zvýšení počtů účastníků v dané oblasti.", "ke zvýšení rušení signálů v dané oblasti.", "ke zvýšení přenosové kapacity v dané oblasti."], "ans": [4], "pts": 1.0, "hint": "Směrové antény.", "rationale": "Rozdělení buňky na sektory umožňuje opakované využití frekvencí a zvyšuje celkovou kapacitu." },
-{ "id": 31, "q": "Ultra krátké vlny UHF jsou definovány v rozmezí:", "opts": ["3-30 GHz", "30-300 MHz", "300-3000 MHz"], "ans": [2], "pts": 1.0, "hint": "Ultra High Frequency.", "rationale": "Pásmo UHF pokrývá rozsah 300 až 3000 MHz." },
-{ "id": 32, "q": "Náchylnost rádiových vln na poruchy:", "opts": ["je přímo úměrná kmitočtu.", "je nepřímo úměrná kmitočtu.", "nemá s jejich kmitočtem žádnou souvislost."], "ans": [1], "pts": 1.0, "hint": "Frekvenční závislost rušení.", "rationale": "Nižší frekvence jsou obecně více náchylné na atmosférické a průmyslové rušení." },
-{ "id": 33, "q": "Mezi ochrany přenosu digitálních signálů před chybovostí vznikajících při přenosu patří:", "opts": ["majoritní paritní logika, interleaving a řetězové kódy", "opakované vysílání jednotlivých bitů, prokládání a multiplexování vstupních signálů", "opakované vysílání jednotlivých bitů, prokládání a řetězové kódy."], "ans": [2], "pts": 1.0, "hint": "Metody zabezpečení.", "rationale": "Standardní metody zahrnují časovou redundanci (opakování), prokládání (proti shlukům) a zřetězené kódy." },
-{ "id": 34, "q": "Tzv. Tvrdý handover je použit u systému:", "opts": ["WiFi", "DECT", "UMTS", "GSM"], "ans": [3], "pts": 1.0, "hint": "Hard Handover (Break-before-make).", "rationale": "GSM používá tvrdý handover, kdy se staré spojení přeruší těsně před navázáním nového." },
-{ "id": 35, "q": "Krátké vlny HF jsou definovány v rozmezí:", "opts": ["3-30 MHz", "300-3000 kHz", "30-300 MHz", "300-3000 MHz", "30-300 GHz"], "ans": [0], "pts": 1.0, "hint": "High Frequency.", "rationale": "Pásmo HF (High Frequency) je definováno jako 3 až 30 MHz." },
-{ "id": 36, "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velmi velké buňky je nutno použít:", "opts": ["jednoduché kodéry s vysokými přenosovými rychlostmi", "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi", "kodéry s minimálními přenosovými rychlostmi"], "ans": [2], "pts": 1.0, "hint": "Extrémní dosah.", "rationale": "U velmi velkých buněk je nutné minimalizovat datový tok zdroje, aby zbyl prostor pro extrémně robustní kanálové kódování." },
-{ "id": 37, "q": "Pojem „difrakce“ vlnění znamená:", "opts": ["skládání", "ohyb", "lom"], "ans": [1], "pts": 1.0, "hint": "Šíření za překážku.", "rationale": "Difrakce je ohyb vlnění na hranách překážek." },
-{ "id": 38, "q": "Únik signálu (fading) znamená:", "opts": ["kolísání úrovně signálu v místě příjmu.", "ztráta signálu v místě příjmu.", "úmyslné (kontrolované) snížení úrovně signálu v místě příjmu."], "ans": [0], "pts": 1.0, "hint": "Rychlý a pomalý únik.", "rationale": "Fading je jev, kdy úroveň přijímaného signálu v čase kolísá kvůli vícecestnému šíření nebo stínění." },
-{ "id": 39, "q": "Které z následujících tvrzení je správné?", "opts": ["Vlnová délka je přímo úměrná kmitočtu.", "Vlnová délka je nepřímo úměrná kmitočtu.", "Mezi vlnovou délkou a kmitočtem není žádná souvislost."], "ans": [1], "pts": 1.0, "hint": "lambda = c / f.", "rationale": "Vlnová délka klesá s rostoucí frekvencí, jde tedy o nepřímou úměru." },
-{ "id": 40, "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:", "opts": ["je přímo úměrná velikosti svazu buněk.", "se se změnou velikosti svazu buněk nemění.", "je nepřímo úměrná velikosti svazu buněk."], "ans": [0], "pts": 1.0, "hint": "Reuse distance.", "rationale": "Větší svaz (cluster) znamená, že se stejná frekvence opakuje v delší vzdálenosti, což snižuje rušení." }
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Rámec vnějšího kódu vyjadřuje:",
+    "opts": [
+      "počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby",
+      "velikost paměťové matice",
+      "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Vnější kód u zřetězených kódů.",
+    "rationale": "Rámec vnějšího kódu v kontextu prokládání a zřetězených kódů definuje periodu opakování chyb.",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Velmi krátké vlny VHF jsou definovány v rozmezí:",
+    "opts": [
+      "300-3000 MHz",
+      "30-300 MHz",
+      "3-30 GHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Very High Frequency.",
+    "rationale": "Pásmo VHF (Very High Frequency) náleží frekvencím 30 až 300 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Při handoveru dochází:",
+    "opts": [
+      "k přepnutí spojení mezi MS a BTS během komunikace zachováním rádiového kanálu",
+      "k přepnutí spojení mezi MS a BTS během komunikace z jednoho rádiového kanálu na jiný",
+      "k přepnutí spojení mezi MS a BTS během komunikace na jiného účastníka",
+      "se používá pouze v XHTML"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Předání hovoru mezi buňkami.",
+    "rationale": "Handover je proces předání mobilní stanice od jedné základnové stanice ke druhé (nebo změna kanálu).",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Duplex označovaný jako TDD je využíván v systému:",
+    "opts": [
+      "DECT",
+      "Paging",
+      "GSM",
+      "WiFi"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Time Division Duplex.",
+    "rationale": "Systém DECT využívá časový duplex (TDD), kde vysílání i příjem probíhá na stejné frekvenci v různých časech.",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Pro úzkopásmové radiokomunikační systémy platí:",
+    "opts": [
+      "S/N < 1",
+      "S/N > 1",
+      "S/N = B"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Odstup signálu od šumu.",
+    "rationale": "U úzkopásmových systémů musí být výkon signálu vyšší než výkon šumu pro úspěšnou detekci.",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Blokové prokládání dosahuje vůči konvolučnímu prokládání:",
+    "opts": [
+      "vyšší účinnosti",
+      "nižší účinnosti",
+      "srovnatelné účinnosti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Srovnání typů interleavingu.",
+    "rationale": "Konvoluční prokládání je obecně efektivnější z hlediska paměťové náročnosti a zpoždění.",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Zmenšení přenosové rychlosti:",
+    "opts": [
+      "znamená zvětšení odolnosti zdrojového kódování vůči chybám při přenosu",
+      "nemá na odolnost zdrojového kódování vůči chybám při přenosu vliv",
+      "znamená zmenšení odolnosti zdrojového kódování vůči chybám při přenosu"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Vztah rychlosti a robustnosti.",
+    "rationale": "Nižší přenosová rychlost (při stejném výkonu) zvyšuje energii na bit a tím i odolnost.",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "V případě, že se pozorovatel pohybuje vzhledem ke klidnému zdroji v klidném prostředí platí:",
+    "opts": [
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.",
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
+      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění."
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "Dopplerův jev - pozorovatel v pohybu.",
+    "rationale": "Při pohybu pozorovatele zůstává vlnová délka v prostředí stejná, ale mění se rychlost nárazu vln na pozorovatele (fázová rychlost) a frekvence.",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Při překrývání buněk (umístění menší buňky do oblasti větší buňky) dochází:",
+    "opts": [
+      "ke zvýšení počtu účastníků v dané oblasti",
+      "ke zvýšení rušení signálů v dané oblasti",
+      "ke zmenšení přenosové kapacity v dané oblasti",
+      "ke zvýšení přenosové kapacity v dané oblasti"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "Hierarchické struktury buněk.",
+    "rationale": "Přidáním mikrobuněk do makrobuněk se zvyšuje celková kapacita sítě v dané lokalitě.",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "V případě, že se zdroj vlnění pohybuje vzhledem ke klidnému pozorovateli v klidném prostředí platí:",
+    "opts": [
+      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.",
+      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Dopplerův jev - zdroj v pohybu.",
+    "rationale": "Pohybující se zdroj 'stlačuje' nebo 'natahuje' vlnovou délku v prostředí, fázová rychlost v prostředí je konstantní.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Tzv. měkký handover je použit u systému:",
+    "opts": [
+      "DECT",
+      "UMTS",
+      "WiFi",
+      "GSM"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Soft Handover (Make-before-break).",
+    "rationale": "Systém UMTS (3G) využívá soft handover, kdy je stanice spojena s více základnami najednou.",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Všechny rušivé vlivy, jenž ovlivňují parametry daného rádiového kanálu je možno kompenzovat:",
+    "opts": [
+      "diverzitou",
+      "ekvalizací",
+      "Dopplerovým principem"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Úprava signálu v přijímači.",
+    "rationale": "Ekvalizér v přijímači se snaží eliminovat zkreslení a interference způsobené kanálem.",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Redundanci v hovorovém signálu představují:",
+    "opts": [
+      "všechny hodnoty signálu mimo vzorky signálu vzniklých v důsledku vzorkování signálu",
+      "signály mimo pásmo 300 – 3400 Hz",
+      "časové prodlevy bez hovoru"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Vzorkovací teorém.",
+    "rationale": "Spojitý signál obsahuje nekonečně mnoho hodnot; po navzorkování jsou ostatní hodnoty z hlediska digitálního přenosu redundantní.",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Veřejné analogové celulární radiotelefonní systémy I. Generace využívaly:",
+    "opts": [
+      "kombinace AM/FM",
+      "amplitudové modulace AM",
+      "kmitočtové modulace FM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "NMT, AMPS apod.",
+    "rationale": "První generace mobilních sítí (např. NMT) využívala pro přenos hlasu analogovou FM modulaci.",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Korekční kódy označujeme jako:",
+    "opts": [
+      "systémy bez zpětného kanálu",
+      "komunikační systémy hybridní",
+      "systémy se zpětným kanálem"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "FEC (Forward Error Correction).",
+    "rationale": "Korekční kódy (FEC) umožňují opravu chyb přímo v přijímači bez nutnosti žádat o opakování přes zpětný kanál.",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Pro vyjádření velikosti energie přenášené elektromagnetickou vlnou se používá:",
+    "opts": [
+      "hustota zářivého toku S",
+      "magnetická indukce B",
+      "intenzita elektromagnetického pole E"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Poyntingův vektor.",
+    "rationale": "Plošná hustota výkonu (zářivého toku) S udává energii protékající jednotkovou plochou.",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Vokodéry dosahují vůči kodérům tvarového průběhu:",
+    "opts": [
+      "srovnatelné redukce bitové rychlosti",
+      "poměrně vysoké redukce bitové rychlosti",
+      "poměrně malé redukce bitové rychlosti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Voice Coder.",
+    "rationale": "Vokodéry nepřenášejí tvar vlny, ale parametry hlasového modelu, čímž výrazně šetří datový tok.",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Modulace PAM patří mezi:",
+    "opts": [
+      "analogové modulace",
+      "diskrétní modulace s nosnými vlnami",
+      "diskrétní modulace v základním pásmu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Pulse Amplitude Modulation.",
+    "rationale": "PAM je pulsní modulace, kde se mění amplituda pulsů v základním pásmu.",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Hloubka prokládání vyjadřuje:",
+    "opts": [
+      "velikost paměťové matice",
+      "počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby",
+      "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Interleaving depth.",
+    "rationale": "Definuje schopnost systému rozptýlit shlukovou chybu na samostatné chyby, které kód umí opravit.",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Střední vlny MF jsou definovány v rozmezí:",
+    "opts": [
+      "300-3000 kHz",
+      "30-300 MHz",
+      "3-30 kHz",
+      "3-30 MHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Medium Frequency.",
+    "rationale": "Pásmo MF (Medium Frequency) pokrývá frekvence 300 až 3000 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Změnu kmitočtu vyvolanou vzájemným přibližováním nebo oddalováním zdroje vlnění a pozorovatele popisuje:",
+    "opts": [
+      "diverzita",
+      "ekvalizace",
+      "Dopplerův jev"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Efekt relativního pohybu.",
+    "rationale": "Dopplerův jev je fyzikální princip změny frekvence při relativním pohybu zdroje a pozorovatele.",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "V systému GSM se používá:",
+    "opts": [
+      "handover řízený mobilní stanicí",
+      "sítí řízený handover s asistencí mobilní stanice",
+      "sítí řízený handover"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "MAHO (Mobile Assisted Handover).",
+    "rationale": "V GSM mobilní stanice měří okolní buňky a posílá výsledky síti, která rozhodne o handoveru.",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Detekční kódy patří mezi:",
+    "opts": [
+      "obyčejné kódy",
+      "zabezpečovací kódy",
+      "blokové konvoluční kódy"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Účel kódování.",
+    "rationale": "Detekční kódy slouží k zabezpečení přenosu odhalením chyb.",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Tzv. Bezešvý handover je použit u systému:",
+    "opts": [
+      "UMTS",
+      "WiFi",
+      "DECT",
+      "GSM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Seamless handover.",
+    "rationale": "DECT je navržen tak, aby přepnutí kanálu bylo pro uživatele zcela nepostřehnutelné.",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Modulace PCM patří mezi:",
+    "opts": [
+      "diskrétní kódové modulace s nosnými vlnami",
+      "diskrétní modulace s nosnými vlnami",
+      "diskrétní modulace v základním pásmu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Pulse Code Modulation.",
+    "rationale": "PCM je základní způsob digitalizace signálu v základním pásmu.",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Pro systémy s rozprostřeným spektrem platí:",
+    "opts": [
+      "S/N < 1",
+      "S/M > 1",
+      "S/N = B"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Spread Spectrum (CDMA).",
+    "rationale": "Systémy s rozprostřeným spektrem mohou pracovat i 'pod úrovní šumu' díky zisku rozprostřením.",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "V systému DECT se používá:",
+    "opts": [
+      "sítí řízený handover",
+      "handover řízený mobilní stanicí",
+      "sítí řízený handover s asistencí mobilní stanice"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "MCHO (Mobile Controlled Handover).",
+    "rationale": "V DECTu o handoveru rozhoduje přímo mobilní stanice.",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velké buňky je nutno použít:",
+    "opts": [
+      "jednoduché kodéry s vysokými přenosovými rychlostmi",
+      "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi",
+      "kodéry s minimálními přenosovými rychlostmi"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vliv dosahu na kódování.",
+    "rationale": "Ve velkých buňkách je vyšší chybovost, proto se volí robustnější kanálové kódování na úkor rychlosti zdroje.",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Účinnost zdrojového kódování:",
+    "opts": [
+      "roste s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru",
+      "klesá s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru",
+      "roste s poklesem přen. rychlost dig. signálu na vstupu kodéru vůči přen. rychlost dig. signálu na výstupu kodéru"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Kompresní poměr.",
+    "rationale": "Čím méně bitů je potřeba na výstupu k popisu stejné informace na vstupu, tím je kódování účinnější.",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Při sektorizaci buněk dochází:",
+    "opts": [
+      "k rozdělení dané oblasti mezi jednotlivé mobilní operátory.",
+      "ke zmenšení přenosové kapacity v dané oblasti.",
+      "ke zvýšení počtů účastníků v dané oblasti.",
+      "ke zvýšení rušení signálů v dané oblasti.",
+      "ke zvýšení přenosové kapacity v dané oblasti."
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "Směrové antény.",
+    "rationale": "Rozdělení buňky na sektory umožňuje opakované využití frekvencí a zvyšuje celkovou kapacitu.",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Ultra krátké vlny UHF jsou definovány v rozmezí:",
+    "opts": [
+      "3-30 GHz",
+      "30-300 MHz",
+      "300-3000 MHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Ultra High Frequency.",
+    "rationale": "Pásmo UHF pokrývá rozsah 300 až 3000 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Náchylnost rádiových vln na poruchy:",
+    "opts": [
+      "je přímo úměrná kmitočtu.",
+      "je nepřímo úměrná kmitočtu.",
+      "nemá s jejich kmitočtem žádnou souvislost."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Frekvenční závislost rušení.",
+    "rationale": "Nižší frekvence jsou obecně více náchylné na atmosférické a průmyslové rušení.",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Mezi ochrany přenosu digitálních signálů před chybovostí vznikajících při přenosu patří:",
+    "opts": [
+      "majoritní paritní logika, interleaving a řetězové kódy",
+      "opakované vysílání jednotlivých bitů, prokládání a multiplexování vstupních signálů",
+      "opakované vysílání jednotlivých bitů, prokládání a řetězové kódy."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Metody zabezpečení.",
+    "rationale": "Standardní metody zahrnují časovou redundanci (opakování), prokládání (proti shlukům) a zřetězené kódy.",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Tzv. Tvrdý handover je použit u systému:",
+    "opts": [
+      "WiFi",
+      "DECT",
+      "UMTS",
+      "GSM"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "Hard Handover (Break-before-make).",
+    "rationale": "GSM používá tvrdý handover, kdy se staré spojení přeruší těsně před navázáním nového.",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Krátké vlny HF jsou definovány v rozmezí:",
+    "opts": [
+      "3-30 MHz",
+      "300-3000 kHz",
+      "30-300 MHz",
+      "300-3000 MHz",
+      "30-300 GHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "High Frequency.",
+    "rationale": "Pásmo HF (High Frequency) je definováno jako 3 až 30 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velmi velké buňky je nutno použít:",
+    "opts": [
+      "jednoduché kodéry s vysokými přenosovými rychlostmi",
+      "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi",
+      "kodéry s minimálními přenosovými rychlostmi"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Extrémní dosah.",
+    "rationale": "U velmi velkých buněk je nutné minimalizovat datový tok zdroje, aby zbyl prostor pro extrémně robustní kanálové kódování.",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Pojem „difrakce“ vlnění znamená:",
+    "opts": [
+      "skládání",
+      "ohyb",
+      "lom"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Šíření za překážku.",
+    "rationale": "Difrakce je ohyb vlnění na hranách překážek.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Únik signálu (fading) znamená:",
+    "opts": [
+      "kolísání úrovně signálu v místě příjmu.",
+      "ztráta signálu v místě příjmu.",
+      "úmyslné (kontrolované) snížení úrovně signálu v místě příjmu."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Rychlý a pomalý únik.",
+    "rationale": "Fading je jev, kdy úroveň přijímaného signálu v čase kolísá kvůli vícecestnému šíření nebo stínění.",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Které z následujících tvrzení je správné?",
+    "opts": [
+      "Vlnová délka je přímo úměrná kmitočtu.",
+      "Vlnová délka je nepřímo úměrná kmitočtu.",
+      "Mezi vlnovou délkou a kmitočtem není žádná souvislost."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "lambda = c / f.",
+    "rationale": "Vlnová délka klesá s rostoucí frekvencí, jde tedy o nepřímou úměru.",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:",
+    "opts": [
+      "je přímo úměrná velikosti svazu buněk.",
+      "se se změnou velikosti svazu buněk nemění.",
+      "je nepřímo úměrná velikosti svazu buněk."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Reuse distance.",
+    "rationale": "Větší svaz (cluster) znamená, že se stejná frekvence opakuje v delší vzdálenosti, což snižuje rušení.",
+    "proc": ""
+  }
 ]
