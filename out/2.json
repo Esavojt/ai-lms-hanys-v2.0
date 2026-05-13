@@ -1,0 +1,718 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Transformační metody zdrojového kódování:",
+    "opts": [
+      "realizují kódovací algoritmy v kmitočtové i časové oblasti",
+      "realizují kódovací algoritmy v kmitočtové oblasti",
+      "realizují kódovací algoritmy v časové oblasti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Transformační metody (např. DCT) pracují s frekvenčním spektrem signálu.",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Dlouhé vlny LF jsou definovány v rozmezí:",
+    "opts": [
+      "300-3000 kHz",
+      "30-300 GHz",
+      "30-300 kHz",
+      "3-30 MHz",
+      "3-30 kHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "LF (Low Frequency) odpovídá pásmu 30 až 300 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Pojem kódová modulace znamená:",
+    "opts": [
+      "spojení kanálového kódování a vlastní modulace do jediného procesu",
+      "spojení zdrojového kódování a vlastní modulace do jediného procesu",
+      "označení pro modulaci PAM"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Kódová modulace (TCM) integruje ochranu proti chybám a modulaci pro vyšší efektivitu.",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Pojem „refrakce“ vlnění znamená:",
+    "opts": [
+      "ohyb",
+      "lom",
+      "skládání"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Refrakce je fyzikální termín pro lom vlnění při přechodu mezi prostředími.",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Které z následujících tvrzení je správné?",
+    "opts": [
+      "Přenosová kapacita rádiového komunikačního systému je nepřímo úměrná šířce pásma daného kanálu.",
+      "Přenosová kapacita rádiového komunikačního systému je přímo úměrná šířce pásma daného kanálu.",
+      "Mezi přenosovou kapacitou a šířkou pásma není žádná souvislost."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Dle Shannon-Hartleyho teorému kapacita roste lineárně se šířkou pásma.",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Každé zmenšení poloměru buňky o 50% vede ke:",
+    "opts": [
+      "zmenšení přenosové kapacity v dané oblasti na polovinu.",
+      "čtyřnásobnému zvětšení přenosové kapacity v dané oblasti.",
+      "zmenšení přenosové kapacity v dané oblasti na čtvrtinu.",
+      "dvojnásobnému zvětšení přenosové kapacity v dané oblasti."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Při zmenšení poloměru na polovinu se do původní plochy vejdou 4 buňky, což čtyřnásobí kapacitu.",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "V analogových radiokomunikačních systémech se nejčastěji používá:",
+    "opts": [
+      "sítí řízený handover.",
+      "sítí řízený handover s asistenci mobilní stanice.",
+      "handover řízený mobilní stanicí."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "U první generace (analogové) rozhodovala o předání výhradně pevná síť.",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Omezení vlivu pomalých úniků se uskutečňuje následovně:",
+    "opts": [
+      "komunikace probíhá na více rádiových kanálech současně.",
+      "mobilní stanice zvýší svůj vysílací výkon.",
+      "mobilní stanice si vybere základnovou stanici s nejlepším spojením."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Pomalé úniky se řeší výběrem vhodnější cesty/buňky (makrodiverzita).",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Irelevanci v hovorovém signálu představují:",
+    "opts": [
+      "signály mimo pásmo 300 – 3400 Hz",
+      "časové prodlevy bez hovoru",
+      "všechny hodnoty signálu mimo vzorky signálu vzniklých v důsledku vzorkování signálu"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Irelevance jsou složky, které lidské ucho nevnímá (frekvence mimo hovorové pásmo).",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Základní parametr kanálového kodéru je:",
+    "opts": [
+      "kódový zisk",
+      "kompresní poměr",
+      "bitová chybovost"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Kódový zisk vyjadřuje zlepšení energetické účinnosti díky kódování.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Pro systémy CDMA platí:",
+    "opts": [
+      "S/N > 1",
+      "S/N = B",
+      "S/N < 1"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "CDMA díky zisku rozprostřením dokáže pracovat i v signálu pod úrovní šumu.",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Detekční kódy označujeme jako:",
+    "opts": [
+      "systémy bez zpětného kanálu",
+      "systémy se zpětným kanálem",
+      "komunikační systémy hybridní"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Detekční kód chybu jen najde a pak přes zpětný kanál žádá o nové vyslání (ARQ).",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Velmi dlouhé vlny VLF jsou definovány v rozmezí:",
+    "opts": [
+      "300-3000 GHz",
+      "300-3000 kHz",
+      "3-30 GHz",
+      "3-30 kHz"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "VLF (Very Low Frequency) odpovídá frekvencím 3 až 30 kHz.",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Rádiové záření je v rámci elektromagnetického spektra záření definováno jako záření:",
+    "opts": [
+      "pod 300MHz",
+      "pod 3 GHz",
+      "pod 300 GHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Rádiové vlny končí u hranice 300 GHz, kde začíná infračervené záření.",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:",
+    "opts": [
+      "je závislá na poloměru buňky a velikosti svazu buněk.",
+      "je závislá jen na velikosti svazu buněk.",
+      "je závislá na počtu kanálů přidělených dané buňce.",
+      "je závislá jen na poloměru buňky."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Vzdálenost D závisí na poloměru R a počtu buněk ve svazu K (D = R * sqrt(3K)).",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Zřetězené kódování znamená:",
+    "opts": [
+      "využití vícenásobné úrovně zdrojového kódování a prokládání",
+      "využití vícenásobné úrovně zdrojového a kanálového kódování",
+      "využití vícenásobné úrovně kanálového kódování a prokládání"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Zřetězené kódování kombinuje vnější a vnitřní kód oddělené prokladačem.",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Kolísání úrovně signálu v místě příjmu je možno kompenzovat:",
+    "opts": [
+      "ekvivalencí.",
+      "diverzitou.",
+      "Dopplerovým principem."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Diverzita (příjem na více antén/frekvencí) potlačuje vliv úniků.",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Pro širokopásmové radiokomunikační systémy platí:",
+    "opts": [
+      "S/N > 1",
+      "S/N = B",
+      "S/N < 1"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Širokopásmové systémy (např. UMTS) pracují s nízkým poměrem signálu k šumu.",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Konvoluční prokládání dosahuje vůči blokovému prokládání:",
+    "opts": [
+      "srovnatelné účinnosti",
+      "nižší účinnosti",
+      "vyšší účinnosti"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Konvoluční prokládání je paměťově efektivnější a lépe rozprostírá chyby.",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Mobilní systémy GSM využívají pásmo:",
+    "opts": [
+      "ultrakrátkých vln UHF",
+      "centimetrových vln SHF",
+      "velmi krátkých vln VHF"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "GSM (900/1800 MHz) spadá do oblasti UHF.",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Pojem „interference“ znamená:",
+    "opts": [
+      "lom",
+      "ohyb",
+      "skládání"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Interference je vzájemné ovlivňování a skládání vln.",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Analogový radiokomunikační systém NSM využíval metodu:",
+    "opts": [
+      "CDMA",
+      "FDMA",
+      "TDMA",
+      "TDMA/CDMA",
+      "FDMA/CDMA",
+      "FDMA/TDMA"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Analogové sítě využívaly výhradně kmitočtové dělení kanálů.",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Která z následujících možností charakterizuje ionosféru?",
+    "opts": [
+      "Vrstva atmosféry ve výšce 10-12 km...",
+      "Vrstva atmosféry ve výšce 50-500 km...",
+      "Vrstva ve výšce 50-500 km, ve které probíhá značné množství meteorologických jevů...",
+      "Vrstva ve výšce 10-12 km..."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Ionosféra začíná cca od 50 km a je zásadní pro odraz rádiových vln.",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Digitální modulace jsou:",
+    "opts": [
+      "modulace s nosnými vlnami",
+      "diskrétní kódované modulace v základním pásmu",
+      "diskrétní nekódované modulace v základním pásmu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Základní digitální modulace v základním pásmu (lineární kódy) se považují za nekódované.",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Rádiové vlny rozdělujeme do tří základních skupin a to na:",
+    "opts": [
+      "ionosférické, troposférické a prostorové",
+      "ionosférické, troposférické a povrchové",
+      "ionosférické, troposférické a přízemní",
+      "ionosférické, troposférické a přímé"
+    ],
+    "ans": [
+      2,
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Zde jsou správné odpovědi C i D (podle zdroje).",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Analogový radiokomunikační systém NMT využíval metodu:",
+    "opts": [
+      "FDMA",
+      "TDMA",
+      "FDMA/CDMA",
+      "FDMA/TDMA",
+      "TDMA/CDMA",
+      "CDMA"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "NMT (Nordic Mobile Telephone) byla FDMA síť.",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "Při kanálovém kódování dochází:",
+    "opts": [
+      "k odstranění redundance signálu",
+      "k navýšení redundance signálu",
+      "k odstranění irelevance signálu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Zabezpečení se provádí přidáním kontrolních (redundantních) bitů.",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Omezení vlivu rychlých úniků se uskutečňuje následovně:",
+    "opts": [
+      "mobilní stanice zvýší svůj vysílací výkon.",
+      "komunikace probíhá na více rádiových kanálech současně.",
+      "mobilní stanice si vybere základnovou stanici s nejlepším spojením."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Rychlé úniky se potlačují kmitočtovou diverzitou nebo skákáním (hopping).",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Kodéry tvarového průběhu dosahují vůči vokodérům:",
+    "opts": [
+      "poměrně malé redukce bitové rychlosti",
+      "poměrně vysoké redukce bitové rychlosti",
+      "srovnatelné redukce bitové rychlosti"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Tvarové kodéry (např. PCM) generují vysoký datový tok.",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Při kanálovém kódování dochází:",
+    "opts": [
+      "ke kompresi signálu",
+      "zabezpečení signálu proti chybám vznikajícím při přenosu v komunikačním kanálu.",
+      "ke snížení přenosového pásma kanálu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Toto je primární účel kanálového kódování.",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Prediktivní metody zdrojového kódování:",
+    "opts": [
+      "realizují kódovací algoritmy v kmitočtové i časové oblasti",
+      "realizují kódovací algoritmy v kmitočtové oblasti",
+      "realizují kódovací algoritmy v časové oblasti"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Predikce (odhad dalšího vzorku) probíhá přímo v časové ose.",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Korekční kódy patří mezi:",
+    "opts": [
+      "blokové konvoluční kódy.",
+      "zabezpečovací kódy",
+      "obyčejné kódy"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Korekční kód je podskupinou zabezpečovacích kódů.",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Tzv. tréninková sekvence bitů obsažená v normálním burstu je využívána pro:",
+    "opts": [
+      "diverzitu",
+      "ekvalizaci",
+      "interleaving",
+      "Dopplerův jev",
+      "šifrování",
+      "autentizaci"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Dle tréninkové sekvence se ekvalizér učí vlastnosti kanálu.",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Systém DECT pracuje v pásmu:",
+    "opts": [
+      "SHF",
+      "VHF",
+      "UHF",
+      "MF",
+      "HF"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "DECT pracuje na 1,9 GHz, což je UHF.",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Který z uvedených prvků sítě GSM nepatří do subsystému BSS?",
+    "opts": [
+      "TRAU",
+      "jiná odpověď",
+      "BTS",
+      "BSC",
+      "MSC"
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "MSC patří do síťového subsystému (NSS), nikoliv do radiového (BSS).",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "GPRS zařízení třídy C:",
+    "opts": [
+      "jen hovor nebo data bez přecházení",
+      "jen hovor nebo data s přecházením",
+      "umožňující ovládat pouze služby na základě přepojování paketů.",
+      "současně okruhy i pakety",
+      "pouze okruhy"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Třída C je vyhrazena pouze pro datové přenosy.",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Počet rádiových kanálů u systému EGSM je:",
+    "opts": [
+      "74",
+      "174",
+      "170",
+      "200",
+      "124",
+      "45",
+      "900",
+      "250"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Standardní GSM má 124 kanálů, rozšířené EGSM má o 50 více.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Jednoznačná identifikace uživatele je uložena:",
+    "opts": [
+      "v radiotelefonní ústředně",
+      "na kartě SIM",
+      "v řídicí jednotce základnových stanic",
+      "v databázi prodaných mobilů",
+      "v mobilní stanici"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "SIM karta obsahuje IMSI, což je unikátní ID uživatele.",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Kmitočtový rozsah u systému PGSM činí:",
+    "opts": [
+      "75 MHz",
+      "50 MHz",
+      "35 MHz",
+      "70 MHz",
+      "90 MHz",
+      "60 MHz",
+      "25 MHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "P-GSM používá 2x25 MHz, celkem 50 MHz.",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Který burst má dlouhou (přídavnou) ochrannou dobu?",
+    "opts": [
+      "přístupový",
+      "prázdný",
+      "pro kmitočtovou korekci",
+      "normální",
+      "synchronizační"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "Access Burst má dlouhou Guard Period kvůli nejistotě v čase příchodu signálu.",
+    "proc": ""
+  }
+]

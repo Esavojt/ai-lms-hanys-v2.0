@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Jak je v českém zákoně o elektronických komunikacích definováno rádiové spektrum?",
+    "opts": [
+      "Vlny o kmitočtu nižším než 300 GHz",
+      "Vlny o kmitočtu nižším než 3000 GHz šířené prostorem bez umělého vedení",
+      "Všechno elektromagnetické záření včetně RTG",
+      "Pouze vlny využívané pro AM a FM rádio"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hledej definici ze Sbírky zákonů č. 374/2021.",
+    "rationale": "Zákon přesně specifikuje horní hranici 3000 GHz a podmínku šíření prostorem bez vedení.",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Kdo v roce 1888 experimentálně dokázal existenci rádiových vln?",
+    "opts": [
+      "Guglielmo Marconi",
+      "James Clerk Maxwell",
+      "Heinrich Hertz",
+      "Albert Einstein"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Jeho jméno nese jednotka kmitočtu.",
+    "rationale": "Heinrich Hertz dokázal, že se tyto vlny odrážejí a lámou stejně jako světlo.",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Které dvě vektorové veličiny jednoznačně popisují elektromagnetické pole?",
+    "opts": [
+      "Rychlost a směr",
+      "Intenzita elektrického pole (E) a magnetická indukce (B)",
+      "Teplota a tlak",
+      "Hmotnost a hybnost"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Jedna se udává ve V/m, druhá v Teslech.",
+    "rationale": "Vektory E a B jsou základními pilíři popisu elektromagnetického pole.",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Jaká je přibližná rychlost šíření elektromagnetických vln ve vakuu?",
+    "opts": [
+      "340 m/s",
+      "300 000 km/s",
+      "150 000 km/s",
+      "1 000 000 m/s"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Odpovídá rychlosti světla.",
+    "rationale": "Konstanta c je přesně 299 792 458 m/s, což zaokrouhlujeme na 300 tisíc km/s.",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Vztah pro výpočet vlnové délky (lambda) je:",
+    "opts": [
+      "lambda = f / c",
+      "lambda = c * f",
+      "lambda = c / f",
+      "lambda = 1 / f"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Vlnová délka je nepřímo úměrná frekvenci.",
+    "rationale": "Podílem rychlosti světla a kmitočtu získáme délku jedné vlny v metrech.",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Které kmitočtové pásmo se využívá pro komunikaci s ponorkami?",
+    "opts": [
+      "VLF (Very Low Frequency)",
+      "VHF (Very High Frequency)",
+      "SHF (Super High Frequency)",
+      "EHF (Extremely High Frequency)"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Jde o velmi dlouhé vlny schopné pronikat hluboko do vody.",
+    "rationale": "Pásmo 3-30 kHz má schopnost částečného průniku do vodivého prostředí, jako je mořská voda.",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Pásmo UHF (Ultra High Frequency) má kmitočtový rozsah:",
+    "opts": [
+      "3-30 MHz",
+      "30-300 MHz",
+      "300 MHz - 3 GHz",
+      "3-30 GHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "V tomto pásmu funguje Wi-Fi (2,4 GHz) i mobilní sítě.",
+    "rationale": "Rozsah 300 MHz až 3 GHz odpovídá standardu pro UHF.",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Které vlny se šíří odrazem od ionosféry, což umožňuje globální dosah?",
+    "opts": [
+      "Krátké vlny (HF)",
+      "Ultra krátké vlny (UHF)",
+      "Centimetrové vlny (SHF)",
+      "Milimetrové vlny (EHF)"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Pásmo 3-30 MHz, často využívané radioamatéry.",
+    "rationale": "HF vlny se odrážejí mezi zemským povrchem a ionosférou, čímž překonávají zakřivení Země.",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Jaký je hlavní rozdíl mezi individuálním a všeobecným oprávněním ČTÚ?",
+    "opts": [
+      "Individuální je zdarma, všeobecné se platí",
+      "Všeobecné oprávnění nevyžaduje podání písemné žádosti o konkrétní kmitočet",
+      "Individuální platí pro celou ČR, všeobecné jen pro město",
+      "Všeobecné platí jen pro armádu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Všeobecné oprávnění (VO-R) stanovuje podmínky pro všechny uživatele daného zařízení hromadně.",
+    "rationale": "U všeobecného oprávnění ČTÚ předem určí pravidla a kdokoli je splní, může kmitočet využívat bez žádosti.",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Co znamená zkratka ISM v souvislosti s kmitočtovými pásmy?",
+    "opts": [
+      "International System for Mobile",
+      "Industrial, Scientific and Medical",
+      "Integrated Service Module",
+      "Internal Signal Management"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Využití pro jiné účely než přenos informací (např. ohřev).",
+    "rationale": "Pásma ISM jsou vyhrazena pro průmyslové, vědecké a lékařské aplikace, jako jsou mikrovlnné trouby.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Vektor intenzity elektrického pole E a magnetického pole H jsou v postupné vlně:",
+    "opts": [
+      "Rovnoběžné",
+      "Navzájem kolmé",
+      "Svírají úhel 45 stupňů",
+      "Mění se nezávisle na sobě"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Podívej se na blokové schéma EM pole v přednášce.",
+    "rationale": "Vektor E a H jsou na sebe vždy kolmé a oba jsou kolmé ke směru šíření.",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Jak se nazývá veličina vyjadřující energii přenášenou vlnou přes jednotkovou plochu?",
+    "opts": [
+      "Permeabilita",
+      "Hustota zářivého toku (výkonová hustota) S",
+      "Frekvenční zdvih",
+      "Modulační index"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Jednotka je W/m^2.",
+    "rationale": "Vektor S popisuje hustotu výkonu procházejícího prostorem.",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Která standardizační organizace definuje rozdělení pásem L, S, C, X, Ku, K, Ka?",
+    "opts": [
+      "ITU-R",
+      "IEEE",
+      "ČTÚ",
+      "ISO"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Standard IEEE 521-1984.",
+    "rationale": "IEEE zavedlo toto písmenné označení, které se běžně používá v satelitní a radarové technice.",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Pro pásmo VHF (Very High Frequency) platí, že se šíří:",
+    "opts": [
+      "Pouze v noci odrazem od ionosféry",
+      "Přímou vlnou do vzdálenosti rádiového horizontu",
+      "Hluboko pod zemský povrch",
+      "Jen v metalických vodičích"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Typické pro FM rádio a TV vysílání.",
+    "rationale": "VHF vlny vyžadují přímou viditelnost a šíří se mírně za optický horizont díky ohybu.",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Sítě 5G a satelitní internet (např. Starlink) využívají především pásmo:",
+    "opts": [
+      "VLF",
+      "MF",
+      "EHF / SHF",
+      "LF"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Hledej pásma s vysokým kmitočtem a velkou šířkou pásma.",
+    "rationale": "Vysoké kmitočty (GHz) umožňují přenášet extrémně velké objemy dat.",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Jaké je pořadí bloků v digitálním vysílači?",
+    "opts": [
+      "Zdroj -> Kodér kanálu -> Kodér zdroje -> Modulátor",
+      "Zdroj -> Kodér zdroje -> Kodér kanálu -> Modulátor",
+      "Zdroj -> Modulátor -> Kodér zdroje -> Kodér kanálu",
+      "Zdroj -> Dekodér -> Demodulátor"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Nejdříve data komprimujeme, pak zabezpečujeme a nakonec posíláme na nosnou.",
+    "rationale": "Kódování zdroje (komprese) musí předcházet kódování kanálu (zabezpečení).",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Co je hlavním úkolem kodéru zdroje?",
+    "opts": [
+      "Zvýšit výkon signálu",
+      "Potlačit redundanci a irelevanci (komprese)",
+      "Přidat kontrolní bity pro opravu chyb",
+      "Změnit kmitočet nosné vlny"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Cílem je minimalizovat datový tok při zachování kvality.",
+    "rationale": "Kodér zdroje odstraňuje nadbytečné a pro člověka nevnímatelné složky informace.",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Vztah pro kompresní poměr CR je:",
+    "opts": [
+      "CR = Rvyst / Rvst",
+      "CR = Rvst / Rvyst",
+      "CR = Rvst * Rvyst",
+      "CR = 1 / Rvst"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vstupní rychlost lomeno výstupní rychlost.",
+    "rationale": "CR udává, kolikrát se zmenšil datový objem po průchodu kodérem.",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Který typ hovorového kodéru má nejnižší výslednou rychlost (např. 2,4 kbit/s), ale syntetický zvuk?",
+    "opts": [
+      "PCM kodéry",
+      "Hybridní kodéry",
+      "Vokodéry (parametrické kodéry)",
+      "ADPCM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Přenášejí pouze parametry modelu řeči, nikoli přesný tvar vlny.",
+    "rationale": "Vokodéry modelují lidský hlasový trakt a dosahují extrémní komprese za cenu nižší přirozenosti.",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Metoda CELP (Code-Excited Linear Prediction) patří mezi:",
+    "opts": [
+      "Kodéry tvarového průběhu",
+      "Čisté vokodéry",
+      "Hybridní kodéry",
+      "Analogové modulace"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Kombinuje analýzu-syntézu s kódovou knihou excitací.",
+    "rationale": "CELP je dnes nejrozšířenější hybridní metoda (G.729, AMR, Opus).",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Systém hodnocení kvality řeči MOS (Mean Opinion Score) má maximum:",
+    "opts": [
+      "10 bodů",
+      "100 procent",
+      "5 bodů",
+      "1 bod"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "5 bodů znamená vynikající kvalitu bez úsilí při poslechu.",
+    "rationale": "MOS je subjektivní stupnice od 1 (špatná) do 5 (vynikající).",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Co je hlavním cílem kanálového kódování?",
+    "opts": [
+      "Komprese dat",
+      "Zabezpečení proti chybám úmyslným zvýšením redundance",
+      "Zvýšení vysílacího výkonu",
+      "Šifrování obsahu zprávy"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Přidáváme bity navíc, abychom mohli chyby detekovat a opravit.",
+    "rationale": "Kanálové kódování chrání zprávu před šumem a rušením v přenosovém kanálu.",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Kódový zisk (Coding Gain) udává:",
+    "opts": [
+      "Kolikrát se zvýší rychlost přenosu",
+      "O kolik dB lze snížit poměr S/N při zachování stejného BER",
+      "Zisk antény v dB",
+      "Počet opravených bitů v jednom rámci"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Je to výhoda, kterou získáme díky kvalitnímu kódování.",
+    "rationale": "Díky kódovému zisku můžeme vysílat s nižším výkonem a přesto mít kvalitní příjem.",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Který z uvedených kódů patří mezi korekční (opravné) kódy?",
+    "opts": [
+      "Pouze jednoduchá parita",
+      "Reed-Solomonův kód",
+      "ASCII kód",
+      "Morseova abeceda"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Využívají se v CD, DVD nebo satelitním vysílání.",
+    "rationale": "Reed-Solomon a konvoluční kódy jsou schopny chyby nejen najít, ale i opravit.",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Interleaving (prokládání) slouží jako ochrana proti:",
+    "opts": [
+      "Ojedinělým chybám",
+      "Skupinovým (shlukovým) chybám",
+      "Ztrátě napájení",
+      "Nízkému kmitočtu nosné"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Rozprostírá chyby v čase, aby je korekční kód mohl zvládnout.",
+    "rationale": "Prokládání zajistí, že dlouhý výpadek signálu nepoškodí bity za sebou, ale 'rozhází' je do různých bloků.",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Systém FEC (Forward Error Correction) se vyznačuje tím, že:",
+    "opts": [
+      "Vyžaduje zpětný kanál pro žádost o opakování",
+      "Opravuje chyby přímo v přijímači bez zpětného dotazu",
+      "Nefunguje u rádiových spojů",
+      "Vždy zdvojnásobuje šířku pásma"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Zkratka znamená 'dopředná korekce'.",
+    "rationale": "U FEC přijímač opravuje chyby sám pomocí redundantních bitů, což je klíčové pro jednosměrné spoje.",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "ARQ (Automatic Request Repetition) systémy opravují chyby:",
+    "opts": [
+      "Pomocí složitých algoritmů v dekodéru",
+      "Opakovaným vysíláním poškozeného bloku",
+      "Zvýšením kmitočtu vysílače",
+      "Nefungují v digitálních sítích"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vyžadují potvrzení o přijetí (ACK/NACK).",
+    "rationale": "ARQ je založen na detekci chyby a následném vyžádání nové kopie dat přes zpětný kanál.",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Modulace je proces, při kterém se:",
+    "opts": [
+      "Mění parametry zprávy podle nosné vlny",
+      "Mění některý parametr nosné vlny v rytmu modulačního signálu",
+      "Zvyšuje amplituda hovoru",
+      "Odstraňuje šum ze signálu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Měníme amplitudu, kmitočet nebo fázi nosné vlny.",
+    "rationale": "Modulace transformuje signál ze základního pásma do vysokofrekvenčního pro efektivní šíření.",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "V konstelačním diagramu (rovina IQ) představuje osa Q složku:",
+    "opts": [
+      "Synfázní (reálnou)",
+      "Kvadraturní (imaginární, posunutou o 90 stupňů)",
+      "Kvalitativní",
+      "Frekvenční"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Zkratka z anglického 'Quadrature'.",
+    "rationale": "I (In-phase) a Q (Quadrature) jsou dvě ortogonální složky modulačního symbolu.",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "U vícestavové modulace M-PSK platí pro počet přenášených bitů na symbol (n) vztah:",
+    "opts": [
+      "n = M / 2",
+      "n = log2(M)",
+      "n = M^2",
+      "n = 2 * M"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Pokud má modulace 16 stavů, kolik je to bitů?",
+    "rationale": "Např. 16-QAM přenáší 4 bity na symbol (log2 z 16).",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Která modulace kombinuje klíčování amplitudy i fáze zároveň?",
+    "opts": [
+      "ASK",
+      "PSK",
+      "QAM (Kvadraturní amplitudová modulace)",
+      "FSK"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Používá se v moderních systémech jako Wi-Fi nebo LTE.",
+    "rationale": "QAM mění polohu symbolu v ploše diagramu, nikoli jen po kružnici (fáze) nebo po ose (amplituda).",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Modulace 256-QAM přenáší v jednom symbolu:",
+    "opts": [
+      "4 bity",
+      "8 bitů",
+      "16 bitů",
+      "256 bitů"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hledej mocninu dvou: 2 na kolikátou je 256?",
+    "rationale": "2^8 = 256, tedy jeden symbol reprezentuje 8-bitovou kombinaci.",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Co je to 'dibit'?",
+    "opts": [
+      "Bit s poloviční energií",
+      "Bitová dvojice přenášená jedním modulačním symbolem",
+      "Speciální bit pro synchronizaci",
+      "Způsob kódování nuly"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Předpona di- značí dva.",
+    "rationale": "U 4-stavových modulací (např. QPSK) každý stav nese 2 bity (dibit).",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Hlavní výhodou vícestavových modulací (vyšší M) je:",
+    "opts": [
+      "Větší odolnost proti šumu",
+      "Úspora šířky pásma při stejné přenosové rychlosti",
+      "Jednodušší konstrukce přijímače",
+      "Nižší cena vysílače"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Přenášíme více bitů za stejný čas v užším kanálu.",
+    "rationale": "Vícestavové modulace zvyšují spektrální účinnost přenosu.",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Nevýhodou modulací s vysokým počtem stavů (např. 1024-QAM) je:",
+    "opts": [
+      "Velká vlnová délka",
+      "Nízká přenosová rychlost",
+      "Vysoká citlivost na šum a rušení",
+      "Nemožnost šíření v atmosféře"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Body v konstelačním diagramu jsou příliš blízko u sebe.",
+    "rationale": "Čím více je stavů, tím menší rozdíl v amplitudě/fázi stačí k chybnému rozhodnutí o bitu.",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "V mobilních sítích GSM se používá modulační schéma:",
+    "opts": [
+      "Pouze analogová FM",
+      "RPE-LTP s modulací GMSK",
+      "1024-QAM",
+      "Morseova abeceda"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "GMSK je varianta FSK s vyhlazenými přechody.",
+    "rationale": "GSM kombinuje RPE-LTP kódování hlasu s GMSK modulací.",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Jaký parametr nosné se mění u modulace FSK?",
+    "opts": [
+      "Amplituda",
+      "Kmitočet",
+      "Fáze",
+      "Barva"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Zkratka z anglického 'Frequency'.",
+    "rationale": "Frequency Shift Keying přiřazuje bitům 0 a 1 různé frekvence nosné vlny.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Pojem 'signálový prostor' se nejčastěji spojuje s:",
+    "opts": [
+      "Měřením výkonu antény",
+      "Zobrazením stavů modulace v konstelačním diagramu",
+      "Šířením vln ve vesmíru",
+      "Stíněním budov"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "IQ rovina je signálový prostor.",
+    "rationale": "V signálovém prostoru definujeme vzdálenost mezi modulačními symboly.",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Kodéry tvarového průběhu (např. PCM) mají výhodu v tom, že jsou:",
+    "opts": [
+      "Extrémně složité",
+      "Relativně jednoduché, levné a odolné vůči rušení",
+      "Přenášejí jen parametry řeči",
+      "Mají nejvyšší kompresní poměr"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Snaží se o co nejdokonalejší shodu průběhu signálu.",
+    "rationale": "PCM je základní metoda (G.711) používaná v pevné telefonii pro svou jednoduchost a kvalitu.",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "V moderních sítích 5G a Wi-Fi 6 se setkáváme s modulacemi až:",
+    "opts": [
+      "4-PSK",
+      "16-QAM",
+      "1024-QAM až 4096-QAM",
+      "Pouze AM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Hledej nejvyšší čísla v tabulce QAM.",
+    "rationale": "Vysoký počet stavů umožňuje dosahovat gigabitových rychlostí v omezeném pásmu.",
+    "proc": ""
+  }
+]

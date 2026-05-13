@@ -1,0 +1,167 @@
+[
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Účinnost zdrojového kódování:",
+    "opts": [
+      "klesá s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru",
+      "roste s poklesem přen. rychlost dig. signálu na vstupu kodéru vůči přen. rychlost dig. signálu na výstupu kodéru",
+      "roste s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "Kompresní poměr.",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:",
+    "opts": [
+      "se se změnou velikosti svazu buněk nemění.",
+      "je nepřímo úměrná velikosti svazu buněk.",
+      "je přímo úměrná velikosti svazu buněk."
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "Reuse distance.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Tzv. měkký handover je použit u systému:",
+    "opts": [
+      "WiFi",
+      "DECT",
+      "UMTS",
+      "GSM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "Soft Handover (Make-before-break).",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Při sektorizaci buněk dochází:",
+    "opts": [
+      "ke zmenšení přenosové kapacity v dané oblasti.",
+      "ke zvýšení přenosové kapacity v dané oblasti.",
+      "k rozdělení dané oblasti mezi jednotlivé mobilní operátory.",
+      "ke zvýšení rušení signálů v dané oblasti.",
+      "ke zvýšení počtů účastníků v dané oblasti."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "Směrové antény.",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Pojem „difrakce“ vlnění znamená:",
+    "opts": [
+      "ohyb",
+      "skládání",
+      "lom"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "Šíření za překážku.",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "V případě, že se pozorovatel pohybuje vzhledem ke klidnému zdroji v klidném prostředí platí:",
+    "opts": [
+      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.",
+      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "Dopplerův jev - pozorovatel v pohybu.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Únik signálu (fading) znamená:",
+    "opts": [
+      "úmyslné (kontrolované) snížení úrovně signálu v místě příjmu.",
+      "kolísání úrovně signálu v místě příjmu.",
+      "ztráta signálu v místě příjmu."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "Rychlý a pomalý únik.",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "V případě, že se zdroj vlnění pohybuje vzhledem ke klidnému pozorovateli v klidném prostředí platí:",
+    "opts": [
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
+      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "Dopplerův jev - zdroj v pohybu.",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Pro vyjádření velikosti energie přenášené elektromagnetickou vlnou se používá:",
+    "opts": [
+      "intenzita elektromagnetického pole E",
+      "magnetická indukce B",
+      "hustota zářivého toku S"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "Poyntingův vektor.",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Blokové prokládání dosahuje vůči konvolučnímu prokládání:",
+    "opts": [
+      "srovnatelné účinnosti",
+      "nižší účinnosti",
+      "vyšší účinnosti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "Srovnání typů interleavingu.",
+    "proc": ""
+  }
+]

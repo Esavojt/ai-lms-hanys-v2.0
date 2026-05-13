@@ -1,0 +1,730 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Rádiovými vlnami nazýváme elektromagnetické vlnění v kmitočtovém pásmu:",
+    "opts": [
+      "3 kHz až 3000 GHz",
+      "30 kHz až 300 GHz",
+      "3 MHz až 3000 MHz",
+      "100 kHz až 100 GHz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Jaký je vztah pro výpočet vlnové délky?",
+    "opts": [
+      "lambda = f / c",
+      "lambda = c / f",
+      "lambda = c * f",
+      "lambda = 1 / (c * f)"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Který parametr se používá pro hodnocení kvality analogových komunikačních systémů?",
+    "opts": [
+      "BER (Bit Error Ratio)",
+      "dBFS",
+      "SNR (Signal to Noise Ratio)",
+      "C/I poměr"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Bitová chybovost BER je definována jako poměr:",
+    "opts": [
+      "Výkonu signálu k výkonu šumu",
+      "Celkového počtu bitů k chybným bitům",
+      "Počtu chybně přijatých bitů k celkovému počtu přenesených bitů",
+      "Aktuální amplitudy k maximální amplitudě"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Jednotka dBFS (decibels relative to full scale) vyjadřuje decibely vzhledem k:",
+    "opts": [
+      "Šumu pozadí",
+      "Plnému rozsahu systému",
+      "Izotropnímu zářiči",
+      "Výkonu 1 Watt"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Který vztah definuje teoretickou přenosovou kapacitu kanálu (C)?",
+    "opts": [
+      "Ohmův zákon",
+      "Shannon-Hartleyův vztah",
+      "Maxwellovy rovnice",
+      "Dopplerův princip"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Zisk vysílací antény (Gt) vyjadřuje:",
+    "opts": [
+      "Celkový vyzářený výkon v Joulech",
+      "Schopnost soustřeďovat vyzařování do hlavního směru na úkor ostatních",
+      "Ztráty v napáječi antény",
+      "Útlum šíření ve volném prostoru"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Co v radiokomunikační rovnici představuje parametr EIRP?",
+    "opts": [
+      "Efektivní izotropický vyzařovaný výkon",
+      "Ztráty v atmosféře",
+      "Spektrální hustota šumu",
+      "Jakostní číslo přijímače"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Jaké typy ztrát uvažuje radiokomunikační rovnice?",
+    "opts": [
+      "Ztráty šířením ve volném prostředí",
+      "Ztráty v atmosféře (vodní páry, smog)",
+      "Ztráty nepřesným zaměřením antény",
+      "Polarizační ztráty"
+    ],
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Spektrální výkonová hustota šumu N0 je definována vztahem (k je Boltzmannova konstanta):",
+    "opts": [
+      "N0 = k / T0",
+      "N0 = k * T0",
+      "N0 = k * f",
+      "N0 = T0 / k"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Který fyzikální jev způsobuje zakřivení dráhy vlny při průchodu rozhraním dvou prostředí?",
+    "opts": [
+      "Difrakce (ohyb)",
+      "Refrakce (lom)",
+      "Interference",
+      "Dopplerův jev"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Difrakce (ohyb) rádioých vln vzniká při:",
+    "opts": [
+      "Dopadu na hladkou vodivou plochu",
+      "Setkání vlny s překážkou",
+      "Pohybu zdroje signálu",
+      "Změně šumové teploty"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Při interferenci dvou vln ve shodné fázi dochází k:",
+    "opts": [
+      "Výslednému zeslabení vlny",
+      "Výslednému zesílení vlny",
+      "Změně kmitočtu",
+      "Vzniku tepelných ztrát"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Ionosféra je svrchní vrstva atmosféry, která:",
+    "opts": [
+      "Obsahuje volné elektrony a ionty",
+      "Má významnou elektrickou vodivost",
+      "Odráží vlny určitých kmitočtů zpět k zemi",
+      "Je tvořena pouze dusíkem"
+    ],
+    "ans": [
+      0,
+      1,
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Které poruchy patří mezi rádiove poruchy způsobené člověkem?",
+    "opts": [
+      "Kosmický šum ze Slunce",
+      "Průmyslové poruchy (motory, svářečky)",
+      "Atmosférické výboje (blesky)",
+      "Galaktické emise"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Dopplerův jev se projevuje tak, že při přibližování zdroje k pozorovateli:",
+    "opts": [
+      "Kmitočet vnímaný pozorovatelem je nižší",
+      "Kmitočet vnímaný pozorovatelem je vyšší",
+      "Kmitočet zůstává stejný, mění se jen amplituda",
+      "Vlna zaniká"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Ekvalizace v digitálních systémech slouží primárně k:",
+    "opts": [
+      "Zvýšení vysílacího výkonu",
+      "Minimalizaci intersymbolových interferencí (ISI)",
+      "Změně polarizace antény",
+      "Měření vzdálenosti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Adaptivní ekvalizace (např. v GSM) využívá pro nastavení parametrů:",
+    "opts": [
+      "Výkonový wattmetr",
+      "Tréninkovou sekvenci dat",
+      "Boltzmannovu konstantu",
+      "Pouze statické filtry"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Diverzitní příjem je technika sloužící k:",
+    "opts": [
+      "Zvýšení bitové rychlosti",
+      "Potlačení vlivu úniků (fading)",
+      "Změně modulace",
+      "Snížení šířky pásma"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Jaké typy diverzitního příjmu rozlišujeme?",
+    "opts": [
+      "Prostorová",
+      "Úhlová",
+      "Polarizační",
+      "Kmitočtová"
+    ],
+    "ans": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Která zkratka označuje mnohonásobný přístup s časovým dělením?",
+    "opts": [
+      "FDMA",
+      "CDMA",
+      "TDMA",
+      "SDMA"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "FDMA (Frequency Division Multiple Access) funguje na principu:",
+    "opts": [
+      "Přidělení unikátního kódu každému uživateli",
+      "Přidělení časového slotu",
+      "Přidělení konkrétního kmitočtového kanálu",
+      "Vysílání na všech kmitočtech najednou"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Simplexní přenos je definován jako:",
+    "opts": [
+      "Přenos oběma směry současně",
+      "Přenos oběma směry, ale ne současně",
+      "Přenos pouze jedním směrem",
+      "Přenos využívající kódové dělení"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "FDD (Frequency Division Duplex) znamená, že:",
+    "opts": [
+      "Vysílání a příjem probíhá na stejném kmitočtu v jiný čas",
+      "Vysílání a příjem probíhá na různých kmitočtech",
+      "Přenos je pouze jednosměrný",
+      "Uživatelé jsou odlišeni kódem"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Hlavním důvodem zavedení buňkové (celulární) struktury je:",
+    "opts": [
+      "Větší dosah jednoho vysílače",
+      "Opakované využití kmitočtů a zvýšení kapacity sítě",
+      "Snížení počtu základnových stanic",
+      "Zjednodušení rádioých přijímačů"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Handover (nebo handoff) je proces:",
+    "opts": [
+      "Změny modulace během hovoru",
+      "Přepnutí spojení MS mezi kanály nebo stanicemi během pohybu",
+      "Měření výkonu antény",
+      "Kódování zdroje signálu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "Rušení ze sousedního kanálu lze snížit:",
+    "opts": [
+      "Zvýšením výkonu vysílače",
+      "Filtrováním na vysílací i přijímací straně",
+      "Větším počtem uživatelů",
+      "Zrušením buňkové struktury"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Velikost svazku buněk (cluster) se označuje písmenem K. Platí vztah:",
+    "opts": [
+      "K = i + j",
+      "K = i^2 + ij + j^2",
+      "K = i * j",
+      "K = (i + j)^2"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Kapacita sítě (C) v buňkovém systému je dána vztahem C = M*k*K, kde M je:",
+    "opts": [
+      "Výkon vysílače",
+      "Počet opakování svazku buněk v síti",
+      "Počet chyb v kanálu",
+      "Počet handoverů za sekundu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Při dělení buněk (cell splitting) na polovinu (r_n = r_b/2) se kapacita sítě:",
+    "opts": [
+      "Nezmění",
+      "Zvýší 4x",
+      "Sníží o polovinu",
+      "Zvýší 16x"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Sektorizace buněk se provádí za účelem:",
+    "opts": [
+      "Zvětšení dosahu stanice",
+      "Snížení rušení a zvýšení kapacity sítě",
+      "Změny kmitočtového pásma",
+      "Snížení počtu antén"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Buňky s poloměrem menším než 100 metrů se nazývají:",
+    "opts": [
+      "Makrobuňky",
+      "Mikrobuňky",
+      "Pikobuňky",
+      "Femtobuňky"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Jaký je typický poměr signál/rušení (S/I) požadovaný pro analogové systémy?",
+    "opts": [
+      "9 dB",
+      "13 dB",
+      "18 dB",
+      "30 dB"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "DCA (Dynamic Channel Allocation) znamená:",
+    "opts": [
+      "Pevné přidělení kanálů buňkám",
+      "Dynamické přidělování kanálů podle aktuální potřeby",
+      "Ruční přepínání kanálů operátorem",
+      "Přidělování kanálů pouze pro data"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Hard Handover se vyznačuje principem:",
+    "opts": [
+      "make-before-break",
+      "break-before-make",
+      "seamless transition",
+      "multi-point connection"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Měkký (Soft) Handover je typický pro systémy:",
+    "opts": [
+      "GSM (TDMA)",
+      "CDMA",
+      "AM rozhlas",
+      "Analogové TV"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "MAHO (Mobile Assisted Handover) znamená, že:",
+    "opts": [
+      "Sítě řídí handover bez mobilu",
+      "Mobilní stanice provádí měření a síť rozhoduje o handoveru",
+      "Uživatel musí handover potvrdit tlačítkem",
+      "Handover se provádí jen při vybité baterii"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Pomalé úniky (fading) jsou v mobilních sítích způsobeny především:",
+    "opts": [
+      "Vícenásobným šířením",
+      "Terénními překážkami (stíněním)",
+      "Dopplerovým jevem",
+      "Změnou kmitočtu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Vnitrobuňkový (intra cell) handover slouží k:",
+    "opts": [
+      "Přechodu k jinému operátorovi",
+      "Optimalizaci zátěže nebo zlepšení kvality v rámci jedné buňky",
+      "Ukončení hovoru",
+      "Změně telefonního čísla"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Který typ buňky slouží k pokrytí rychle se pohybujících uživatelů a eliminaci častých handoverů?",
+    "opts": [
+      "Pikobuňka",
+      "Mikrobuňka",
+      "Umbrella cell (deštníková buňka)",
+      "Femtobuňka"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "",
+    "rationale": "",
+    "proc": ""
+  }
+]

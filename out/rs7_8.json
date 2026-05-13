@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Který systém patří do tzv. 0. generace mobilních sítí?",
+    "opts": [
+      "GSM",
+      "NMT",
+      "Autorádiotelefon ARP (Finsko)",
+      "LTE"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Jde o analogovou nezabezpečenou síť spuštěnou v roce 1971.",
+    "rationale": "ARP byl finský systém 0. generace; NMT patří do 1G a GSM do 2G. [cite: 11047, 11048]",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Jaká byla hlavní nevýhoda systému ARP?",
+    "opts": [
+      "Pomalý internet",
+      "Nemožnost handoveru",
+      "Malé pokrytí Finska",
+      "Pouze digitální přenos"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hledej omezení při pohybu mezi buňkami.",
+    "rationale": "V systému ARP nebylo možné automatické přepojení hovoru mezi základnovými stanicemi. [cite: 11052]",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Který z uvedených systémů 1. generace byl provozován v ČSFR od roku 1991?",
+    "opts": [
+      "AMPS",
+      "TACS",
+      "NMT 450",
+      "C 450"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Nordic Mobile Telephony pracující v pásmu 450 MHz.",
+    "rationale": "NMT 450 byl první široce dostupný mobilní systém v bývalém Československu. [cite: 11114]",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Základní rozdíl mezi NMT 450 a NMT 900 je:",
+    "opts": [
+      "NMT 900 je plně digitální",
+      "NMT 900 má vyšší počet kanálů a menší buňky",
+      "NMT 450 má vyšší přenosovou rychlost dat",
+      "NMT 900 neumožňuje handover"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vyšší frekvence znamená více kanálů, ale horší šíření signálu.",
+    "rationale": "NMT 900 navýšilo počet kanálů o 1000 a zmenšilo typickou velikost buňky na 2–20 km. [cite: 11145, 11147]",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Které tři hlavní subsystémy tvoří architekturu sítě GSM?",
+    "opts": [
+      "BSS, NSS, OSS",
+      "BTS, BSC, MSC",
+      "HLR, VLR, EIR",
+      "GSM, GPRS, UMTS"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Hledej zkratky pro základnové stanice, síťové přepojování a provozní podporu.",
+    "rationale": "GSM architektura se dělí na BSS (Base Station), NSS (Network and Switching) a OSS (Operation Support). [cite: 11240, 11241]",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "K čemu slouží v síti GSM jednotka TRAU (Transcoder and Rate Adaptor Unit)?",
+    "opts": [
+      "K šifrování hovorů",
+      "K přizpůsobení bitových rychlostí mezi BSC a MSC",
+      "K lokalizaci mobilní stanice",
+      "K ukládání SMS zpráv"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Nachází se mezi BSC a MSC.",
+    "rationale": "TRAU provádí transkódování řeči (např. z 13 kbit/s na 64 kbit/s pro PCM). [cite: 11388]",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Jakou informaci v GSM síti obsahuje databáze HLR?",
+    "opts": [
+      "Dočasné údaje o návštěvnících v lokační oblasti",
+      "Trvalé informace o všech 'domovských' účastnících ústředny",
+      "Identifikaci zcizených mobilních telefonů",
+      "Záznam o každém jednotlivém hovoru"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Home Location Register.",
+    "rationale": "HLR uchovává identitu uživatele (IMSI) a informace o předplacených službách. [cite: 11451, 11452]",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Co je to IMSI v systému GSM?",
+    "opts": [
+      "Mezinárodní volací číslo telefonu",
+      "Jednoznačná identifikace uživatele (účastníka)",
+      "Identifikační číslo hardwaru telefonu",
+      "Kód pro odblokování SIM karty"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Skládá se z MCC, MNC a MSIN.",
+    "rationale": "IMSI je unikátní číslo přiřazené účastníkovi (uloženo na SIM), nikoliv přístroji. [cite: 11465]",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Registr EIR v síti GSM slouží k:",
+    "opts": [
+      "Ověřování autentičnosti účastníka",
+      "Identifikaci zcizených nebo neoprávněně užívaných mobilních stanic",
+      "Ukládání volacích čísel MSISDN",
+      "Řízení handoveru"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Equipment Identity Register.",
+    "rationale": "EIR sleduje IMEI přístrojů a může zablokovat kradené telefony. [cite: 11553, 11554]",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Pásmo PGSM (Primary GSM) používá kmitočtový odstup duplexu (FDD):",
+    "opts": [
+      "10 MHz",
+      "45 MHz",
+      "95 MHz",
+      "200 kHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Rozdíl mezi downlinkem a uplinkem.",
+    "rationale": "U PGSM je odstup mezi vysíláním a příjmem stanoven na 45 MHz. [cite: 11587, 11680]",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Jaký typ mnohonásobného přístupu využívá standard GSM?",
+    "opts": [
+      "Pouze FDMA",
+      "FDMA/TDMA",
+      "Pouze CDMA",
+      "SDMA"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Dělení podle kmitočtu i času.",
+    "rationale": "GSM dělí pásmo na rádiové kanály (FDMA) a každý kanál na 8 časových slotů (TDMA). [cite: 11207, 11598]",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Kolik časových úseků (TS) tvoří jeden TDMA rámec v GSM?",
+    "opts": [
+      "1",
+      "4",
+      "8",
+      "16"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Podívej se na nákres rozdělení kmitočtového pásma.",
+    "rationale": "Jeden TDMA rámec o délce 4,615 ms obsahuje 8 časových slotů (TS 0 až TS 7). [cite: 11659, 11660]",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Telematické služby GSM (např. přenos hlasu nebo SMS) zahrnují které vrstvy RM-OSI?",
+    "opts": [
+      "Pouze 1. vrstvu",
+      "Vrstvy 1 až 3",
+      "Vrstvy 1 až 7",
+      "Pouze 7. vrstvu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Hledej rozdíl oproti přenosovým (transportním) službám.",
+    "rationale": "Telematické služby definují komunikaci mezi koncovými zařízeními a zahrnují všech 7 vrstev OSI. [cite: 11718]",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Do které fáze GSM služeb patří zavedení technologií GPRS a EDGE?",
+    "opts": [
+      "Fáze 1",
+      "Fáze 2",
+      "Fáze 2+",
+      "Fáze 3"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Jde o rozvojovou fázi zahrnující nové datové přenosy.",
+    "rationale": "Fáze 2+ přinesla vysokorychlostní datové přenosy a nové hlasové kodeky. [cite: 11736]",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Doba trvání jednoho časového slotu v TDMA rámci GSM je:",
+    "opts": [
+      "1 ms",
+      "4,615 ms",
+      "577 μs",
+      "57,7 μs"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Je to jedna osmina TDMA rámce.",
+    "rationale": "Jeden časový slot (Time Slot) trvá přesně 577 mikrosekund. [cite: 11602]",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Služba CSD (Circuit Switched Data) v GSM funguje na principu:",
+    "opts": [
+      "Paketového přenosu",
+      "Přepojování okruhů s garantovanou kapacitou",
+      "Sdílení šířky pásma mezi všemi uživateli",
+      "Pouze pro příjem SMS"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Circuit Switched.",
+    "rationale": "CSD vyhradí souvislou přenosovou cestu s pevnou rychlostí (typicky 9,6 kbit/s). [cite: 11831, 11832]",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Hlavní nevýhodou CSD přenosu dat je:",
+    "opts": [
+      "Nemožnost šifrování",
+      "Tarifikace podle doby spojení (času)",
+      "Využití milimetrových vln",
+      "Vysoká latence jednotek sekund"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Platíte, i když zrovna žádná data neproudí.",
+    "rationale": "Jelikož jde o vyhrazený okruh, operátoři účtují čas spojení bez ohledu na objem dat. [cite: 11882]",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Technologie HSCSD dosahuje vyšší rychlosti oproti CSD díky:",
+    "opts": [
+      "Nové modulaci 1024-QAM",
+      "Sdružování více časových slotů (timeslotů) pro jedno spojení",
+      "Přechodu na pásmo 5 GHz",
+      "Změně z analogového na digitální přenos"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "High Speed Circuit Switched Data.",
+    "rationale": "HSCSD umožňuje sdružit např. 4 sloty a dosáhnout tak rychlosti až 57,6 kbit/s. [cite: 11892, 11902]",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Služba GPRS (General Packet Radio Service) je označována jako generace:",
+    "opts": [
+      "2G",
+      "2,5G",
+      "3G",
+      "4G"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Mezistupeň mezi GSM a UMTS.",
+    "rationale": "GPRS zavedlo paketový přenos do GSM sítí a je považováno za 2,5. generaci. [cite: 11807]",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Jaké dva nové uzly přidává architektura GPRS do sítě GSM?",
+    "opts": [
+      "BTS a BSC",
+      "SGSN a GGSN",
+      "HLR a VLR",
+      "NodeB a RNC"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "GPRS Support Nodes.",
+    "rationale": "Pro řízení paketů jsou nutné uzly SGSN (obsluha) a GGSN (brána k internetu). [cite: 11978, 11979, 11980]",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Tarifikace u GPRS probíhá typicky na základě:",
+    "opts": [
+      "Doby trvání spojení",
+      "Objemu přenesených dat",
+      "Počtu uskutečněných handoverů",
+      "Síly signálu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Díky paketovému přenosu můžete být 'vždy připojeni'.",
+    "rationale": "U GPRS platíte za skutečně přenesené bajty, nikoliv za čas připojení k síti. [cite: 12045, 12145]",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "GPRS zařízení třídy 'A' se vyznačují tím, že:",
+    "opts": [
+      "Umožňují pouze datové přenosy",
+      "Umožňují současně telefonovat i přenášet paketová data",
+      "Musí být manuálně přepnuta mezi hlasem a daty",
+      "Fungují pouze v blízkosti BTS"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Nejvyšší třída schopností terminálu.",
+    "rationale": "Třída A zvládá oba režimy (okruhový i paketový) paralelně. [cite: 12130]",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Technologie EDGE (Enhanced Data Rates for GSM Evolution) využívá modulaci:",
+    "opts": [
+      "GMSK",
+      "8-PSK",
+      "QPSK",
+      "16-QAM"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Modulace umožňující přenést 3 bity na jeden stav (symbol).",
+    "rationale": "EDGE využívá 8-PSK (kromě základní GMSK) k navýšení rychlosti až na 384 kbit/s. [cite: 12161, 12170]",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Systém UMTS (3G) v Evropě využívá pro rádioý přístup technologii:",
+    "opts": [
+      "TDMA",
+      "W-CDMA",
+      "OFDMA",
+      "FDMA"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Wideband Code Division Multiple Access.",
+    "rationale": "UMTS přešlo z časového dělení na kódové dělení kanálů (CDMA). [cite: 12224, 12370]",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Jaká je maximální teoretická rychlost UMTS v pikobuňce (vnitřní prostředí)?",
+    "opts": [
+      "144 kbit/s",
+      "384 kbit/s",
+      "2 Mbit/s",
+      "100 Mbit/s"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Při rychlosti pohybu uživatele do 3 km/hod.",
+    "rationale": "Původní UMTS specifikovalo až 2 Mbit/s pro stacionární uživatele nebo v budovách. [cite: 12395, 12396]",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Nadstavba HSPA (3,5G) se dělí na dva směry:",
+    "opts": [
+      "Uplink a Downlink",
+      "HSDPA (Downlink) a HSUPA (Uplink)",
+      "GSM a UMTS",
+      "FDD a TDD"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hledej zkratky pro vysokorychlostní paketový přístup nahoru a dolů.",
+    "rationale": "HSDPA zrychluje stahování (Downlink), HSUPA zrychluje odesílání (Uplink). [cite: 12408, 12410, 12411]",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "Technologie MIMO (Multiple-Input Multiple-Output) znamená:",
+    "opts": [
+      "Použití více frekvencí současně",
+      "Použití více antén na straně vysílače i přijímače",
+      "Možnost připojení více uživatelů k jedné BTS",
+      "Změnu modulace za běhu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Více vstupů, více výstupů.",
+    "rationale": "MIMO využívá více antén ke zvýšení kapacity a spolehlivosti přenosu. [cite: 12424]",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Co tvoří systém EPS (Evolved Packet System) u technologie LTE?",
+    "opts": [
+      "BTS a mobilní telefon",
+      "LTE (rádiová část) a SAE (jádro sítě)",
+      "Pouze IP protokol",
+      "SIM karta a anténa"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Spojení přístupové sítě a evoluce architektury systému.",
+    "rationale": "EPS je tvořen rádioou částí (LTE) a jádrem sítě (SAE). [cite: 12447]",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Jediným uzlem přístupové sítě E-UTRAN v technologii LTE je:",
+    "opts": [
+      "BSC",
+      "RNC",
+      "eNode B",
+      "SGSN"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Evolved Node B.",
+    "rationale": "LTE zjednodušilo architekturu tím, že eNode B vykonává funkce, které dříve dělily NodeB a RNC. [cite: 12467]",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Jaká je maximální teoretická rychlost downlinku u základního standardu LTE?",
+    "opts": [
+      "2 Mbit/s",
+      "10,8 Mbit/s",
+      "326,4 Mbit/s",
+      "1 Gbit/s"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Release 8.",
+    "rationale": "Základní LTE definuje maximální rychlost stahování 326,4 Mbit/s. [cite: 12472]",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Která technologie umožňuje v LTE-A (4G) sdružování nosných frekvencí?",
+    "opts": [
+      "MIMO",
+      "Carrier Aggregation (CA)",
+      "Beamforming",
+      "Handover"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Sčítání kanálů pro dosažení šířky až 100 MHz.",
+    "rationale": "Carrier Aggregation spojuje více frekvenčních pásem pro navýšení rychlosti až k 1 Gbit/s. [cite: 12499]",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Jaké jsou tři základní typy služeb definované pro sítě 5G?",
+    "opts": [
+      "Hlas, SMS, Internet",
+      "eMBB, uRLLC, mMTC",
+      "GSM, UMTS, LTE",
+      "WiFi, Bluetooth, ZigBee"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Širokopásmová data, nízké zpoždění a komunikace strojů.",
+    "rationale": "5G definuje eMBB (rychlost), uRLLC (spolehlivost/latence) a mMTC (Internet věcí). [cite: 12551, 12552]",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "V sítích 5G technologie Beamforming slouží k:",
+    "opts": [
+      "Měření rychlosti uživatele",
+      "Tvarování a směrování rádioých paprsků přímo k uživateli",
+      "Změně barvy LED na telefonu",
+      "Šifrování datových paketů"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Elektrické nasměrování svazku.",
+    "rationale": "Beamforming soustředí signál do úzkého paprsku směrem k zařízení, čímž snižuje rušení a spotřebu. [cite: 12570, 12571]",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Architektura sítě 5G se nazývá SBA, což znamená:",
+    "opts": [
+      "Simple Based Architecture",
+      "Service-Based Architecture",
+      "Signal Base Access",
+      "Station Binary Area"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Architektura založená na službách.",
+    "rationale": "5G jádro je postaveno na SBA, kde prvky sítě nabízejí své funkce jako služby přes API. [cite: 12601]",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Která funkce v jádru 5G sítě (SBA) přiděluje IP adresy (služba DHCP)?",
+    "opts": [
+      "AMF",
+      "UPF",
+      "SMF",
+      "AUSF"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Session Management Function.",
+    "rationale": "SMF má na starosti správu relací, včetně přidělování IP adres. [cite: 12653]",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Technologie 'Massive MIMO' u 5G využívá výhodu:",
+    "opts": [
+      "Dlouhých vln (VLF)",
+      "Krátkých vlnových délek milimetrových vln pro umístění mnoha antén",
+      "Nízkého výkonu vysílačů",
+      "Použití pouze jedné antény"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Více antén na malém prostoru.",
+    "rationale": "Díky mm vlnám (vysoký kmitočet) jsou antény malé, což umožňuje jejich zmnohonásobení na BTS. [cite: 12569]",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "V 5G architektuře prvek UPF (User Plane Function) zajišťuje:",
+    "opts": [
+      "Autentizaci uživatele",
+      "Směrování paketů a přístup k vnější síti (Internetu)",
+      "Výběr typu síťového řezu (slice)",
+      "Ukládání profilů v databázi UDM"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Uživatelská rovina.",
+    "rationale": "UPF je zodpovědný za samotný přenos uživatelských dat mezi rádioou sítí a internetem. [cite: 12650]",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Jaké frekvenční pásmo (označované jako mmWave) je nově využíváno pro 5G?",
+    "opts": [
+      "Pod 1 GHz",
+      "1 - 6 GHz",
+      "30 - 300 GHz",
+      "Pouze 2,4 GHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Milimetrové vlny.",
+    "rationale": "5G využívá mmWave pásma (např. 26 GHz a vyšší) pro dosažení extrémních rychlostí. [cite: 12568, 12586]",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Přenosová rychlost 5G má dosahovat v ideálních podmínkách až:",
+    "opts": [
+      "100 Mbit/s",
+      "1 Gbit/s",
+      "Desítky Gbit/s",
+      "1 Tbit/s"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Využití velmi širokých kanálů.",
+    "rationale": "Díky širokým kanálům ve vysokých pásmech umožňuje 5G rychlosti v řádech desítek gigabitů za sekundu. [cite: 12538]",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Služba uRLLC v sítích 5G je určena pro:",
+    "opts": [
+      "Masivní připojení milionů senzorů",
+      "Extrémně rychlé stahování 4K filmů",
+      "Služby vyžadující velmi nízké zpoždění a vysokou spolehlivost",
+      "Pouze hlasové hovory v HD kvalitě"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Ultra-Reliable Low-Latency Communications.",
+    "rationale": "uRLLC je klíčové pro aplikace jako autonomní řízení vozidel nebo robotiku v průmyslu. [cite: 12552, 12556]",
+    "proc": ""
+  }
+]
