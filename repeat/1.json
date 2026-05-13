@@ -1,34 +1,69 @@
 [
   {
-    "id": 32,
+    "id": 29,
     "type": "choice",
-    "q": "Náchylnost rádiových vln na poruchy:",
+    "q": "Účinnost zdrojového kódování:",
     "opts": [
-      "je nepřímo úměrná kmitočtu.",
-      "je přímo úměrná kmitočtu.",
-      "nemá s jejich kmitočtem žádnou souvislost."
+      "klesá s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru",
+      "roste s poklesem přen. rychlost dig. signálu na vstupu kodéru vůči přen. rychlost dig. signálu na výstupu kodéru",
+      "roste s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru"
     ],
     "ans": [
-      0
+      2
     ],
     "pts": 1,
-    "hint": "Frekvenční závislost rušení.",
+    "hint": "Kompresní poměr.",
     "proc": ""
   },
   {
-    "id": 26,
+    "id": 40,
     "type": "choice",
-    "q": "Pro systémy s rozprostřeným spektrem platí:",
+    "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:",
     "opts": [
-      "S/N < 1",
-      "S/M > 1",
-      "S/N = B"
+      "se se změnou velikosti svazu buněk nemění.",
+      "je nepřímo úměrná velikosti svazu buněk.",
+      "je přímo úměrná velikosti svazu buněk."
     ],
     "ans": [
-      0
+      2
     ],
     "pts": 1,
-    "hint": "Spread Spectrum (CDMA).",
+    "hint": "Reuse distance.",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Tzv. měkký handover je použit u systému:",
+    "opts": [
+      "WiFi",
+      "DECT",
+      "UMTS",
+      "GSM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "Soft Handover (Make-before-break).",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Při sektorizaci buněk dochází:",
+    "opts": [
+      "ke zmenšení přenosové kapacity v dané oblasti.",
+      "ke zvýšení přenosové kapacity v dané oblasti.",
+      "k rozdělení dané oblasti mezi jednotlivé mobilní operátory.",
+      "ke zvýšení rušení signálů v dané oblasti.",
+      "ke zvýšení počtů účastníků v dané oblasti."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "Směrové antény.",
     "proc": ""
   },
   {
@@ -36,65 +71,15 @@
     "type": "choice",
     "q": "Pojem „difrakce“ vlnění znamená:",
     "opts": [
-      "lom",
+      "ohyb",
       "skládání",
-      "ohyb"
+      "lom"
     ],
     "ans": [
-      2
+      0
     ],
     "pts": 1,
     "hint": "Šíření za překážku.",
-    "proc": ""
-  },
-  {
-    "id": 35,
-    "type": "choice",
-    "q": "Krátké vlny HF jsou definovány v rozmezí:",
-    "opts": [
-      "30-300 MHz",
-      "3-30 MHz",
-      "300-3000 MHz",
-      "300-3000 kHz",
-      "30-300 GHz"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "High Frequency.",
-    "proc": ""
-  },
-  {
-    "id": 14,
-    "type": "choice",
-    "q": "Veřejné analogové celulární radiotelefonní systémy I. Generace využívaly:",
-    "opts": [
-      "kombinace AM/FM",
-      "kmitočtové modulace FM",
-      "amplitudové modulace AM"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "NMT, AMPS apod.",
-    "proc": ""
-  },
-  {
-    "id": 6,
-    "type": "choice",
-    "q": "Blokové prokládání dosahuje vůči konvolučnímu prokládání:",
-    "opts": [
-      "vyšší účinnosti",
-      "nižší účinnosti",
-      "srovnatelné účinnosti"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "Srovnání typů interleavingu.",
     "proc": ""
   },
   {
@@ -103,15 +88,48 @@
     "q": "V případě, že se pozorovatel pohybuje vzhledem ke klidnému zdroji v klidném prostředí platí:",
     "opts": [
       "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.",
-      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.",
       "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
-      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění."
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka."
     ],
     "ans": [
       0
     ],
     "pts": 1,
     "hint": "Dopplerův jev - pozorovatel v pohybu.",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Únik signálu (fading) znamená:",
+    "opts": [
+      "úmyslné (kontrolované) snížení úrovně signálu v místě příjmu.",
+      "kolísání úrovně signálu v místě příjmu.",
+      "ztráta signálu v místě příjmu."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "Rychlý a pomalý únik.",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "V případě, že se zdroj vlnění pohybuje vzhledem ke klidnému pozorovateli v klidném prostředí platí:",
+    "opts": [
+      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
+      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
+      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění.",
+      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "Dopplerův jev - zdroj v pohybu.",
     "proc": ""
   },
   {
@@ -131,298 +149,19 @@
     "proc": ""
   },
   {
-    "id": 33,
+    "id": 6,
     "type": "choice",
-    "q": "Mezi ochrany přenosu digitálních signálů před chybovostí vznikajících při přenosu patří:",
+    "q": "Blokové prokládání dosahuje vůči konvolučnímu prokládání:",
     "opts": [
-      "majoritní paritní logika, interleaving a řetězové kódy",
-      "opakované vysílání jednotlivých bitů, prokládání a multiplexování vstupních signálů",
-      "opakované vysílání jednotlivých bitů, prokládání a řetězové kódy."
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Metody zabezpečení.",
-    "proc": ""
-  },
-  {
-    "id": 25,
-    "type": "choice",
-    "q": "Modulace PCM patří mezi:",
-    "opts": [
-      "diskrétní modulace s nosnými vlnami",
-      "diskrétní kódové modulace s nosnými vlnami",
-      "diskrétní modulace v základním pásmu"
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Pulse Code Modulation.",
-    "proc": ""
-  },
-  {
-    "id": 22,
-    "type": "choice",
-    "q": "V systému GSM se používá:",
-    "opts": [
-      "handover řízený mobilní stanicí",
-      "sítí řízený handover s asistencí mobilní stanice",
-      "sítí řízený handover"
+      "srovnatelné účinnosti",
+      "nižší účinnosti",
+      "vyšší účinnosti"
     ],
     "ans": [
       1
     ],
     "pts": 1,
-    "hint": "MAHO (Mobile Assisted Handover).",
-    "proc": ""
-  },
-  {
-    "id": 29,
-    "type": "choice",
-    "q": "Účinnost zdrojového kódování:",
-    "opts": [
-      "klesá s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru",
-      "roste s poklesem přen. rychlost dig. signálu na vstupu kodéru vůči přen. rychlost dig. signálu na výstupu kodéru",
-      "roste s poklesem přen. rychlost dig. signálu na výstupu kodéru vůči přen. rychlost dig. signálu na vstupu kodéru"
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Kompresní poměr.",
-    "proc": ""
-  },
-  {
-    "id": 24,
-    "type": "choice",
-    "q": "Tzv. Bezešvý handover je použit u systému:",
-    "opts": [
-      "UMTS",
-      "WiFi",
-      "GSM",
-      "DECT"
-    ],
-    "ans": [
-      3
-    ],
-    "pts": 1,
-    "hint": "Seamless handover.",
-    "proc": ""
-  },
-  {
-    "id": 12,
-    "type": "choice",
-    "q": "Všechny rušivé vlivy, jenž ovlivňují parametry daného rádiového kanálu je možno kompenzovat:",
-    "opts": [
-      "diverzitou",
-      "ekvalizací",
-      "Dopplerovým principem"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "Úprava signálu v přijímači.",
-    "proc": ""
-  },
-  {
-    "id": 28,
-    "type": "choice",
-    "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velké buňky je nutno použít:",
-    "opts": [
-      "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi",
-      "kodéry s minimálními přenosovými rychlostmi",
-      "jednoduché kodéry s vysokými přenosovými rychlostmi"
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Vliv dosahu na kódování.",
-    "proc": ""
-  },
-  {
-    "id": 10,
-    "type": "choice",
-    "q": "V případě, že se zdroj vlnění pohybuje vzhledem ke klidnému pozorovateli v klidném prostředí platí:",
-    "opts": [
-      "Nemění se fázová rychlost vlnění, avšak vůči pozorovateli se mění vlnová délka a kmitočet vlnění.",
-      "Nemění se vlnová délka a kmitočet vlnění, avšak vůči pozorovateli se mění fázová rychlost.",
-      "Nemění se fázová rychlost vlnění a kmitočet vlnění, avšak vůči pozorovateli se mění vlnová délka.",
-      "Nemění se vlnová délka, avšak vůči pozorovateli se mění fázová rychlost a kmitočet vlnění."
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Dopplerův jev - zdroj v pohybu.",
-    "proc": ""
-  },
-  {
-    "id": 30,
-    "type": "choice",
-    "q": "Při sektorizaci buněk dochází:",
-    "opts": [
-      "ke zmenšení přenosové kapacity v dané oblasti.",
-      "k rozdělení dané oblasti mezi jednotlivé mobilní operátory.",
-      "ke zvýšení rušení signálů v dané oblasti.",
-      "ke zvýšení počtů účastníků v dané oblasti.",
-      "ke zvýšení přenosové kapacity v dané oblasti."
-    ],
-    "ans": [
-      4
-    ],
-    "pts": 1,
-    "hint": "Směrové antény.",
-    "proc": ""
-  },
-  {
-    "id": 36,
-    "type": "choice",
-    "q": "Výběr zdrojového kodéru rovněž závisí na velikosti buňky v mobilní síti. Pro velmi velké buňky je nutno použít:",
-    "opts": [
-      "jednoduché kodéry s vysokými přenosovými rychlostmi",
-      "rovné kanálové kódování – kodéry s nižšími přenosovými rychlostmi",
-      "kodéry s minimálními přenosovými rychlostmi"
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Extrémní dosah.",
-    "proc": ""
-  },
-  {
-    "id": 38,
-    "type": "choice",
-    "q": "Únik signálu (fading) znamená:",
-    "opts": [
-      "kolísání úrovně signálu v místě příjmu.",
-      "úmyslné (kontrolované) snížení úrovně signálu v místě příjmu.",
-      "ztráta signálu v místě příjmu."
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Rychlý a pomalý únik.",
-    "proc": ""
-  },
-  {
-    "id": 17,
-    "type": "choice",
-    "q": "Vokodéry dosahují vůči kodérům tvarového průběhu:",
-    "opts": [
-      "poměrně vysoké redukce bitové rychlosti",
-      "srovnatelné redukce bitové rychlosti",
-      "poměrně malé redukce bitové rychlosti"
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Voice Coder.",
-    "proc": ""
-  },
-  {
-    "id": 11,
-    "type": "choice",
-    "q": "Tzv. měkký handover je použit u systému:",
-    "opts": [
-      "UMTS",
-      "WiFi",
-      "GSM",
-      "DECT"
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Soft Handover (Make-before-break).",
-    "proc": ""
-  },
-  {
-    "id": 4,
-    "type": "choice",
-    "q": "Duplex označovaný jako TDD je využíván v systému:",
-    "opts": [
-      "WiFi",
-      "GSM",
-      "DECT",
-      "Paging"
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Time Division Duplex.",
-    "proc": ""
-  },
-  {
-    "id": 34,
-    "type": "choice",
-    "q": "Tzv. Tvrdý handover je použit u systému:",
-    "opts": [
-      "WiFi",
-      "GSM",
-      "UMTS",
-      "DECT"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "Hard Handover (Break-before-make).",
-    "proc": ""
-  },
-  {
-    "id": 19,
-    "type": "choice",
-    "q": "Hloubka prokládání vyjadřuje:",
-    "opts": [
-      "velikost paměťové matice",
-      "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé",
-      "počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby"
-    ],
-    "ans": [
-      1
-    ],
-    "pts": 1,
-    "hint": "Interleaving depth.",
-    "proc": ""
-  },
-  {
-    "id": 1,
-    "type": "choice",
-    "q": "Rámec vnějšího kódu vyjadřuje:",
-    "opts": [
-      "velikost paměťové matice",
-      "velikost skupinové chyby, kterou je možno rozprostřít na chyby ojedinělé",
-      "počet bitů, po kterých se budou opakovat vzniklé ojedinělé chyby"
-    ],
-    "ans": [
-      2
-    ],
-    "pts": 1,
-    "hint": "Vnější kód u zřetězených kódů.",
-    "proc": ""
-  },
-  {
-    "id": 40,
-    "type": "choice",
-    "q": "Vzdálenost odstupu dvou buněk se shodným rádiovým kanálem:",
-    "opts": [
-      "je přímo úměrná velikosti svazu buněk.",
-      "se se změnou velikosti svazu buněk nemění.",
-      "je nepřímo úměrná velikosti svazu buněk."
-    ],
-    "ans": [
-      0
-    ],
-    "pts": 1,
-    "hint": "Reuse distance.",
+    "hint": "Srovnání typů interleavingu.",
     "proc": ""
   }
 ]
