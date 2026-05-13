@@ -1,0 +1,312 @@
+[
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Který burst má dlouhou (přídavnou) ochrannou dobu?",
+    "opts": [
+      "prázdný",
+      "přístupový",
+      "normální",
+      "synchronizační",
+      "pro kmitočtovou korekci"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Transformační metody zdrojového kódování:",
+    "opts": [
+      "realizují kódovací algoritmy v kmitočtové i časové oblasti",
+      "realizují kódovací algoritmy v kmitočtové oblasti",
+      "realizují kódovací algoritmy v časové oblasti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "GPRS zařízení třídy C:",
+    "opts": [
+      "jen hovor nebo data bez přecházení",
+      "pouze okruhy",
+      "jen hovor nebo data s přecházením",
+      "současně okruhy i pakety",
+      "umožňující ovládat pouze služby na základě přepojování paketů."
+    ],
+    "ans": [
+      4
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Pojem kódová modulace znamená:",
+    "opts": [
+      "označení pro modulaci PAM",
+      "spojení kanálového kódování a vlastní modulace do jediného procesu",
+      "spojení zdrojového kódování a vlastní modulace do jediného procesu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Pojem „refrakce“ vlnění znamená:",
+    "opts": [
+      "ohyb",
+      "skládání",
+      "lom"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Počet rádiových kanálů u systému EGSM je:",
+    "opts": [
+      "170",
+      "174",
+      "250",
+      "45",
+      "124",
+      "74",
+      "200",
+      "900"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Každé zmenšení poloměru buňky o 50% vede ke:",
+    "opts": [
+      "čtyřnásobnému zvětšení přenosové kapacity v dané oblasti.",
+      "zmenšení přenosové kapacity v dané oblasti na polovinu.",
+      "dvojnásobnému zvětšení přenosové kapacity v dané oblasti.",
+      "zmenšení přenosové kapacity v dané oblasti na čtvrtinu."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "V analogových radiokomunikačních systémech se nejčastěji používá:",
+    "opts": [
+      "sítí řízený handover s asistenci mobilní stanice.",
+      "sítí řízený handover.",
+      "handover řízený mobilní stanicí."
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Kmitočtový rozsah u systému PGSM činí:",
+    "opts": [
+      "35 MHz",
+      "60 MHz",
+      "25 MHz",
+      "50 MHz",
+      "70 MHz",
+      "90 MHz",
+      "75 MHz"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Analogový radiokomunikační systém NSM využíval metodu:",
+    "opts": [
+      "TDMA/CDMA",
+      "CDMA",
+      "TDMA",
+      "FDMA",
+      "FDMA/CDMA",
+      "FDMA/TDMA"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Analogový radiokomunikační systém NMT využíval metodu:",
+    "opts": [
+      "FDMA",
+      "FDMA/TDMA",
+      "CDMA",
+      "FDMA/CDMA",
+      "TDMA/CDMA",
+      "TDMA"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Digitální modulace jsou:",
+    "opts": [
+      "diskrétní kódované modulace v základním pásmu",
+      "modulace s nosnými vlnami",
+      "diskrétní nekódované modulace v základním pásmu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Který z uvedených prvků sítě GSM nepatří do subsystému BSS?",
+    "opts": [
+      "BSC",
+      "jiná odpověď",
+      "MSC",
+      "BTS",
+      "TRAU"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Kolísání úrovně signálu v místě příjmu je možno kompenzovat:",
+    "opts": [
+      "diverzitou.",
+      "ekvivalencí.",
+      "Dopplerovým principem."
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Prediktivní metody zdrojového kódování:",
+    "opts": [
+      "realizují kódovací algoritmy v časové oblasti",
+      "realizují kódovací algoritmy v kmitočtové oblasti",
+      "realizují kódovací algoritmy v kmitočtové i časové oblasti"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Konvoluční prokládání dosahuje vůči blokovému prokládání:",
+    "opts": [
+      "srovnatelné účinnosti",
+      "nižší účinnosti",
+      "vyšší účinnosti"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Zřetězené kódování znamená:",
+    "opts": [
+      "využití vícenásobné úrovně zdrojového kódování a prokládání",
+      "využití vícenásobné úrovně kanálového kódování a prokládání",
+      "využití vícenásobné úrovně zdrojového a kanálového kódování"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Pro systémy CDMA platí:",
+    "opts": [
+      "S/N > 1",
+      "S/N = B",
+      "S/N < 1"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1,
+    "hint": "",
+    "proc": ""
+  }
+]
