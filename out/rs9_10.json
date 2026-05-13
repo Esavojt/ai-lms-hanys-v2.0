@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Kdy bylo v Československu zahájeno pravidelné rozhlasové vysílání stanicí Radiojournal?",
+    "opts": [
+      "1910",
+      "1922",
+      "18. 5. 1923",
+      "1959"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Stalo se tak v Praze.",
+    "rationale": "Pravidelné vysílání v ČSR začalo 18. května 1923 ze stanu v pražských Kbelích[cite: 13962].",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Která organizace sdružuje provozovatele stanic pro digitalizaci rozhlasu?",
+    "opts": [
+      "Eureka 147",
+      "CCIR",
+      "OIRT",
+      "DVB Konsorcium"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Vznikla v 80. letech minulého století.",
+    "rationale": "Projekt Eureka 147 je základem digitalizace rozhlasových pásem ve světě[cite: 13982, 13983].",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Který systém je určen pro digitální vysílání na kmitočtech POD 30 MHz (DV, SV, KV)?",
+    "opts": [
+      "DAB",
+      "DRM (Digital Radio Mondiale)",
+      "DMB",
+      "FM"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Nahrazuje klasickou AM modulaci.",
+    "rationale": "DRM je standard pro digitální rozhlas v pásmech dlouhých, středních a krátkých vln[cite: 13985, 13986].",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Experimentální vysílání DRM v Českých Budějovicích (2022) využilo modulaci:",
+    "opts": [
+      "BPSK",
+      "16-QAM",
+      "OFDM",
+      "GMSK"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Šířka kanálu byla 9 kHz na středních vlnách.",
+    "rationale": "Při experimentu byla použita modulace 16-QAM na kmitočtu 954 kHz[cite: 14008, 14010].",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Co v kontextu DAB znamená pojem 'multiplex'?",
+    "opts": [
+      "Zesílení signálu anténou",
+      "Sdružení více rozhlasových stanic (zpravidla 6-8) do jedné frekvence",
+      "Způsob šifrování zvuku",
+      "Přenášení TV signálu místo zvuku"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Umožňuje efektivnější využití spektra.",
+    "rationale": "DAB umožňuje sdružit více stanic do jednoho datového balíku vysílaného na společném kmitočtu[cite: 14048].",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Jaká je hlavní výhoda DAB vysílání z hlediska výkonu vysílačů?",
+    "opts": [
+      "Vyžaduje vyšší výkony než FM",
+      "Postačí menší vyzářené výkony, což omezuje EM smog",
+      "Výkon musí být konstantní 100 kW",
+      "Vysílače nepotřebují antény"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Souvisí to s efektivitou digitálního přenosu.",
+    "rationale": "Digitální rozhlas potřebuje k pokrytí stejného území menší výkon než analogové vysílání[cite: 14070, 14071].",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Který systém umožňuje sledování TV na mobilních rozhlasových přijímačích?",
+    "opts": [
+      "DRM",
+      "DMB (Digital Multimedia Broadcasting)",
+      "AM",
+      "CCIR"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vychází z technologie DAB.",
+    "rationale": "DMB je standard pro multimediální služby včetně videa v rámci digitálního rozhlasu[cite: 14033, 14068].",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Jaký zvukový formát přinesl standard DAB+ oproti původnímu DAB?",
+    "opts": [
+      "MP3",
+      "WAV",
+      "AAC (Advanced Audio Coding)",
+      "FLAC"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Je to modernější a úspornější kodek.",
+    "rationale": "DAB+ využívá efektivnější kódování AAC, což umožňuje umístit více stanic do multiplexu.",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Pásmo VKV CCIR, využívané v ČR pro FM rádio, má rozsah:",
+    "opts": [
+      "66-73 MHz",
+      "87,5-108 MHz",
+      "174-230 MHz",
+      "470-862 MHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Pásmo, které dnes ladíte na klasických rádiích.",
+    "rationale": "VKV CCIR v rozsahu 87,5-108 MHz se v ČR plně prosadilo od 90. let[cite: 13969].",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Radiotext v systému DAB slouží k:",
+    "opts": [
+      "Dálkovému ovládání vysílače",
+      "Přenosu aktuálních informací o skladbě, zprávách či dopravě",
+      "Šifrování hovoru",
+      "Měření vzdálenosti k vysílači"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Doplňková informační služba.",
+    "rationale": "DAB umožňuje zobrazovat textové informace přímo na displeji přijímače[cite: 14050].",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Zkratka DRM znamená:",
+    "opts": [
+      "Digital Radio Mobile",
+      "Digital Radio Mondiale",
+      "Direct Radio Media",
+      "Digital Record Management"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Francouzské slovo pro 'světový'.",
+    "rationale": "Standard DRM byl navržen jako světový digitální systém pro pásma pod 30 MHz[cite: 13986].",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Jaká je šířka jednoho kanálu u DRM v pásmu středních vln?",
+    "opts": [
+      "200 kHz",
+      "8 MHz",
+      "9 kHz",
+      "1,5 MHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Stejná jako u analogového AM.",
+    "rationale": "DRM je navrženo tak, aby se vešlo do stávajícího kanálového rastru 9 kHz (v Evropě)[cite: 14009].",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Systém Eureka 147 je technologický základ pro:",
+    "opts": [
+      "Wi-Fi",
+      "DAB (Digital Audio Broadcasting)",
+      "GSM",
+      "Bluetooth"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Digitální rádio nad 30 MHz.",
+    "rationale": "Projekt Eureka 147 definoval standardy pro digitální rozhlasové vysílání[cite: 13982, 13989].",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Výhoda DAB v členitém terénu je:",
+    "opts": [
+      "Signál se nešíří",
+      "Vynikající příjem díky odolnosti proti odrazům",
+      "Nutnost přímé viditelnosti na každý metr",
+      "Pouze pro vnitřní použití"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Digitální signál lépe zpracovává vícecestné šíření.",
+    "rationale": "DAB poskytuje kvalitní příjem i v oblastech s mnoha odrazy[cite: 14046, 14069].",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Původní VKV pásmo OIRT (východní norma) mělo rozsah:",
+    "opts": [
+      "87,5-108 MHz",
+      "66-73 MHz",
+      "45-50 MHz",
+      "108-118 MHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Používalo se v ČSSR před rokem 1984.",
+    "rationale": "Organizace OIRT definovala 'východní' pásmo VKV v rozsahu 66-73 MHz[cite: 13966].",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Lze v DAB vysílání pozastavit 'živý' poslech?",
+    "opts": [
+      "Ne, je to technicky nemožné",
+      "Ano, některé přijímače umožňují 'time-shift'",
+      "Pouze u stanic vysílajících v AM",
+      "Jen v noci"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Využívá se vyrovnávací paměť.",
+    "rationale": "Některé digitální přijímače umožňují pozastavit živé vysílání a spustit jej se zpožděním[cite: 14051].",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Jakou modulaci testovaly České Radiokomunikace pro DRM v Č. Budějovicích?",
+    "opts": [
+      "Pouze 16-QAM",
+      "16-QAM a 64-QAM",
+      "FM a AM",
+      "GMSK"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hledej v modulačních parametrech experimentu.",
+    "rationale": "Cílem experimentu bylo ověření parametrů modulací 16-QAM i 64-QAM[cite: 14012].",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Digitální rozhlas DAB se ladí:",
+    "opts": [
+      "Podle kmitočtu v kHz jako AM",
+      "Výběrem názvu stanice ze seznamu",
+      "Pouze manuálně otáčením kondenzátoru",
+      "Přes webový prohlížeč"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Přijímač prohledá multiplex.",
+    "rationale": "DAB přijímač automaticky naladí multiplexy a nabídne přehledný seznam názvů stanic[cite: 14049].",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Která stanice byla použita pro experiment DRM v roce 2022?",
+    "opts": [
+      "Radio Wave",
+      "ČRo Radiožurnál",
+      "BBC",
+      "Evropa 2"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Veřejnoprávní rozhlas.",
+    "rationale": "Pro experimentální vysílání DRM v Husově kolonii byla zvolena stanice ČRo Radiožurnál[cite: 14007].",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Je kvalita zvuku v DAB srovnatelná s CD?",
+    "opts": [
+      "Ne, je vždy horší",
+      "Ano, díky digitálnímu přenosu a kódování",
+      "Jen pokud je vysílač blíž než 1 km",
+      "Pouze v mono režimu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Jedna z hlavních propagovaných výhod.",
+    "rationale": "DAB poskytuje kvalitnější zvuk srovnatelný s poslechem CD[cite: 14025, 14063].",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Který formát komprese obrazu používá standard DVB-T2?",
+    "opts": [
+      "MPEG-2",
+      "HEVC (H.265)",
+      "DivX",
+      "GIF"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Je efektivnější než MPEG-2 i MPEG-4.",
+    "rationale": "Standard DVB-T2 využívá pro kompresi obrazu moderní formát HEVC[cite: 14736, 14818].",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Co znamená zkratka SFN v digitálním televizním vysílání?",
+    "opts": [
+      "Super Frequency Network",
+      "Single Frequency Network (Jednokmitočtová síť)",
+      "Signal Flow Node",
+      "Small Field Net"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Více vysílačů na stejném kanálu.",
+    "rationale": "SFN umožňuje vysílat stejný multiplex z více vysílačů na jediném kmitočtu[cite: 14275].",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Jaký je hlavní rozdíl mezi '720p' a '1080i'?",
+    "opts": [
+      "720p je částečné rozlišení, 1080i plné",
+      "720p je progresivní (celé snímky), 1080i je prokládané (půlsnímky)",
+      "1080i je pro rádio, 720p pro TV",
+      "Není v nich žádný rozdíl"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Sleduj písmena 'p' a 'i'.",
+    "rationale": "Písmeno 'i' značí interlacing (prokládání), 'p' značí progresivní skenování[cite: 14765, 14768].",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Který jev v digitální TV nahrazuje analogové 'sněžení' při slabém signálu?",
+    "opts": [
+      "Duchové",
+      "Cliff efekt (stoprocentní obraz nebo nic)",
+      "Změna barvy na černobílou",
+      "Zvýšení hlasitosti"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Souvisí se strmým pádem kvality.",
+    "rationale": "U digitálu signál buď funguje bezchybně, nebo při poklesu pod určitou mez zcela vypadne (Cliff efekt)[cite: 14299, 14313].",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Standard DVB-S2 je určen pro:",
+    "opts": [
+      "Pozemské vysílání",
+      "Kabelové rozvody",
+      "Družicové (satelitní) vysílání",
+      "Mobilní telefony"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "'S' v názvu značí Satellite.",
+    "rationale": "DVB-S2 je nástupnický standard pro digitální televizní vysílání přes družice[cite: 15097].",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "V jaké výšce se nacházejí geostacionární družice pro DVB-S?",
+    "opts": [
+      "10 000 km",
+      "36 000 km",
+      "100 km",
+      "120 000 km"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Musí se zdát z pohledu Země nehybné.",
+    "rationale": "Geostacionární družice obíhají ve výšce cca 36 000 km nad rovníkem[cite: 15098].",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "LNB konvertor u satelitní paraboly slouží k:",
+    "opts": [
+      "Otáčení paraboly za sluncem",
+      "Převedení signálu z pásma Ku na nižší kmitočty",
+      "Napájení televize",
+      "Zobrazení teletextu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Low-Noise Block.",
+    "rationale": "LNB konvertuje vysokofrekvenční satelitní signál pro přenos koaxiálním kabelem k přijímači[cite: 15111].",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Ochranný interval v OFDM slouží k:",
+    "opts": [
+      "Zvýšení vysílacího výkonu",
+      "Zabránění překrývání symbolů vlivem odrazů",
+      "Chlazení vysílače",
+      "Ukládání hesel účastníků"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Vkládá se před užitečnou část symbolu.",
+    "rationale": "Ochranný interval brání interferencím ISI vznikajícím mnohocestným šířením[cite: 14653, 14654].",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Který systém kanálového kódování přineslo DVB-T2 oproti DVB-T?",
+    "opts": [
+      "Pouze paritu",
+      "LDPC + BCH",
+      "Morseovu abecedu",
+      "Reed-Solomon"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Je mnohem odolnější a blíží se Shannonovu limitu.",
+    "rationale": "DVB-T2 nahradilo RS kódování modernějším systémem LDPC a BCH[cite: 14780, 14781].",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Co je to 'elevace' při nastavování satelitní paraboly?",
+    "opts": [
+      "Sklon paraboly vůči vodorovné rovině (výška)",
+      "Natočení ve směru sever-jih",
+      "Délka kabelu",
+      "Počet programů"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Svislý úhel.",
+    "rationale": "Elevace určuje výškový úhel nasměrování paraboly na družici[cite: 15110, 15119].",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Jaký byl hlavní důvod přechodu z DVB-T na DVB-T2 v ČR?",
+    "opts": [
+      "Televize se rozbíjely",
+      "Uvolnění pásem pro mobilní sítě 5G (digitální dividenda)",
+      "Zrušení vysílání v HD",
+      "Zákaz používání antén"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Souvisí s frekvencemi nad 694 MHz.",
+    "rationale": "Bylo nutné uvolnit pásmo 700 MHz pro mobilní operátory a zefektivnit využití zbylého spektra[cite: 14716, 14718].",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Vysílací mód '32k' je dostupný v:",
+    "opts": [
+      "Analogové TV",
+      "DVB-T",
+      "DVB-T2",
+      "Rozhlasu AM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Umožňuje nejvyšší počet subnosných.",
+    "rationale": "Mód 32k se 32 768 nosnými je novinkou standardu DVB-T2[cite: 14780].",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "V jakém pásmu nejčastěji probíhá satelitní DVB-S2 vysílání?",
+    "opts": [
+      "Pásmo FM",
+      "Pásmo Ku (cca 10-12 GHz)",
+      "Pásmo VHF",
+      "Dlouhé vlny"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Kmitočty v řádech desítek GHz.",
+    "rationale": "Pro satelitní TV se standardně využívají transpondéry v pásmu Ku[cite: 15099, 15101].",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Která modulace je v DVB-T2 nejúčinnější pro vysoký datový tok?",
+    "opts": [
+      "QPSK",
+      "16-QAM",
+      "256-QAM",
+      "64-QAM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Přenáší nejvíce bitů na jeden symbol.",
+    "rationale": "DVB-T2 nově zavedlo modulaci 256-QAM pro dosažení maximální přenosové kapacity[cite: 14780].",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Co určuje parametr 'azimut'?",
+    "opts": [
+      "Svislý sklon antény",
+      "Vodorovné natočení antény (směr k severu)",
+      "Barvu obrazu",
+      "Hlasitost zvuku"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Úhel v horizontální rovině.",
+    "rationale": "Azimut je úhel natočení paraboly ve směru světových stran[cite: 15110, 15120].",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Standard DVB-H byl určen pro:",
+    "opts": [
+      "Vysoké rozlišení v kině",
+      "Mobilní příjem v kapesních zařízeních (Handheld)",
+      "Pouze pro tiskárny",
+      "Satelitní internet"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "'H' značí Handheld.",
+    "rationale": "DVB-H je varianta digitální TV optimalizovaná pro malá přenosná zařízení[cite: 14224].",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "Rozlišení Full HD obrazu odpovídá počtu bodů:",
+    "opts": [
+      "720 x 576",
+      "1920 x 1080",
+      "640 x 480",
+      "3840 x 2160"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Odpovídá formátu 16:9.",
+    "rationale": "Full HD rozlišení definuje matici 1920 x 1080 pixelů[cite: 14750, 14764].",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Který kmitočtový rastr (šířka kanálu) je standardní pro UHF v ČR?",
+    "opts": [
+      "1,7 MHz",
+      "5 MHz",
+      "8 MHz",
+      "10 MHz"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "V tomto kanálu se vysílá multiplex.",
+    "rationale": "V pásmech UHF (IV. a V. pásmo) je šířka TV kanálu stanovena na 8 MHz[cite: 14243, 14247].",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Cliff efekt u digitální TV znamená, že:",
+    "opts": [
+      "Obraz postupně šedne",
+      "Kvalita obrazu je konstantní až do kritického bodu, pak zmizí",
+      "Obraz se zrychluje",
+      "Zvuk hraje dříve než obraz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Digitální útes.",
+    "rationale": "Na rozdíl od analogu, kde kvalita klesá pozvolna, digitál drží kvalitu až do úplného výpadku[cite: 14313, 14314].",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Pojem 'D-Book' v ČR označuje:",
+    "opts": [
+      "Seznam televizních herců",
+      "Souhrn technických požadavků na přijímače pro český trh",
+      "Návod na stavbu vysílače",
+      "Historii rozhlasu"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Důležitý dokument pro certifikaci Set-Top Boxů.",
+    "rationale": "D-Book definuje minimální parametry přijímačů, aby správně fungovaly v českých sítích DVB-T2[cite: 14794].",
+    "proc": ""
+  }
+]

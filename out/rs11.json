@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "type": "choice",
+    "q": "Kdo v roce 1945 publikoval první koncepci komunikačních družic v článku 'Extraterrestrial Relays'?",
+    "opts": [
+      "Heinrich Hertz",
+      "Arthur C. Clarke",
+      "Guglielmo Marconi",
+      "Sputnik"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Známý autor sci-fi literatury.",
+    "rationale": "A. C. Clarke jako první veřejně popsal využití družic na geostacionární dráze pro přenos signálu[cite: 15582, 15583].",
+    "proc": ""
+  },
+  {
+    "id": 2,
+    "type": "choice",
+    "q": "Zkratka FSS (Fixed Satellite Services) označuje:",
+    "opts": [
+      "Mobilní družicové služby",
+      "Fixní (pevné) družicové služby",
+      "Radionavigační služby",
+      "Vojenské systémy"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Pevné stanice pro přenos dat a TV.",
+    "rationale": "FSS jsou pevné služby určené pro přenos dat, telefonu a rozhlasu (např. INTELSAT)[cite: 15595].",
+    "proc": ""
+  },
+  {
+    "id": 3,
+    "type": "choice",
+    "q": "Která družicová služba je určena pro mobilní telefony a telekonference (např. INMARSAT)?",
+    "opts": [
+      "BSS",
+      "RDSS",
+      "MSS (Mobile Satellite Services)",
+      "ISS"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "'M' v názvu značí Mobile.",
+    "rationale": "MSS zabezpečuje služby pro námořní, letecké a pozemní mobilní sítě[cite: 15596, 15597].",
+    "proc": ""
+  },
+  {
+    "id": 4,
+    "type": "choice",
+    "q": "Družicové služby pro rozhlasové a televizní vysílání (např. ASTRA) mají zkratku:",
+    "opts": [
+      "FSS",
+      "BSS (Broadcast Satellite Services)",
+      "RNSS",
+      "LEO"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Broadcast v názvu.",
+    "rationale": "BSS je určena pro přímé vysílání rozhlasu a TV k uživatelům[cite: 15599].",
+    "proc": ""
+  },
+  {
+    "id": 5,
+    "type": "choice",
+    "q": "Které kmitočtové pásmo je nejčastěji využíváno pro vojenské družicové služby?",
+    "opts": [
+      "Pásmo L",
+      "Pásmo S",
+      "Pásmo X",
+      "Pásmo Ku"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Rozsah cca 7,2 až 8,4 GHz.",
+    "rationale": "Pásmo X je dle tabulek vyhrazeno pro vojenské služby[cite: 15615].",
+    "proc": ""
+  },
+  {
+    "id": 6,
+    "type": "choice",
+    "q": "Pásmo L (1,5-1,7 GHz) je v družicové komunikaci využíváno pro služby:",
+    "opts": [
+      "Pevné (data)",
+      "Rozhlasové",
+      "Pohyblivé (přenosné terminály)",
+      "Vojenské"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Nízké kmitočty vhodné pro malé antény.",
+    "rationale": "V pásmu L se provozuje pohyblivá služba se šířkou pásma 100 MHz[cite: 15615].",
+    "proc": ""
+  },
+  {
+    "id": 7,
+    "type": "choice",
+    "q": "Jak se nazývá nejvzdálenější bod eliptické oběžné dráhy od Země?",
+    "opts": [
+      "Perigeum",
+      "Apogeum",
+      "Orbita",
+      "Almanach"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Opak perigea.",
+    "rationale": "Apogeum je bod dráhy s největší vzdáleností od povrchu Země[cite: 15624].",
+    "proc": ""
+  },
+  {
+    "id": 8,
+    "type": "choice",
+    "q": "Družice na dráze GEO (Geostacionární) jsou umístěny ve výšce přibližně:",
+    "opts": [
+      "500 km",
+      "10 000 km",
+      "35 768 km",
+      "20 190 km"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Musí se otáčet stejně rychle jako Země.",
+    "rationale": "Výška cca 36 tisíc km nad rovníkem zajišťuje, že družice je vůči Zemi nehybná[cite: 15639].",
+    "proc": ""
+  },
+  {
+    "id": 9,
+    "type": "choice",
+    "q": "Který typ oběžné dráhy má nejnižší zpoždění (latenci) signálu (cca 6-30 ms)?",
+    "opts": [
+      "GEO",
+      "MEO",
+      "LEO (Low Earth Orbit)",
+      "HEO"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Nízká oběžná dráha.",
+    "rationale": "Díky malé výšce (500-3000 km) je doba šíření signálu u LEO nejkratší[cite: 15639].",
+    "proc": ""
+  },
+  {
+    "id": 10,
+    "type": "choice",
+    "q": "Nevýhodou družic na dráze GEO je:",
+    "opts": [
+      "Malé pokrytí území",
+      "Vysoká latence (240-280 ms)",
+      "Složité řízení družice",
+      "Nemožnost příjmu TV"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Signál musí urazit velkou vzdálenost.",
+    "rationale": "Vysoká dráha GEO způsobuje značné zpoždění, nevhodné pro interaktivní hraní nebo hovory[cite: 15639].",
+    "proc": ""
+  },
+  {
+    "id": 11,
+    "type": "choice",
+    "q": "Družice GPS se pohybují na které oběžné dráze?",
+    "opts": [
+      "LEO",
+      "GEO",
+      "MEO (Medium Earth Orbit)",
+      "HEO"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Střední oběžná dráha.",
+    "rationale": "Systém GPS využívá dráhy MEO ve výšce cca 20 000 km[cite: 15639, 15671].",
+    "proc": ""
+  },
+  {
+    "id": 12,
+    "type": "choice",
+    "q": "Oběžná dráha HEO (High Eliptic Earth Orbit) je charakteristická:",
+    "opts": [
+      "Kruhovým tvarem",
+      "Výstřední eliptickou dráhou",
+      "Výškou přesně 100 km",
+      "Nemožností pokrytí pólů"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Používá se pro oblasti ve vysokých zeměpisných šířkách.",
+    "rationale": "HEO je vysoce eliptická dráha s kolísavou výškou 500 až 50 000 km[cite: 15630, 15639].",
+    "proc": ""
+  },
+  {
+    "id": 13,
+    "type": "choice",
+    "q": "Družice na dráze LEO mají dobu viditelnosti z jednoho místa:",
+    "opts": [
+      "24 hodin",
+      "Několik hodin",
+      "Několik minut",
+      "Trvale"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Pohybují se velmi rychle.",
+    "rationale": "Kvůli nízké výšce a vysoké rychlosti 'přelétnou' nad obzorem během pár minut[cite: 15639].",
+    "proc": ""
+  },
+  {
+    "id": 14,
+    "type": "choice",
+    "q": "Náklady na vynesení jedné družice jsou nejnižší u drah:",
+    "opts": [
+      "GEO",
+      "MEO",
+      "LEO",
+      "HEO"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Je to nejblíže k zemskému povrchu.",
+    "rationale": "Vynesení na dráhu LEO vyžaduje méně energie než u vyšších drah[cite: 15639].",
+    "proc": ""
+  },
+  {
+    "id": 15,
+    "type": "choice",
+    "q": "Která organizace vypustila v roce 1965 první geostacionární komunikační družici?",
+    "opts": [
+      "Sputnik",
+      "INTERSPUTNIK",
+      "INTELSAT",
+      "ESA"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Satelit Intelsat 1.",
+    "rationale": "INTELSAT byl průkopníkem v geostacionární komunikaci[cite: 15585, 15586].",
+    "proc": ""
+  },
+  {
+    "id": 16,
+    "type": "choice",
+    "q": "Z kolika základních segmentů se skládá systém GPS?",
+    "opts": [
+      "2 (Země a vesmír)",
+      "3 (Kosmický, kontrolní, uživatelský)",
+      "4 (Vojenský, civilní, servisní, rádiový)",
+      "5"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Družice, pozemní stanice a přijímače.",
+    "rationale": "GPS tvoří kosmický (družice), kontrolní (řízení) a uživatelský segment (přijímače)[cite: 15651, 15652].",
+    "proc": ""
+  },
+  {
+    "id": 17,
+    "type": "choice",
+    "q": "Plně funkční kosmický segment GPS tvoří minimálně:",
+    "opts": [
+      "12 družic",
+      "24 družic (+ záložní)",
+      "100 družic",
+      "3 družice"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Zajišťují celosvětové pokrytí.",
+    "rationale": "Koncepce GPS počítá s 24 aktivními družicemi na 6 drahách[cite: 15668, 15669].",
+    "proc": ""
+  },
+  {
+    "id": 18,
+    "type": "choice",
+    "q": "Jaká je výška drah družic systému GPS nad povrchem Země?",
+    "opts": [
+      "36 000 km",
+      "20 190 km",
+      "500 km",
+      "800 km"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Typická dráha MEO.",
+    "rationale": "Družice GPS obíhají ve výšce 20 190 km[cite: 15671].",
+    "proc": ""
+  },
+  {
+    "id": 19,
+    "type": "choice",
+    "q": "Za jak dlouho oběhne družice GPS jedenkrát celou Zemi?",
+    "opts": [
+      "24 hodin",
+      "11 h 58 min",
+      "1 hodinu",
+      "30 dní"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Dva oběhy za jeden den.",
+    "rationale": "Doba jednoho oběhu je cca 12 hodin (přesně 11 h 58 min)[cite: 15673].",
+    "proc": ""
+  },
+  {
+    "id": 20,
+    "type": "choice",
+    "q": "Kolik družic musí přijímač GPS vidět pro výpočet 3D polohy a času (celkem 4 souřadnice)?",
+    "opts": [
+      "1",
+      "2",
+      "3",
+      "Minimálně 4"
+    ],
+    "ans": [
+      3
+    ],
+    "pts": 1.0,
+    "hint": "Čtvrtá souřadnice je odchylka času.",
+    "rationale": "K výpočtu x, y, z a času (t) je nutný signál ze 4 družic[cite: 15713, 15866].",
+    "proc": ""
+  },
+  {
+    "id": 21,
+    "type": "choice",
+    "q": "Kde se nachází hlavní řídící středisko systému GPS?",
+    "opts": [
+      "Moskva, Rusko",
+      "Praha, ČR",
+      "Colorado Springs, USA",
+      "Brusel, Belgie"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Letecká základna Schriever.",
+    "rationale": "Řídící centrum je v Colorado Springs v USA[cite: 15684, 15691].",
+    "proc": ""
+  },
+  {
+    "id": 22,
+    "type": "choice",
+    "q": "Základní nosná frekvence L1 v systému GPS je:",
+    "opts": [
+      "10,23 MHz",
+      "1575,42 MHz",
+      "1227,60 MHz",
+      "2,4 GHz"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Odpovídá vlnové délce 19 cm.",
+    "rationale": "Frekvence L1 je 1575,42 MHz[cite: 15729, 15737].",
+    "proc": ""
+  },
+  {
+    "id": 23,
+    "type": "choice",
+    "q": "Dálkoměrný kód C/A (Coarse/Acquisition) je určen pro:",
+    "opts": [
+      "Vojenské účely (šifrovaný)",
+      "Standardní civilní polohovou službu (SPS)",
+      "Opravu chyb v atomových hodinách",
+      "Řízení motorů družice"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Hrubý/dostupný kód.",
+    "rationale": "Kód C/A není šifrovaný a používá ho většina civilních přijímačů[cite: 15742, 15743].",
+    "proc": ""
+  },
+  {
+    "id": 24,
+    "type": "choice",
+    "q": "Co jsou to 'efemeridy' vysílané v navigační zprávě?",
+    "opts": [
+      "Historie družic",
+      "Přesná data o poloze dané konkrétní družice",
+      "Data o všech družicích systému",
+      "Změny počasí"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Aktualizují se cca jednou za hodinu.",
+    "rationale": "Efemeridy nesou přesné údaje o poloze družice, ze které jsou vysílány[cite: 15773].",
+    "proc": ""
+  },
+  {
+    "id": 25,
+    "type": "choice",
+    "q": "Pojem 'almanach' v navigační zprávě GPS znamená:",
+    "opts": [
+      "Méně přesná data o polohách všech družic systému",
+      "Kód pro odblokování přijímače",
+      "Seznam uživatelů",
+      "Aktuální čas v Londýně"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Pomáhá přijímači najít družice na obloze.",
+    "rationale": "Almanach obsahuje přibližné polohy všech družic a aktualizuje se jednou za několik dní[cite: 15774].",
+    "proc": ""
+  },
+  {
+    "id": 26,
+    "type": "choice",
+    "q": "Navigační zpráva GPS se vysílá frekvencí:",
+    "opts": [
+      "50 Hz",
+      "1575 MHz",
+      "10,23 MHz",
+      "1600 Hz"
+    ],
+    "ans": [
+      0
+    ],
+    "pts": 1.0,
+    "hint": "Nízká bitová rychlost.",
+    "rationale": "Binární navigační zpráva se přenáší rychlostí 50 bit/s[cite: 15788].",
+    "proc": ""
+  },
+  {
+    "id": 27,
+    "type": "choice",
+    "q": "Jak dlouho trvá odvysílání jednoho kompletního rámce navigační zprávy (1500 bitů)?",
+    "opts": [
+      "0,6 s",
+      "6 s",
+      "30 s",
+      "1 hodinu"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Rámec tvoří 5 podrámců po 6 sekundách.",
+    "rationale": "Doba trvání jednoho rámce je přesně 30 s[cite: 15789, 15792].",
+    "proc": ""
+  },
+  {
+    "id": 28,
+    "type": "choice",
+    "q": "Druhým slovem v každém podrámci je slovo HOW, které slouží pro:",
+    "opts": [
+      "Měření teploty",
+      "Handover (předání) a určení času v týdnu",
+      "Identifikaci uživatele",
+      "Šifrování dat"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Handover Word.",
+    "rationale": "HOW obsahuje pořadí podrámce v týdnu a pořadové číslo v rámci[cite: 15804].",
+    "proc": ""
+  },
+  {
+    "id": 29,
+    "type": "choice",
+    "q": "Proč je u GPS kritická přesnost atomových hodin? Odchylka 1 ms způsobí chybu vzdálenosti:",
+    "opts": [
+      "1 metr",
+      "10 metrů",
+      "Téměř 300 km",
+      "Žádnou"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Rychlost světla je 300 000 km/s.",
+    "rationale": "Protože se poloha počítá z času šíření světla, chyba 1 ms (tisícina sekundy) odpovídá 300 km[cite: 15866].",
+    "proc": ""
+  },
+  {
+    "id": 30,
+    "type": "choice",
+    "q": "Co je principem systému DGPS (Differential GPS)?",
+    "opts": [
+      "Využití dvou různých antén na autě",
+      "Korekce chyby pomocí referenční stanice s přesně známou polohou",
+      "Vypnutí všech družic kromě jedné",
+      "Použití laseru"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Diferenční korekce.",
+    "rationale": "Referenční stanice spočítá chybu GPS měření a pošle ji přijímačům v okolí[cite: 15899, 15900].",
+    "proc": ""
+  },
+  {
+    "id": 31,
+    "type": "choice",
+    "q": "Evropský korekční systém, který zpřesňuje GPS pomocí geostacionárních družic, se jmenuje:",
+    "opts": [
+      "WAAS",
+      "EGNOS",
+      "MSAS",
+      "GLONASS"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "European Geostationary Navigation Overlay System.",
+    "rationale": "EGNOS je evropská podoba systému SBAS pro zpřesnění navigace[cite: 15903].",
+    "proc": ""
+  },
+  {
+    "id": 32,
+    "type": "choice",
+    "q": "Typická přesnost civilního přijímače GPS s využitím korekčních systémů je cca:",
+    "opts": [
+      "20 m",
+      "1,5 až 2 m",
+      "100 m",
+      "1 cm"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Výrazné zlepšení oproti základním 20 m.",
+    "rationale": "Vylepšující systémy (EGNOS/WAAS) stlačují chybu na cca 2 metry[cite: 15905].",
+    "proc": ""
+  },
+  {
+    "id": 33,
+    "type": "choice",
+    "q": "Ruský družicový navigační systém se nazývá:",
+    "opts": [
+      "GALILEO",
+      "BEIDOU",
+      "GLONASS",
+      "COMPASS"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Zkratka z GLObalnaja NAvigacionnaja Sputnikovaja Sistēma.",
+    "rationale": "GLONASS je ruskou alternativou k americkému GPS[cite: 15917].",
+    "proc": ""
+  },
+  {
+    "id": 34,
+    "type": "choice",
+    "q": "Jak se jmenuje evropský nezávislý navigační systém?",
+    "opts": [
+      "GPS",
+      "NAVSTAR",
+      "GALILEO",
+      "IRIDIUM"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Pojmenován po slavném astronomovi.",
+    "rationale": "GALILEO je evropský civilní navigační systém[cite: 15919].",
+    "proc": ""
+  },
+  {
+    "id": 35,
+    "type": "choice",
+    "q": "Souhrnný název pro všechny světové navigační systémy (GPS, GLONASS, Galileo atd.) je:",
+    "opts": [
+      "GPRS",
+      "GNSS (Global Navigation Satellite System)",
+      "WWW",
+      "SBA"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Globální družicový polohový systém.",
+    "rationale": "GNSS zastřešuje všechny globální družicové systémy určené k určování polohy[cite: 15922].",
+    "proc": ""
+  },
+  {
+    "id": 36,
+    "type": "choice",
+    "q": "Který z faktorů NEGATIVNĚ ovlivňuje přesnost GPS?",
+    "opts": [
+      "Časová synchronizace",
+      "Vícecestné šíření (odrazy od budov)",
+      "Větší počet viditelných družic",
+      "Přímá viditelnost"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Odražený signál putuje k přijímači déle.",
+    "rationale": "Odrazy signálu prodlužují dráhu vlny, což přijímač vyhodnotí jako větší vzdálenost od družice[cite: 15884].",
+    "proc": ""
+  },
+  {
+    "id": 37,
+    "type": "choice",
+    "q": "V navigační zprávě GPS nese informaci o začátku podrámců slovo:",
+    "opts": [
+      "HOW",
+      "CRC",
+      "TLM (Telemetry Word)",
+      "ID"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Vždy první slovo podrámce.",
+    "rationale": "TLM je telemetrické slovo na začátku každého bloku dat[cite: 15790, 15831].",
+    "proc": ""
+  },
+  {
+    "id": 38,
+    "type": "choice",
+    "q": "Vnavigační zprávě obsahuje 'Stav ionosféry' který podrámec?",
+    "opts": [
+      "1. podrámec",
+      "2. podrámec",
+      "4. podrámec",
+      "Všechny"
+    ],
+    "ans": [
+      2
+    ],
+    "pts": 1.0,
+    "hint": "Společná data u všech družic.",
+    "rationale": "Podrámec 4 obsahuje almanach, stav družic a model ionosféry[cite: 15820, 15847].",
+    "proc": ""
+  },
+  {
+    "id": 39,
+    "type": "choice",
+    "q": "Frekvence L2 (1227,60 MHz) v GPS se používá pro:",
+    "opts": [
+      "Běžnou civilní navigaci v autech",
+      "Přesnou polohovou službu (PPS) a měření vlivu ionosféry",
+      "Pouze pro příjem SMS",
+      "Dálkové ovládání dronů"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Využívána speciálními přijímači.",
+    "rationale": "L2 umožňuje eliminovat chyby způsobené ionosférou díky porovnání se signálem L1[cite: 15754].",
+    "proc": ""
+  },
+  {
+    "id": 40,
+    "type": "choice",
+    "q": "Který bod dráhy je nejblíže k zemskému povrchu?",
+    "opts": [
+      "Apogeum",
+      "Perigeum",
+      "Azimut",
+      "Elevace"
+    ],
+    "ans": [
+      1
+    ],
+    "pts": 1.0,
+    "hint": "Opak apogea.",
+    "rationale": "Perigeum je bod na oběžné dráze, který je nejblíže k těžišti Země[cite: 15625].",
+    "proc": ""
+  }
+]
