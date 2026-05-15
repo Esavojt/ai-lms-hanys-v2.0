@@ -1,0 +1,52 @@
+[
+  {
+    "nazev": "Zaklady radiokomunikace 1",
+    "predmet": "RS",
+    "soubor": "1.json"
+  },
+  {
+    "nazev": "Zaklady radiokomunikace 2",
+    "predmet": "RS",
+    "soubor": "2.json"
+  },
+  {
+    "nazev": "Mobilni site GSM",
+    "predmet": "RS",
+    "soubor": "3.json"
+  },
+  {
+    "nazev": "Zaklady radiovych vln",
+    "predmet": "RS",
+    "soubor": "4.json"
+  },
+  {
+    "nazev": "WPAN a Bluetooth",
+    "predmet": "RS",
+    "soubor": "rs11.json"
+  },
+  {
+    "nazev": "Zaklady radiovych vln 2",
+    "predmet": "RS",
+    "soubor": "rs1_2.json"
+  },
+  {
+    "nazev": "GSM a DECT",
+    "predmet": "RS",
+    "soubor": "rs3_4.json"
+  },
+  {
+    "nazev": "Druzicove komunikace",
+    "predmet": "RS",
+    "soubor": "rs5_6.json"
+  },
+  {
+    "nazev": "Radiove spektrum a anteny",
+    "predmet": "RS",
+    "soubor": "rs7_8.json"
+  },
+  {
+    "nazev": "Rozhlas a digitalni vysilani",
+    "predmet": "RS",
+    "soubor": "rs9_10.json"
+  }
+]
